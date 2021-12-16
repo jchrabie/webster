@@ -1,0 +1,19 @@
+<ng-container *ngIf="inline; else absoluteTpl">
+  <button mat-flat-button color="primary"
+          aria-label="Ouverture d'une boite de dialogue pour prendre rendez-vous"
+          [attr.aria-expanded]="isExpanded" [color]="color"
+          (click)="openDialog()">
+    <mat-icon>event</mat-icon>
+    Prendre rendez-vous
+  </button>
+
+</ng-container>
+<ng-template #absoluteTpl>
+  <button mat-fab [color]="color"
+          matTooltip="Prendre rendez-vous"
+          aria-label="Ouverture d'une boite de dialogue pour prendre rendez-vous"
+          [attr.aria-expanded]="isExpanded"
+          (click)="openDialog()">
+    <mat-icon>event</mat-icon>
+  </button>
+</ng-template>

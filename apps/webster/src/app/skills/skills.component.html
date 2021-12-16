@@ -1,0 +1,6 @@
+<div *ngFor="let skill of skills" class="wrapper">
+        <h3>{{skill.name}}</h3>
+    <div class="container">
+        <app-card *ngFor="let item of skill.content" [cardData]="item"></app-card>
+    </div>
+</div>

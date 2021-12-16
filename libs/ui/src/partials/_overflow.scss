@@ -1,0 +1,7 @@
+@use 'variables';
+
+@each $overflow in variables.$overflows {
+  .overflow-#{$overflow} {
+    overflow: #{$overflow};
+  }
+}

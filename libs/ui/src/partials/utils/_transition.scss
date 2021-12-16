@@ -1,0 +1,22 @@
+@use 'libs/ui/src/partials/variables';
+
+/// Définie les variables de transition
+///
+/// @param $transition map de transitions
+@mixin transition($transition...) {
+  @if length($transition) == 0 {
+    $transition: variables.$transition-base;
+  }
+
+  @if length($transition) > 1 {
+    @each $value in $transition {
+      @if $value == null or $value == none {
+        @warn "The keyword 'none' or 'null' must be used as a single argument.";
+      }
+    }
+  }
+
+  @if nth($transition, 1) != null {
+    transition: $transition;
+  }
+}

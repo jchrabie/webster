@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <mat-sidenav-container>
+    <mat-sidenav
+      #sidenav
+      mode="over"
+      [(opened)]="sidenavService.opened"
+      (openedChange)="sidenavService.onOpenedChange($event)"
+      color="primary"
+    >
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="mat-drawer-content">
+      <mat-progress-bar mode="determinate" [value]="scroll"></mat-progress-bar>
+      <app-header></app-header>
+
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

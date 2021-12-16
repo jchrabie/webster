@@ -1,0 +1,20 @@
+/// Définie les variables du CardComponent
+///
+/// @param $radius radius du card
+/// @param $header-background-color couleur de fond du header
+/// @param $header-border-bottom bordure du bas du header
+/// @param $header-font-family type de font du header
+/// @param $header-font-size taille de police du header
+@mixin card-component(
+  $radius: 5px,
+  $header-background-color: var(--light-color),
+  $header-border-bottom: 1px solid var(--passive-color),
+  $header-font-family: var(--font-bold),
+  $header-font-size: var(--huge-font-size)
+) {
+  --card-radius: #{$radius};
+  --card-header-background-color: #{$header-background-color};
+  --card-header-border-bottom: #{$header-border-bottom};
+  --card-header-font: #{$header-font-family};
+  --card-header-font-size: #{$header-font-size};
+}

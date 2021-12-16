@@ -1,0 +1,77 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'variables';
+
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    $infix: functions.breakpoint-infix($size);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @for $size from 0 through 5 {
+        .#{$abbrev}t#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: var(--spacer-#{$size})!important;
+        }
+        .#{$abbrev}r#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: var(--spacer-#{$size})!important;
+        }
+        .#{$abbrev}b#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: var(--spacer-#{$size})!important;
+        }
+        .#{$abbrev}l#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-left: var(--spacer-#{$size})!important;
+        }
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: var(--spacer-#{$size})!important;
+        }
+      }
+    }
+
+    // Negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
+    @for $size from 1 through 5 {
+      .m#{$infix}-n#{$size} {
+        margin: calc(var(--spacer-#{$size}) * -1)!important;
+      }
+      .mt#{$infix}-n#{$size},
+      .my#{$infix}-n#{$size} {
+        margin-top: calc(var(--spacer-#{$size}) * -1)!important;
+      }
+      .mr#{$infix}-n#{$size},
+      .mx#{$infix}-n#{$size} {
+        margin-right: calc(var(--spacer-#{$size}) * -1)!important;
+      }
+      .mb#{$infix}-n#{$size},
+      .my#{$infix}-n#{$size} {
+        margin-bottom: calc(var(--spacer-#{$size}) * -1)!important;
+      }
+      .ml#{$infix}-n#{$size},
+      .mx#{$infix}-n#{$size} {
+        margin-left: calc(var(--spacer-#{$size}) * -1)!important;
+      }
+    }
+
+    // Some special margin utils
+    .m#{$infix}-auto {
+      margin: auto!important;
+    }
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto!important;
+    }
+    .mr#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-right: auto!important;
+    }
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto!important;
+    }
+    .ml#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-left: auto!important;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use 'variables';
+
+@each $position in variables.$positions {
+  .position-#{$position} {
+    position: #{$position};
+  }
+}

@@ -1,0 +1,17 @@
+:host ::ng-deep .badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    line-height: 1;
+    color: var(--text);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+
+    &::before {
+        content: '#'
+    }
+}

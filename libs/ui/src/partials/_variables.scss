@@ -1,0 +1,194 @@
+$breakpoints-map: (
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+) !default;
+
+$colors-map: (
+  'accent': #{var(--accent-color)},
+  'accent-light': #{var(--accent-transparentized-color)},
+  'alert': #ffe28b,
+  'dark': #3c3c3c,
+  'error': #{var(--error-color)},
+  'flash': #{var(--accent-color)},
+  'flash-light': #{var(--accent-transparentized-color)},
+  'jumbo': #ededf5,
+  'label': #727282,
+  'light': #f7f7fa,
+  'passive': #ceced9,
+  'placeholder': #aaaab5,
+  'police': #828282,
+  'primary': #{var(--primary-color)},
+  'primary-light': #{var(--primary-transparentized-color)},
+  'secondary': #{var(--secondary-color)},
+  'secondary-light': #{var(--secondary-transparentized-color)},
+  'success': #82cf80,
+  'warning': #{var(--warning-color)},
+  'white': white,
+  'black': black,
+  'transparent': transparent,
+) !default;
+
+$font-size-map: (
+  mini: (
+    10,
+    normal,
+    normal,
+  ),
+  small: (
+    11,
+    normal,
+    normal,
+  ),
+  intermediate: (
+    12,
+    normal,
+    normal,
+  ),
+  medium: (
+    13,
+    normal,
+    normal,
+  ),
+  description: (
+    14,
+    normal,
+    normal,
+  ),
+  big: (
+    15,
+    normal,
+    normal,
+  ),
+  big-description: (
+    16,
+    normal,
+    normal,
+  ),
+  huge: (
+    18,
+    normal,
+    normal,
+  ),
+  xxl: (
+    32,
+    40px,
+    0.03,
+  ),
+) !default;
+
+$radius-positions: (
+  null: (
+    top-left: true,
+    top-right: true,
+    bottom-left: true,
+    bottom-right: true,
+  ),
+  top: (
+    top-left: true,
+    top-right: true,
+    bottom-left: false,
+    bottom-right: false,
+  ),
+  bottom: (
+    top-left: false,
+    top-right: false,
+    bottom-left: true,
+    bottom-right: true,
+  ),
+  right: (
+    top-left: false,
+    top-right: true,
+    bottom-left: false,
+    bottom-right: true,
+  ),
+  left: (
+    top-left: true,
+    top-right: false,
+    bottom-left: true,
+    bottom-right: false,
+  ),
+) !default;
+
+$font-weight-map: (
+  light: 300,
+  lighter: lighter,
+  normal: normal,
+  bold: bold,
+  bolder: bolder,
+) !default;
+
+$container-map: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+) !default;
+
+$justify-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+) !default;
+
+$align-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+  between: space-between,
+  around: space-around,
+  auto: auto,
+) !default;
+
+$grid-map: (
+  row: row,
+  col: column,
+) !default;
+
+$text-aligns: wrap, nowrap, truncate, justify !default;
+$overflows: hidden, auto, scroll !default;
+$flex-directions: row, column, row-reverse, column-reverse !default;
+$flex-wraps: wrap, nowrap, wrap-reverse !default;
+$displays: none, inline, inline-block, block, flex, grid, inline-flex, contents !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+
+$transition-base: all 0.2s ease-in-out !default;
+
+/// shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(black, 0.075) !default;
+$box-shadow: 0 0.5rem 1rem rgba(black, 0.15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba(black, 0.175) !default;
+$box-shadow-light: 0 0 12px rgba(20, 139, 166, 0.2) !default;
+$box-shadow-active: 0 0 12px var(--accent-transparentized-color) !default;
+$box-shadow-outer-small: -10px 10px 30px -3px rgba(60, 58, 61, 0.03) !default;
+$box-shadow-tooltip: 0 -4px 21px rgba(60, 58, 61, 0.1) !default;
+$box-shadow-popover: 0 0 18px rgba(60, 58, 61, 0.18) !default;
+
+$border-radius-base: 5px !default;
+$border-radius-big: 10px !default;
+$border-radius-pill: 50rem !default;
+$border-radius-circle: 100% !default;
+
+/// Layout vars
+$footer-height: 56px !default;
+$header-height: 51px !default;
+$subheader-height: 60px !default;
+
+$popover-max-width: 1000px !default;
+$container-width: 100% !default;
+$page-padding-map: (
+  xs: 2vw,
+  sm: 3vw,
+  md: 4vw,
+  lg: 5vw,
+  xl: 120px,
+) !default;
+
+
+

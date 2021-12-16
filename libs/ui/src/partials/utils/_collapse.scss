@@ -1,0 +1,19 @@
+@use "libs/ui/src/partials/variables";
+
+/// Définie les variables du Collapse component
+///
+/// @param $border-radius: radius des bordures
+/// @param $box-shadow-radius: ajoute un effet de shadow
+/// @param $margin: Marges du component
+/// @param $padding: padding du component
+@mixin collapse-component(
+  $border-radius: variables.$border-radius-big,
+  $box-shadow: variables.$box-shadow,
+  $margin: var(--spacer-2),
+  $padding: var(--spacer-3)
+) {
+  --collapse-border-radius: #{$border-radius};
+  --collapse-box-shadow: #{$box-shadow};
+  --collapse-margin: #{$margin};
+  --collapse-padding: #{$padding};
+}

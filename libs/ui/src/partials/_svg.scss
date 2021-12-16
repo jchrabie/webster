@@ -1,0 +1,32 @@
+%rotate-on-active {
+  svg-icon svg {
+    transition: all 0.25s;
+    color: var(--label-color);
+  }
+
+  &.active {
+    svg-icon svg {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.rotate-on-active {
+  @extend %rotate-on-active;
+
+  svg-icon svg {
+    transform: rotate(-90deg);
+  }
+}
+
+.rotate-on-active-inverted {
+  @extend %rotate-on-active;
+
+  svg-icon svg {
+    transform: rotate(90deg);
+  }
+}
+
+.rotate-svg svg-icon svg {
+  animation: rotating 1s linear infinite;
+}

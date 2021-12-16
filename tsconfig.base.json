@@ -13,8 +13,14 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@webster/core": ["libs/core/src/index.ts"],
+      "@webster/model": ["libs/model/src/index.ts"],
+      "@webster/ui": ["libs/ui/src/index.ts"],
+      "@webster/ui/models": ["libs/ui/src/lib/models/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

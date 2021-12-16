@@ -1,0 +1,13 @@
+/// Définie les variables du Tag component
+///
+/// @param $decoration: décoration du tag (default underline)
+/// @param $warning-color: décoration du tag (default underline)
+@mixin tag-component(
+  $decoration: underline,
+  $warning-color: var(--label-color),
+  $padding: var(--spacer-1) var(--spacer-2)
+) {
+  --tag-decoration: #{$decoration};
+  --tag-warning-color: #{$warning-color};
+  --tag-padding: #{$padding};
+}

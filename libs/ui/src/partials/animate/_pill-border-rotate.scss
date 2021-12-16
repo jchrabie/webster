@@ -1,0 +1,35 @@
+@keyframes pill-border-rotate {
+  0% {
+    left: 0;
+    top: -30px;
+  }
+  27.5% {
+    left: 100%;
+    top: -30px;
+    transform: translate(-100%, 0);
+  }
+  42.5% {
+    top: 50%;
+    left: calc(100% + 30px);
+    transform: translate(-100%, -50%);
+  }
+  50% {
+    left: calc(100%);
+    top: calc(100% + 30px);
+    transform: translate(-100%, -100%);
+  }
+  80% {
+    left: 0;
+    top: calc(100% + 30px);
+    transform: translate(-50%, -100%);
+  }
+  87.5% {
+    top: 50%;
+    left: -30px;
+    transform: translate(0, -100%);
+  }
+  100% {
+    left: 0;
+    top: -30px;
+  }
+}

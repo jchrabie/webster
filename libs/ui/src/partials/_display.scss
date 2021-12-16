@@ -1,0 +1,15 @@
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    $infix: functions.breakpoint-infix($size);
+
+    @each $display in variables.$displays {
+      .d#{$infix}-#{$display} {
+        display: #{$display}!important;
+      }
+    }
+  }
+}

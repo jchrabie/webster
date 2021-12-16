@@ -1,0 +1,19 @@
+@use 'libs/ui/src/partials/utils/breakpoint';
+
+.img-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 25vh;
+    margin-top: -8px;
+    background-size: cover;
+
+    @include breakpoint.breakpoint(md) {
+        height: 35vh;
+        margin-top: -1px;
+    }
+
+  @include breakpoint.breakpoint(lg) {
+        height: 50vh;
+    }
+}

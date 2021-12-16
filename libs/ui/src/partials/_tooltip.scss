@@ -1,0 +1,23 @@
+@use 'animate';
+@use 'variables';
+
+.tooltip {
+  @extend .animated-quicker!optional;
+}
+
+.popover {
+  @extend .animated-quicker!optional;
+}
+
+.tooltip-inner {
+  box-shadow: variables.$box-shadow-tooltip;
+  max-width: variables.$box-shadow-popover;
+}
+
+.popover {
+  box-shadow: 0 0 18px rgba(60, 58, 61, 0.18);
+}
+
+.popover-body {
+  font-size: 13px;
+}

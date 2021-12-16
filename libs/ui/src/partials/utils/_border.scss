@@ -1,0 +1,8 @@
+/// Définie les variables de bordure
+///
+/// @param $width La largueur
+/// @param $style Le style du border
+/// @param $color La couleur du border
+@mixin border($width: 1, $style: solid, $color: #ededf5, $property: border) {
+  #{$property}: if($width == none, none, #{$width}px #{$style} #{$color});
+}

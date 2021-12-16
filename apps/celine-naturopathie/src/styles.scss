@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/text';
+@use 'libs/ui/src/design-system';
+
+.active {
+  font-weight: 700 !important;
+}
+
+body {
+  @include design-system.theme(
+    $primary: #507164,
+    $accent: #c59b3c,
+    $warning: #ebc86e,
+    $base-color: #222,
+    $transparent-amount: 0.5,
+    $is-dark-mode: false
+  );
+}

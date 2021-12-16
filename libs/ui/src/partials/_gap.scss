@@ -1,0 +1,18 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'variables';
+
+@for $i from 0 through 5 {
+  @each $size, $breakpoint in variables.$breakpoints-map {
+    @include mixins.breakpoint($size) {
+      .gap#{functions.breakpoint-infix($size)}-#{$i} {
+        gap: var(--spacer-#{$i});
+      }
+      @each $selector, $attr in variables.$grid-map {
+        .gap-#{$selector}#{functions.breakpoint-infix($size)}-#{$i} {
+          #{$attr}-gap: var(--spacer-#{$i});
+        }
+      }
+    }
+  }
+}

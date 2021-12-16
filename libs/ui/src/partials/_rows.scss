@@ -1,0 +1,79 @@
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+@use "sass:math";
+
+$row-columns-length: 12 !default;
+$row-horizontal-padding: 30px !default;
+$horizontal-padding: math.div($row-horizontal-padding, 2);
+
+/// @deprecated, Privilégier le d-flex d-grid
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{$horizontal-padding};
+  margin-left: -#{$horizontal-padding};
+}
+
+// Common properties for all breakpoints
+%grid-column {
+  position: relative;
+  width: 100%;
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+}
+
+@each $size, $breakpoint in variables.$breakpoints-map {
+  $infix: functions.breakpoint-infix($size);
+
+  @if $row-columns-length > 0 {
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $row-columns-length {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column!optional;
+      }
+    }
+  }
+
+  .col#{$infix},
+  .col#{$infix}-auto {
+    @extend %grid-column!optional;
+  }
+
+  @include mixins.breakpoint($size) {
+    .col#{$infix} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    .col#{$infix}-auto {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+
+    @if $row-columns-length > 0 {
+      @for $i from 1 through $row-columns-length {
+        .col#{$infix}-#{$i} {
+          flex: 0 0 percentage(math.div($i, $row-columns-length));
+          max-width: percentage(math.div($i, $row-columns-length));
+        }
+      }
+    }
+
+    .order#{$infix}-first {
+      order: -1;
+    }
+
+    .order#{$infix}-last {
+      order: $row-columns-length + 1;
+    }
+
+    @for $i from 0 through $row-columns-length {
+      .order#{$infix}-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

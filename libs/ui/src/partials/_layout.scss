@@ -1,0 +1,70 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'variables';
+
+.container,
+.container-fluid {
+  width: 100%;
+  padding-right: var(--spacer-4);
+  padding-left: var(--spacer-4);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header {
+  height: variables.$header-height;
+}
+
+.subheader {
+  min-height: variables.$subheader-height;
+}
+
+// Responsive containers that are 100% wide until a breakpoint
+@each $breakpoint-container, $container-max-width in variables.$container-map {
+  .container-#{$breakpoint-container} {
+    @extend .container-fluid!optional;
+    max-width: $container-max-width;
+  }
+
+  @include mixins.breakpoint($breakpoint-container) {
+    // Extend each breakpoint which is smaller or equal to the current breakpoint
+    $extend-breakpoint: true;
+
+    @each $size, $breakpoint in variables.$breakpoints-map {
+      .container-#{size} {
+        max-width: #{$container-max-width};
+      }
+
+      @if ($extend-breakpoint) {
+        .container#{functions.breakpoint-infix($size)} {
+          max-width: $container-max-width;
+        }
+
+        // Once the current breakpoint is reached, stop extending
+        @if ($breakpoint == $size) {
+          $extend-breakpoint: false;
+        }
+      }
+    }
+  }
+}
+
+@each $breakpoint, $page-padding in variables.$page-padding-map {
+  @include mixins.breakpoint($breakpoint) {
+    .page-padding {
+      padding: 0 $page-padding;
+    }
+  }
+}
+
+// Positions
+@each $position in variables.$positions {
+  .position-#{$position} {
+    position: $position;
+  }
+}
+
+.content-loading {
+  height: 9px;
+  border-radius: 5px;
+}

@@ -1,0 +1,112 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'node_modules/@angular/material/index' as mat;
+
+/// Définie les variables couleurs de thème
+///
+/// @param $primary La couleur primaire
+/// @param $accent La couleur d'accentuation
+/// @param $warning La couleur des warnings
+/// @param $transparent-amount Valeur de la transparence à appliquer
+@mixin theme(
+  $primary: #507164,
+  $accent: #c59b3c,
+  $warning: #ebc86e,
+  $base-color: #222,
+  $transparent-amount: 0.5,
+  $is-dark-mode: false
+) {
+  @include mixins.defineColor(--primary-color, $primary, $transparent-amount);
+  @include mixins.defineColor(--accent-color, $accent, $transparent-amount);
+  @include mixins.defineColor(--warning-color, $warning);
+
+  --base-color: #{$base-color};
+
+  // Light Theme Text
+  $dark-text: #4b4b49;
+  $dark-primary-text: rgba($dark-text, 0.87);
+
+  // Dark Theme text
+  $light-text: #000;
+  $light-primary-text:rgba($light-text, 0.87);
+
+
+  // Dark bg
+  $dark-background: #2c2c2c;
+  $dark-bg-lighter-5: lighten($dark-background, 5%);
+  $dark-bg-lighter-10: lighten($dark-background, 10%);
+  $dark-bg-lighter-20: lighten($dark-background, 20%);
+  $dark-bg-lighter-30: lighten($dark-background, 30%);
+  $light-bg-alpha-4: rgba(#fafafa, 0.04);
+  $light-bg-alpha-12: rgba(#fafafa, 0.12);
+
+  $mat-primary: (
+    main: #{$primary},
+    lighter: lighten($primary, 30%),
+    darker: darken($primary, 30%),
+    200: #{$primary}, // For slide toggle,
+    contrast : (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    )
+  );
+
+  $theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+
+  .mat-primary {
+    color: white!important;
+  }
+
+  $mat-accent: (
+    main: #{$accent},
+    lighter: lighten($accent, 30%),
+    darker: darken($accent, 30%),
+    200: #797979, // For slide toggle,
+    contrast : (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    )
+  );
+  $theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
+
+  $mat-warn: (
+    main: #{$warning},
+    lighter: lighten($warning, 30%),
+    darker: darken($warning, 30%),
+    200: #ff0000, // For slide toggle,
+    contrast : (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    )
+  );
+  $theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
+
+  @if $is-dark-mode {
+    $darkTheme: mat.define-dark-theme(
+        (
+          color: (
+            primary: $theme-primary,
+            accent: $theme-accent,
+            warn: $theme-warn,
+          ),
+        )
+    );
+
+    @include mat.all-component-themes($darkTheme);
+  } @else {
+    $theme: mat.define-light-theme(
+        (
+          color: (
+            primary: $theme-primary,
+            accent: $theme-accent,
+            warn: $theme-warn,
+          ),
+        )
+    );
+
+    // Theme Init
+    @include mat.all-component-themes($theme);
+  }
+}

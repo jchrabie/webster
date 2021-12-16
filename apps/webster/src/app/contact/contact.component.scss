@@ -1,0 +1,37 @@
+
+.container {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#informations {
+  flex: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: justify;
+}
+
+:host app-card ::ng-deep mat-card {
+  width: 310px;
+
+  .mat-card-image {
+    height: 100%;
+  }
+
+  .card-button {
+    top: 124px;
+  }
+
+  .light-theme & {
+    .mat-card-image {
+      height: 50%;
+    }
+  }
+}
+
+p.small.mat-line {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+}

@@ -1,0 +1,13 @@
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 750px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+
+  button {
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+}

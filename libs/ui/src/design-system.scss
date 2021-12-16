@@ -1,0 +1,63 @@
+@use './partials/align';
+@use './partials/animate';
+@use './partials/background';
+@use './partials/border';
+@use './partials/cursor';
+@use './partials/display';
+@use './partials/error';
+@use './partials/flex';
+@use './partials/footer';
+@use './partials/forms';
+@use './partials/gap';
+@use './partials/images';
+@use './partials/justify-content';
+@use './partials/layout';
+@use './partials/list';
+@use './partials/material';
+@use './partials/opacity';
+@use './partials/overflow';
+@use './partials/overlay';
+@use './partials/positions';
+@use './partials/progress';
+@use './partials/reboot';
+@use './partials/rotate';
+@use './partials/rows';
+@use './partials/screen-reader';
+@use './partials/scrollbar';
+@use './partials/shadows';
+@use './partials/size';
+@use './partials/spacing';
+@use './partials/svg';
+@use './partials/text';
+@use './partials/theme';
+@use './partials/tooltip';
+@use "./partials/utils/mixins";
+
+@forward "./partials/theme";
+
+@include mixins.fontFace();
+
+:root {
+  @include mixins.button-component();
+  @include mixins.button-link-component();
+  @include mixins.card-component();
+  @include mixins.collapse-component();
+  @include mixins.input-component();
+  @include mixins.list-component();
+  @include mixins.spacer();
+  @include mixins.tag-component();
+
+  @include mixins.fontSizes();
+  @include mixins.font(Poppins);
+
+  @include mixins.defineColor(--white-color, white);
+  @include mixins.defineColor(--light-color, #f7f7fa);
+  @include mixins.defineColor(--jumbo-color, #ededf5);
+  @include mixins.defineColor(--passive-color, #ceced9);
+  @include mixins.defineColor(--placeholder-color, #aaaab5);
+  @include mixins.defineColor(--police-color, #828282);
+  @include mixins.defineColor(--label-color, #727282);
+  @include mixins.defineColor(--dark-color, #3c3c3c);
+  @include mixins.defineColor(--success-color, #82cf80);
+  @include mixins.defineColor(--alert-color, #ffe28b);
+}

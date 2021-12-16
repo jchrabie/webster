@@ -1,0 +1,21 @@
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    @each $color-name, $color in variables.$colors-map {
+      .bg#{functions.breakpoint-infix($size)}-#{$color-name} {
+        background-color: $color !important;
+      }
+
+      @for $weight from 1 through 9 {
+        @each $varient, $mix-color in (light white, dark black) {
+          .bg#{functions.breakpoint-infix($size)}-#{$color-name}-#{$varient}-#{$weight * 10} {
+            background-color: var(--#{$color-name}-#{$varient}#{$weight * 10}-color, transparent);
+          }
+        }
+      }
+    }
+  }
+}

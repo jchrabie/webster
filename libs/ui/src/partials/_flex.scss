@@ -1,0 +1,31 @@
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    @each $direction in variables.$flex-directions {
+      .flex#{functions.breakpoint-infix($size)}-#{$direction} {
+        flex-direction: #{$direction};
+      }
+    }
+
+    @each $wrap in variables.$flex-wraps {
+      .flex#{functions.breakpoint-infix($size)}-#{$wrap} {
+        flex-wrap: #{$wrap};
+      }
+    }
+
+    .flex#{functions.breakpoint-infix($size)}-fill {
+      flex: 1 1 auto;
+    }
+
+    .flex#{functions.breakpoint-infix($size)}-grow-0 {
+      flex-grow: 0;
+    }
+
+    .flex#{functions.breakpoint-infix($size)}-grow-1 {
+      flex-grow: 1;
+    }
+  }
+}

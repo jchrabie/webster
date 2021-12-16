@@ -1,0 +1,52 @@
+@use 'libs/ui/src/partials/animate/fadeInLeft';
+@use 'libs/ui/src/partials/animate/flash';
+@use 'libs/ui/src/partials/animate/slideInDown';
+@use 'libs/ui/src/partials/animate/slideInLeft';
+@use 'libs/ui/src/partials/animate/zoomInLeft';
+
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+
+  &.infinite {
+    animation-iteration-count: infinite;
+  }
+
+  &.quick {
+    animation-duration: 0.1s;
+  }
+}
+
+.animated-quicker {
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animated-long {
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+
+  &.infinite {
+    animation-iteration-count: infinite;
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.flash {
+  animation-name: flash;
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+.zoomInLeft {
+  animation-name: zoomInLeft;
+}

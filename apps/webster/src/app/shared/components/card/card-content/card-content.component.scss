@@ -1,0 +1,14 @@
+mat-list {
+  & .small {
+    font-size: 0.6em;
+  }
+
+  mat-icon {
+    color: var(--primary);
+  }
+}
+
+span {
+  padding: 20px 0;
+  display: block;
+}

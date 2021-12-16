@@ -1,0 +1,17 @@
+@use 'variables';
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 -4px 21px rgba(60, 58, 61, 0.1);
+  color: var(--label-color);
+  height: variables.$footer-height;
+
+  .link-backward {
+    color: var(--label-color);
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'functions';
+
+@mixin defineColor($color-name, $hex, $transparent-amount: 1) {
+  @include alpha($color-name, $hex);
+
+  #{functions.str-replace(#{$color-name}, 'color', 'transparentized-color')}: rgba(
+      var(#{$color-name}-rgb),
+      $transparent-amount
+  );
+
+  @for $weight from 1 through 9 {
+    @each $varient, $mix-color in (light white, dark black) {
+      #{functions.str-replace(#{$color-name}, 'color', #{$varient}#{$weight * 10}-color)}: mix(
+          $hex,
+          $mix-color,
+          $weight * 10
+      );
+    }
+  }
+}
+
+@mixin alpha($color-name, $hex) {
+  $red: red($hex);
+  $green: green($hex);
+  $blue: blue($hex);
+  #{$color-name}: $hex;
+  #{$color-name}-rgb: #{$red}, #{$green}, #{$blue};
+}

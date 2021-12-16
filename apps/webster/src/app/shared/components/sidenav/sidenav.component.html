@@ -1,0 +1,25 @@
+<mat-list>
+  <a mat-list-item [routerLink]="" role="button" (click)="linkClick('header')">
+    <img matListAvatar appLazyLoad src="../../../../../../../../workspace/jc-angular-project/src/assets/avatar.jpg" alt="Accueil" />
+    <h2 matLine>Joël CHRABIE</h2>
+    <h3 matLine>
+      <span>{{ 'devweb' | translate }}</span>
+    </h3>
+  </a>
+</mat-list>
+<mat-nav-list>
+  <ng-container *ngFor="let link of linkList">
+    <a
+      mat-list-item
+      [routerLink]="link.url"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
+      role="button"
+      (click)="linkClick(link.url)"
+    >
+      <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+      {{ link.type | translate }}
+      <mat-divider></mat-divider>
+    </a>
+  </ng-container>
+</mat-nav-list>

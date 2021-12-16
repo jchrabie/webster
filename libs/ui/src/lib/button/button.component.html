@@ -1,0 +1,17 @@
+<button
+  [class.btn-sm]="size === 'small' || size === 'mini'"
+  [class.btn-lg]="size === 'huge' || size === 'xxl'"
+  [class.text-with-hover]="link"
+  [class.text-bold]="!link"
+  [class.justify-content-center]="fullWidth"
+  [class.pending]="pending"
+  [class]="btnClasses"
+  [type]="type"
+  [disabled]="disabled || pending"
+  [name]="name"
+  (click)="handleRippleEffect($event)"
+>
+  <ng-content></ng-content>
+  <span *ngIf="pending" [class]="['dot-typing-' + color]"></span>
+  <span #rippleEl class="ripple"></span>
+</button>

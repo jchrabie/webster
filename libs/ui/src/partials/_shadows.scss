@@ -1,0 +1,29 @@
+@use 'variables';
+
+.shadow-sm {
+  box-shadow: variables.$box-shadow-sm !important;
+}
+
+.shadow {
+  box-shadow: variables.$box-shadow !important;
+}
+
+.shadow-lg {
+  box-shadow: variables.$box-shadow-lg !important;
+}
+
+.shadow-light {
+  box-shadow: variables.$box-shadow-light;
+}
+
+.shadow-active {
+  box-shadow: variables.$box-shadow-active;
+}
+
+.shadow-outer-small {
+  box-shadow: variables.$box-shadow-outer-small;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}

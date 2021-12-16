@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" role="header">
+  <div class="before"></div>
+  <div id="menu">
+    <button mat-icon-button (click)="sidenavService.toggle()" matTooltip="Menu" matTooltipPosition="below">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Menu</span>
+  </div>
+  <span class="fill-remaining-space"></span>
+  <h1>
+    <span class="bigger">J</span>OEL <span class="bigger">C</span>HRABIE
+    <span class="sr-only">{{ 'devweb' | translate }}</span>
+  </h1>
+</mat-toolbar>

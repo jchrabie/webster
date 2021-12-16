@@ -1,0 +1,10 @@
+@use 'libs/ui/src/design-system';
+
+body {
+  @include design-system.theme(#91d3d2,
+  $accent: #c59b3c,
+  $warning: #ebc86e,
+  $base-color: #222,
+  $is-dark-mode: true
+  );
+}

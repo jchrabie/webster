@@ -1,0 +1,47 @@
+button {
+  margin-right: 20px;
+
+  &.image {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+mat-expansion-panel {
+  margin-bottom: 20px;
+}
+
+:host ::ng-deep {
+  .mat-content {
+    align-items: center;
+  }
+  mat-panel-description {
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 1 1 100%;
+    }
+
+    & > button {
+      flex: 0 0 auto;
+      margin-top: 15px;
+    }
+  }
+
+  mat-chip {
+    cursor: pointer!important;
+    margin: 8px;
+  }
+
+  .cta {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+mat-chip-list {
+  margin-top: 20px;
+}

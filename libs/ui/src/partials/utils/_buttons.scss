@@ -1,0 +1,107 @@
+@use 'libs/ui/src/partials/animate/dot-typing';
+@use 'libs/ui/src/partials/animate/pill-border-rotate';
+@use 'libs/ui/src/partials/animate/ripples';
+@use 'libs/ui/src/partials/variables';
+@use 'node_modules/@angular/material/index' as mat;
+
+/// Définie les variables du ButtonComponent
+///
+/// @param $height La hauteur
+/// @param $width La largueur
+/// @param $min-width La largueur mini
+/// @param $font La police d'écriture
+/// @param $radius Le radius du bouton
+/// @param $align Alignement du text
+/// @param $padding Padding intérieur du btn
+@mixin button-component(
+  $height: 100%,
+  $width: 100%,
+  $min-width: 1px,
+  $font: var(--font-base),
+  $radius: 0.25rem,
+  $align: center,
+  $padding: '0.625rem 1rem'
+) {
+  --button-height: #{$height};
+  --button-width: #{$width};
+  --button-min-width: #{$min-width};
+  --button-font: #{$font};
+  --button-radius: #{$radius};
+  --button-align: #{$align};
+  --button-padding: #{$padding};
+}
+
+/// Définie les variables du ButtonLinkComponent
+///
+/// @param $decoration style de décoration
+/// @param $fontFamily police d'écriture
+@mixin button-link-component(
+  $decoration: underline,
+  $fontFamily: var(--font-base),
+  $case: normal,
+  $justify: center
+) {
+  --button-link-decoration: #{$decoration};
+  --button-link-font-family: #{$fontFamily};
+  --button-link-case: #{$case};
+  --button-link-justify: #{$justify};
+}
+
+/// Ripple Effect
+@mixin ripple() {
+  position: absolute;
+  background: var(--white-color);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+
+  &.active {
+    animation: ripples 0.6s linear infinite;
+  }
+}
+
+/// Dot typing effect
+@mixin dotTyping($color) {
+  position: relative;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  margin-right: 20px;
+  animation: dot-typing-#{$color} 1s infinite ease-in-out;
+  @include dot-typing.setDotTypingKeyFrame($color);
+}
+
+// Pending pill effect
+@mixin pendingPill($color) {
+  z-index: 0;
+  overflow: hidden;
+  color: $color;
+  opacity: 1 !important;
+  cursor: not-allowed;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: var(--white-color);
+    border-radius: 100%;
+    animation: pill-border-rotate 2s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    left: 2px;
+    top: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: var(--white-color);
+    border-radius: variables.$border-radius-pill;
+  }
+}

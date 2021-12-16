@@ -1,0 +1,3 @@
+@mixin list-component($bullet-color: var(--accent-color)) {
+  --list-bullet-color: #{$bullet-color};
+}

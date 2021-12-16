@@ -1,0 +1,221 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+.form-control {
+  @include mixins.border($color: var(--passive-color));
+  @include mixins.transition(border-color 0.15s ease-in-out);
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  padding: var(--input-padding);
+  line-height: 1.5;
+  font-size: 12px;
+  background-color: var(--input-background-color);
+  background-clip: padding-box;
+  border-radius: variables.$border-radius-base;
+  color: var(--label-color);
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Remove select outline from select box in FF
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #495057;
+  }
+
+  &:focus {
+    @include mixins.border($color: var(--accent-color));
+    outline: none;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: var(--placeholder-color);
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    @include mixins.border($color: var(--input-disabled-border-color));
+    background-color: var(--input-disabled-background-color);
+    font-family: var(--input-disabled-font);
+    opacity: 1;
+  }
+}
+
+/// Form divider
+.form-divider {
+  @include mixins.border(1, dashed, var(--passive-color), border-top);
+  margin: var(--spacer-3) calc(var(--spacer-4) * -1);
+}
+
+input,
+select,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  &.form-control {
+    appearance: none; // Fix appearance for date inputs in Safari
+  }
+}
+
+select.form-control:focus::-ms-value {
+  // Suppress the nested default white text on blue background highlight given to
+  // the selected option text when the (still closed) <select> receives focus
+  // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+  // match the appearance of the native widget.
+  // See https://github.com/twbs/bootstrap/issues/19398.
+  color: #495057;
+  background-color: var(--white-color);
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.form-control-file,
+.form-control-range {
+  display: block;
+  width: 100%;
+}
+
+//
+// Labels
+//
+
+// stylelint-disable-next-line no-duplicate-selectors
+select.form-control {
+  &[size],
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+}
+
+/* Hide HTML5 Up and Down arrows. */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.required {
+  font-weight: 700;
+
+  &::after {
+    content: '*';
+    position: absolute;
+  }
+}
+
+.form-control.readonly:focus {
+  border-color: var(--passive-color);
+}
+
+.form-label {
+  color: var(--label-color);
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .input-after-tip {
+    position: absolute;
+    top: var(--spacer-2);
+    right: var(--spacer-2);
+    z-index: 2;
+  }
+
+  .input-before-tip {
+    position: absolute;
+    top: var(--spacer-2);
+    left: var(--spacer-2);
+    z-index: 2;
+  }
+
+  .input-prepend {
+    @extend %input-prepend-append;
+    border-top-left-radius: variables.$border-radius-base;
+    border-bottom-left-radius: variables.$border-radius-base;
+    margin-right: -3px;
+
+    & + .form-control {
+      border-left: none;
+    }
+  }
+
+  .input-append {
+    @extend %input-prepend-append;
+    border-top-right-radius: variables.$border-radius-base;
+    border-bottom-right-radius: variables.$border-radius-base;
+    margin-left: -3px;
+
+    & + .form-control {
+      border-right: none;
+    }
+  }
+}
+
+%input-prepend-append {
+  @include mixins.border($color: var(--passive-color));
+  display: flex;
+  align-items: center;
+  background-color: var(--light-color);
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  padding: 0 var(--spacer-2);
+  line-height: 32px;
+  font-size: var(--intermediate-font-size);
+  z-index: 2;
+  min-width: 70px;
+
+  &:has(+ .form-control:focus) {
+    @include mixins.border($color: var(--accent-color));
+  }
+}

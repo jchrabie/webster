@@ -1,0 +1,26 @@
+<mat-form-field class="chip-list">
+  <mat-chip-list #chipList>
+    <mat-chip
+      *ngFor="let search of searchService.filteredSearch()"
+      [selectable]="selectable"
+      removable="true"
+      (remove)="remove(search)">
+      {{search}}
+      <mat-icon matChipRemove (click)="remove(search)">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="{{'search' | translate}}"
+      #searchInput
+      [formControl]="searchCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      (matChipInputTokenEnd)="add($event)"
+      id="chip-list-input"
+    />
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let chips of filteredSearches | async" [value]="chips">
+      {{ chips }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

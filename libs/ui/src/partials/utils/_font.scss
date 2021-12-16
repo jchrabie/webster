@@ -1,0 +1,69 @@
+@use 'libs/ui/src/partials/variables';
+@use 'sass:map';
+
+@mixin defineFont($el, $font-args...) {
+  @each $font-size, $line-height, $letter-spacing in $font-args {
+    --#{$el}-font-size: #{$font-size * 1px};
+    --#{$el}-line-height: #{$line-height};
+    --#{$el}-letter-spacing: #{if(
+        $letter-spacing == normal,
+        normal,
+        #{$letter-spacing}em
+      )};
+  }
+}
+
+@mixin fontSizes($args: variables.$font-size-map) {
+  $font-sizes: map.merge(variables.$font-size-map, $args);
+
+  @each $font-size-name, $font-size in $font-sizes {
+    @include defineFont($font-size-name, $font-size);
+  }
+}
+
+/// Définie les font faces
+///
+/// @param $name Nom de la font
+/// @param $variants Liste de variants
+/// @param $defaultVariant Variant par défaut
+@mixin fontFace(
+  $name: Lato,
+  $variants: (
+    Regular,
+    Bold,
+    Italic,
+    Black,
+  ),
+  $defaultVariant: Regular
+) {
+  @each $variant in $variants {
+    $family-name: null;
+
+    @if $defaultVariant == $variant {
+      $family-name: $name;
+    } @else {
+      $family-name: #{$name}-#{$variant};
+    }
+
+    @font-face {
+      font-family: quote($family-name);
+      font-style: normal;
+      font-weight: normal;
+      src: url('/assets/fonts/#{$name}/#{$name}-#{$variant}.ttf');
+    }
+  }
+
+  .text-bold,
+  b,
+  strong {
+    font-weight: 700;
+  }
+}
+
+/// Définie les variables de police d'écriture
+///
+/// @param $name Nom de la font
+@mixin font($name: Lato) {
+  --font-base: #{$name};
+  --font-bold: #{$name}-Bold;
+}

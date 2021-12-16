@@ -1,0 +1,20 @@
+/// Définie les variables de l'input
+///
+/// @param $disabled-border-color couleur de bordure disable
+/// @param $disabled-background-color couleur de fond disable
+/// @param $disabled-font font des inputs disable
+/// @param $background-color couleur de fond des inputs
+/// @param $padding couleur de fond des inputs
+@mixin input-component(
+  $disabled-border-color: var(--passive-color),
+  $disabled-background-color: var(--light-color),
+  $disabled-font: var(--font-base),
+  $background-color: var(--white-color),
+  $padding: var(--spacer-2)
+) {
+  --input-disabled-border-color: #{$disabled-border-color};
+  --input-disabled-background-color: #{$disabled-background-color};
+  --input-disabled-font: #{$disabled-font};
+  --input-background-color: #{$background-color};
+  --input-padding: #{$padding};
+}

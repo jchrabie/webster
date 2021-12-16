@@ -1,0 +1,22 @@
+<ul>
+  <li *ngFor="let feedback of feedbacks">
+    <figure>
+      <figcaption>
+        <a [href]="feedback.sender.linkedIn" [attr.aria-labelledby]="'Voir le Profile de ' + feedback.sender.name">
+          <img [src]="'assets/img/' + feedback.sender.img" [alt]="'Photo de profile de' +  feedback.sender.name">
+          <div>
+            <h3>{{ feedback.sender.name}}
+              <br>
+              <small>{{ feedback.sender.role}}</small>
+            </h3>
+            <p class="date">{{ feedback.sender.date}}</p>
+          </div>
+        </a>
+      </figcaption>
+      <blockquote>
+        <p>{{ feedback.comment}}
+        </p>
+      </blockquote>
+    </figure>
+  </li>
+</ul>

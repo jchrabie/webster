@@ -1,0 +1,17 @@
+@import '../../../../../workspace/jc-angular-project/node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'breakpoints';
+
+h2 {
+    flex: 0 0 100%;
+    display: flex;
+    align-content: center;
+
+    @include breakpoint ($breakpoint-medium) {
+        flex: 0 0 80%;
+    }
+
+    mat-icon {
+        color: var(--text);
+        margin-right: 20px;
+    }
+}

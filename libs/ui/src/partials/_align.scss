@@ -1,0 +1,19 @@
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+@each $suffix, $value in variables.$align-map {
+  @each $size, $breakpoint in variables.$breakpoints-map {
+    @include mixins.breakpoint($size) {
+      .align-items#{functions.breakpoint-infix($size)}-#{$suffix} {
+        align-items: #{$value};
+      }
+      .align-content#{functions.breakpoint-infix($size)}-#{$suffix} {
+        align-content: #{$value};
+      }
+      .align-self#{functions.breakpoint-infix($size)}-#{$suffix} {
+        align-self: #{$value};
+      }
+    }
+  }
+}

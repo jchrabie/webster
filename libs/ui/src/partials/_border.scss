@@ -1,0 +1,93 @@
+@use 'variables';
+@use 'sass:map';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'libs/ui/src/partials/utils/mixins';
+
+/**
+Border
+ */
+@each $position in (top, bottom, right, left, null) {
+  $position-infix: functions.infix($position);
+
+  .border#{$position-infix} {
+    @include mixins.border($property: border#{$position-infix});
+  }
+
+  .border#{$position-infix}-0,
+  .no-border#{$position-infix} {
+    @include mixins.border($width: 0, $property: border#{$position-infix});
+  }
+
+  .big-border#{$position-infix} {
+    @include mixins.border(
+      $width: 10,
+      $color: var(--primary-color),
+      $property: border#{$position-infix}
+    );
+  }
+}
+
+@each $style in (solid, dashed, dotted) {
+  .border-#{$style} {
+    border-style: $style !important;
+  }
+}
+
+@each $color-name, $color in variables.$colors-map {
+  .border-#{$color-name} {
+    border-color: $color !important;
+  }
+}
+
+@for $i from 0 through 3 {
+  .border-#{$i} {
+    border-width: #{$i}px !important;
+  }
+}
+
+/**
+Radius
+ */
+@each $size, $breakpoint in variables.$breakpoints-map {
+  $breakpoint-infix: functions.breakpoint-infix($size);
+  @include mixins.breakpoint($size) {
+    @each $position, $suffixes in variables.$radius-positions {
+      $position-infix: functions.infix($position);
+      @each $suffix, $shouldShow in $suffixes {
+        @if $shouldShow {
+          .rounded#{$breakpoint-infix}#{$position-infix} {
+            border#{functions.infix($suffix)}-radius: var(--spacer-1);
+          }
+
+          .rounded-big#{$breakpoint-infix}#{$position-infix} {
+            border-#{$suffix}-radius: var(--spacer-2);
+          }
+
+          .rounded-huge#{$breakpoint-infix}#{$position-infix} {
+            border-#{$suffix}-radius: var(--spacer-5);
+          }
+        } @else {
+          .rounded#{$breakpoint-infix}#{$position-infix},
+          .rounded-big#{$breakpoint-infix}#{$position-infix},
+          .rounded-huge#{$breakpoint-infix}#{$position-infix} {
+            border#{functions.infix($suffix)}-radius: var(--spacer-0);
+          }
+        }
+      }
+
+      .no-rounded#{$breakpoint-infix}#{$position-infix} {
+        @each $suffix, $shouldShow in $suffixes {
+          border-#{$suffix}-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.rounded-circle {
+  border-radius: variables.$border-radius-circle;
+}
+
+.rounded-pill {
+  border-radius: variables.$border-radius-pill;
+}

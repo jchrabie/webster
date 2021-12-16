@@ -1,0 +1,16 @@
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'variables';
+
+@each $suffix, $value in variables.$justify-map {
+  @each $size, $breakpoint in variables.$breakpoints-map {
+    @include mixins.breakpoint($size) {
+      .justify-content#{functions.breakpoint-infix($size)}-#{$suffix} {
+        justify-content: #{$value};
+      }
+      .justify-self#{functions.breakpoint-infix($size)}-#{$suffix} {
+        justify-self: #{$value};
+      }
+    }
+  }
+}

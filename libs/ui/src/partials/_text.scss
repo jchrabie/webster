@@ -1,0 +1,110 @@
+@use "libs/ui/src/partials/utils/functions";
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'variables';
+
+// Text color
+@each $color-name, $color in variables.$colors-map {
+  .text-#{$color-name} {
+    color: $color !important;
+  }
+}
+
+// Text font size
+@each $font-size-name, $font-size in variables.$font-size-map {
+  @each $size, $breakpoint in variables.$breakpoints-map {
+    @include mixins.breakpoint($size) {
+      $infix: functions.breakpoint-infix($size);
+
+      .text#{$infix}-#{$font-size-name} {
+        font-size: var(--#{$font-size-name}-font-size);
+        line-height: var(--#{$font-size-name}-line-height);
+        letter-spacing: var(--#{$font-size-name}-letter-spacing);
+      }
+    }
+  }
+}
+
+// Responsive alignment
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    $infix: functions.breakpoint-infix($size);
+
+    @each $text-align in justify, left, right, center {
+      .text#{$infix}-#{$text-align} {
+        text-align: $text-align;
+      }
+    }
+  }
+}
+
+// Text Transformation
+@each $text-transformation in lowercase, uppercase, capitalize {
+  .text-#{$text-transformation} {
+    text-transform: $text-transformation;
+  }
+}
+
+// Weight
+@each $font-weight, $font-value in variables.$font-weight-map {
+  .font-weight-#{$font-weight} {
+    font-weight: $font-value;
+  }
+}
+
+// Italics and decoration
+.font-italic {
+  font-style: italic;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.text-with-hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+// Text alignment
+.text-wrap {
+  white-space: normal;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text highlight
+.text-highlight {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.text-spacing {
+  letter-spacing: 0.1rem;
+}
+
+// Hover
+.hover-bold {
+  @include mixins.bold-hover();
+}
+
+.invisible {
+  visibility: hidden;
+  color: transparent !important;
+  background-color: transparent !important;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+
+  &:hover {
+    cursor: default;
+  }
+}
