@@ -42,7 +42,7 @@ const route = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'jc-angular-project' }),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BlogModule,
     MaterialModule,
     CalendlyModule,

@@ -9,7 +9,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/celine-naturopathie",
             "index": "apps/celine-naturopathie/src/index.html",
@@ -93,7 +95,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/celine-naturopathie"],
+          "outputs": [
+            "coverage/apps/celine-naturopathie"
+          ],
           "options": {
             "jestConfig": "apps/celine-naturopathie/jest.config.js",
             "passWithNoTests": true
@@ -121,14 +125,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/celine-naturopathie-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/celine-naturopathie-e2e/**/*.{js,ts}"
+            ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["celine-naturopathie"]
+      "implicitDependencies": [
+        "celine-naturopathie"
+      ]
     },
     "core": {
       "projectType": "library",
@@ -138,7 +148,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core"],
+          "outputs": [
+            "coverage/libs/core"
+          ],
           "options": {
             "jestConfig": "libs/core/jest.config.js",
             "passWithNoTests": true
@@ -164,7 +176,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/model"],
+          "outputs": [
+            "coverage/libs/model"
+          ],
           "options": {
             "jestConfig": "libs/model/jest.config.js",
             "passWithNoTests": true
@@ -190,17 +204,24 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui"],
+          "outputs": [
+            "coverage/libs/ui"
+          ],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true,
-            "scripts": ["libs/ui/assets/js/calendly.min.js"]
+            "scripts": [
+              "libs/ui/assets/js/calendly.min.js"
+            ]
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
+            "lintFilePatterns": [
+              "libs/ui/src/**/*.ts",
+              "libs/ui/src/**/*.html"
+            ]
           }
         }
       },
@@ -214,7 +235,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/webster",
             "index": "apps/webster/src/index.html",
@@ -226,7 +249,9 @@
               "apps/webster/src/favicon.ico",
               "apps/webster/src/assets"
             ],
-            "styles": ["apps/webster/src/styles.scss"],
+            "styles": [
+              "apps/webster/src/styles.scss"
+            ],
             "scripts": [
               "apps/webster/src/assets/js/calendly.min.js"
             ]
@@ -293,11 +318,39 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/webster"],
+          "outputs": [
+            "coverage/apps/webster"
+          ],
           "options": {
             "jestConfig": "apps/webster/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/webster/server",
+            "main": "apps/webster/src/main.server.ts",
+            "tsConfig": "apps/webster/tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/webster/src/environments/environment.ts",
+                  "with": "apps/webster/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
         }
       },
       "tags": []
@@ -321,14 +374,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/webster-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/webster-e2e/**/*.{js,ts}"
+            ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["webster"]
+      "implicitDependencies": [
+        "webster"
+      ]
     }
   }
 }
