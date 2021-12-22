@@ -7,7 +7,7 @@
     $infix: functions.breakpoint-infix($size);
 
     @each $prop, $abbrev in (margin: m, padding: p) {
-      @for $size from 0 through 5 {
+      @for $size from 0 through 6 {
         .#{$abbrev}t#{$infix}-#{$size},
         .#{$abbrev}y#{$infix}-#{$size} {
           #{$prop}-top: var(--spacer-#{$size})!important;
@@ -31,7 +31,7 @@
     }
 
     // Negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
-    @for $size from 1 through 5 {
+    @for $size from 1 through 6 {
       .m#{$infix}-n#{$size} {
         margin: calc(var(--spacer-#{$size}) * -1)!important;
       }

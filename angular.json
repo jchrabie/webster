@@ -227,7 +227,9 @@
               "apps/webster/src/assets"
             ],
             "styles": ["apps/webster/src/styles.scss"],
-            "scripts": []
+            "scripts": [
+              "apps/webster/src/assets/js/calendly.min.js"
+            ]
           },
           "configurations": {
             "production": {

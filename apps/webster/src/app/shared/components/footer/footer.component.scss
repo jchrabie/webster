@@ -1,15 +1,14 @@
-@import '../../../../../../../../workspace/jc-angular-project/node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import '../../../../../../../../workspace/jc-angular-project/src/stylesheets/breakpoints';
+@use 'libs/ui/src/design-system';
 
 mat-toolbar {
-  background-color: var(--background-light);
+  background-color: var(--background);
 
   mat-divider {
     border-color: var(--text);
     margin-left: -1px;
     display: none;
 
-    @include breakpoint($breakpoint-medium) {
+    @include design-system.breakpoint(md) {
       display: block;
     }
   }
@@ -21,14 +20,14 @@ mat-toolbar {
     white-space: pre-line;
 
     &.last-row {
-      background-color: var(--background);
+      background-color: var(--background-light);
 
       .mat-mini-fab {
         margin: 0 1em;
       }
 
       a:-webkit-any-link {
-        color: var(--primary);
+        color: var(--primary-light50-color);
         cursor: pointer;
         text-decoration: none;
       }
@@ -59,13 +58,13 @@ mat-toolbar {
   }
 
   .col-md-6 {
-    @include breakpoint($breakpoint-medium) {
+    @include design-system.breakpoint(md) {
       flex: 1 1 50%;
     }
   }
 
   .col-md-3 {
-    @include breakpoint($breakpoint-medium) {
+    @include design-system.breakpoint(md) {
       flex: 1 1 25%;
     }
   }
@@ -74,7 +73,7 @@ mat-toolbar {
 hr {
   border-color: rgba(255, 255, 255, 0.12);
 
-  @include breakpoint($breakpoint-medium) {
+  @include design-system.breakpoint(md) {
     display: none;
   }
 }
@@ -87,12 +86,17 @@ img {
   margin-right: 20px;
   &::after {
     content: 'phone_iphone';
-    @include breakpoint($breakpoint-medium) {
+    @include design-system.breakpoint(md) {
       content: 'tablet';
-      @include breakpoint($breakpoint-large) {
+      @include design-system.breakpoint(lg) {
         content: 'desktop_windows';
       }
     }
+  }
+}
+mat-toolbar-row {
+  p {
+    font-weight: 400;
   }
 }
 
@@ -104,21 +108,17 @@ img {
 
   & span::after {
     content: 'mobile';
-    @include breakpoint($breakpoint-medium) {
+    @include design-system.breakpoint(md) {
       content: 'tablette';
-      @include breakpoint($breakpoint-large) {
+      @include design-system.breakpoint(lg) {
         content: 'desktop';
       }
     }
   }
 }
 
-.socialLinks {
-  background-color: white !important;
-}
-
 .center {
-  @include breakpoint($breakpoint-medium) {
+  @include design-system.breakpoint(md) {
     margin-left: 50%;
     transform: translateX(-50%);
   }

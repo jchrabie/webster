@@ -1,17 +1,24 @@
-@import '../../../../../workspace/jc-angular-project/node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import 'breakpoints';
+@import 'libs/ui/src/partials/utils/breakpoint';
 
 h2 {
-    flex: 0 0 100%;
-    display: flex;
-    align-content: center;
+  border-bottom: var(--primary) 3px solid;
+  display: inline-block;
+  margin-left: 50%!important;
+  transform: translateX(-50%);
+  margin-bottom: var(--spacer-4);
+  font-size: 2rem;
+}
 
-    @include breakpoint ($breakpoint-medium) {
-        flex: 0 0 80%;
-    }
+h3 {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
 
-    mat-icon {
-        color: var(--text);
-        margin-right: 20px;
-    }
+  mat-icon {
+    margin-right: 1rem;
+    width: 15px;
+    color: var(--primary);
+  }
 }

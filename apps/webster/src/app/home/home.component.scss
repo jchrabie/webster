@@ -2,70 +2,80 @@
 
 .container {
   padding: 0;
-
-  @include breakpoint.breakpoint(lg) {
-    margin: 0 15%;
-  }
+  max-width: 80%;
+  margin: 0 auto;
 }
 
-#title {
-  margin: 20px 0;
-  font-size: 3em;
-  flex: 0 0 94%;
-  height: 174px;
-
-  @include breakpoint.breakpoint(md) {
-    height: 116px;
-  }
-
-
-  @include breakpoint.breakpoint(lg) {
-    height: initial;
-  }
-
-  .typing-element {
-    color: var(--primary);
-  }
-}
-
-#introduction {
-  font-size: 1em;
-  flex: 0 0 94%;
-  text-align: justify;
-
-  p {
-    margin-bottom: 0;
-  }
-}
-
-#signature {
-  font-style: italic;
-}
-
-.carac-wrapper {
-  display: grid;
+h1 mat-icon {
   width: 100%;
-  grid-gap: 30px;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  height: 300px;
+}
 
+.space-background {
+  background-image: url(/assets/svg/wave-white.svg), url(/assets/background.webp);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom,bottom;
+  width: 100%;
+  height: 70vh;
+  background-size: contain, cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: grid;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 10rem;
 
   @include breakpoint.breakpoint(md) {
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @include breakpoint.breakpoint(xl) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
   }
 
   mat-card {
-    padding: 3rem;
+    padding: 1rem;
+    min-height: 210px;
     color: white;
     height: 100%;
-    background: #424242;
+    background: #2f2e53;
+    border-radius: 1rem;
+    flex: 1 1 0;
+
+    &:hover::after {
+      transform: rotateZ(
+          10deg);
+    }
+
+    &::after {
+      content: "";
+      bottom: 0;
+      left: 1px;
+      background: #a55afe;
+      border-radius: 1rem;
+      position: absolute;
+      right: 14px;
+      height: 105px;
+      z-index: -1;
+      transform: rotateZ(
+          6deg);
+      transform-origin: bottom left 0;
+      transition: all .25s ease-in-out;
+      color: white;
+    }
 
     mat-card-header {
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      justify-content: space-between;
 
       mat-card-title {
         margin: 0;
@@ -75,20 +85,34 @@
     mat-card-content {
       line-height: 1.8;
     }
+
+    mat-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--background);
+      padding: .5rem;
+    }
   }
 }
 
-.face {
-  left: 0;
-  top: 74px;
-  position: fixed;
-  height: calc(100% - 74px);
-  z-index: -1;
-  opacity: 0.1;
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 
+  mat-icon {
+    width: 120px;
+    height: 120px;
+    transition: all .25s ease-in-out;
+    margin: 2rem;
 
-  @include breakpoint.breakpoint(md) {
-    left: auto;
-    right: 0;
+    &:not(:hover) {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
   }
 }

@@ -1,3 +1,8 @@
+
+@use 'libs/ui/src/partials/utils/mixins';
+@use 'libs/ui/src/partials/utils/functions';
+@use 'variables';
+
 %bullet {
   font-weight: bold;
   position: absolute;
@@ -26,7 +31,7 @@ ul:not(.list-unstyled) {
       &::before {
         content: '\2713';
         color: var(--primary-color);
-        @extend %bullet!optional;
+        @extend %bullet !optional;
       }
     }
   }
@@ -37,18 +42,25 @@ ul:not(.list-unstyled) {
     &::before {
       content: '\2022';
       color: var(--list-bullet-color);
-      @extend %bullet!optional;
+      @extend %bullet !optional;
     }
   }
 }
 
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
 
-.list-horizontal {
-  display: grid;
-  gap: var(--spacer-5);
-  grid-template-columns: repeat(3, auto);
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    $infix: functions.breakpoint-infix($size);
+
+    .list#{$infix}-unstyled {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .list#{$infix}-horizontal {
+      display: grid;
+      gap: var(--spacer-5);
+      grid-template-columns: repeat(3, auto);
+    }
+  }
 }

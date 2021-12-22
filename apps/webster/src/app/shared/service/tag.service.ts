@@ -30,7 +30,7 @@ export class TagService {
   ) {}
 
   public setTitle(title: string): void {
-    this.titleService.setTitle(`Joël CHRABIE | ${title}`);
+    this.titleService.setTitle(`Webster | ${title}`);
   }
 
   public setSocialMediaTags(
@@ -41,11 +41,7 @@ export class TagService {
   ): void {
     const tags = [
       new MetaTag(this.urlMeta, `og:${this.urlMeta}`, this.doc.URL),
-      new MetaTag(
-        this.titleMeta,
-        `og:${this.titleMeta}`,
-        `Joël CHRABIE | ${title}`
-      ),
+      new MetaTag(this.titleMeta, `og:${this.titleMeta}`, `Webster | ${title}`),
       new MetaTag(
         this.descriptionMeta,
         `og:${this.descriptionMeta}`,

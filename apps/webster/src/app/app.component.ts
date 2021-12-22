@@ -4,24 +4,39 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { filter, map, takeUntil, throttleTime } from 'rxjs/operators';
+import { delay, filter, map, takeUntil, throttleTime } from 'rxjs/operators';
 import { fromEvent } from 'rxjs/internal/observable/fromEvent';
-import { Subject } from 'rxjs';
+import { of, Subject } from 'rxjs';
 
 import { SidenavService } from './shared/service/sidenav.service';
 import { getHeaderByType, Header } from './shared/constants/header.constants';
 import { getArticleByTemplate } from './shared/constants/blog.constants';
 import { TagService } from './shared/service/tag.service';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'webster-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [style({ opacity: 0 }), animate(600)]),
+      transition(':leave', animate(600, style({ opacity: 0 }))),
+    ]),
+  ],
   providers: [SidenavService, MatSidenav],
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   public scroll: number = 0;
+  isLoading = true;
 
   private destroy$: Subject<void> = new Subject();
 
@@ -43,6 +58,10 @@ export class AppComponent implements OnInit {
     );
 
     this.iconRegistry();
+
+    of(false)
+      .pipe(delay(5000))
+      .subscribe((loading) => (this.isLoading = loading));
   }
 
   ngOnInit() {
@@ -110,6 +129,7 @@ export class AppComponent implements OnInit {
       `accessibility`,
       'brush',
       'bulb',
+      `cbp`,
       `css`,
       `english`,
       `europe`,
@@ -118,9 +138,11 @@ export class AppComponent implements OnInit {
       'html',
       `ionic`,
       `javascript`,
+      `logistar`,
       `linkedin`,
       `malte`,
       `moon`,
+      `neo-soft`,
       `nodejs`,
       `safe`,
       `sass`,
@@ -128,6 +150,10 @@ export class AppComponent implements OnInit {
       `sun`,
       `typescript`,
       `viadeo`,
+      `webster-full`,
+      `webster`,
+      `wave`,
+      `younup`,
     ];
 
     icons.forEach((icon) =>

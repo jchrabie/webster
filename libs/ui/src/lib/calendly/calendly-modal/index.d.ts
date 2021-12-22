@@ -8,6 +8,7 @@ declare module 'Calendly' {
   interface InlineWidgetOptions {
     url?: string;
     parentElement: HTMLElement;
+    branding?: boolean;
   }
   export function createInlineWidgets(): void;
   export function showPopupWidget(url: string): void;

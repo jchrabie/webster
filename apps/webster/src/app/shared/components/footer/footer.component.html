@@ -1,12 +1,14 @@
-<mat-toolbar color="basic" role="footer">
+<mat-toolbar color="basic">
   <mat-toolbar-row>
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <mat-list role="list">
-          <div mat-subheader>A la recherche d'un développeur Freelance Angular sur Nantes ?</div>
-          <div mat-subheader>Vous souhaitez me rencontrer?</div>
-        </mat-list>
-        <button mat-stroked-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi</button>
+          <h2>Développeur Freelance sur nantes</h2>
+          <p>
+            Développeur Web front freelance, je suis à votre disposition pour répondre à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.
+            <br>
+            Passionné par les technologies liées au Web, je mets mes compétences au service de vos besoins dans divers domaines.
+          </p>
+        <button mat-flat-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi</button>
         <hr />
       </div>
       <mat-divider [vertical]="true"></mat-divider>
@@ -37,12 +39,6 @@
       </div>
       <a href="/legal">Mentions légales</a>
       <div class="socials">
-        <a [href]="social.url" *ngFor="let social of socials" ng-if="socials.length">
-          <button mat-mini-fab class="socialLinks">
-            <mat-icon [svgIcon]="social.title"></mat-icon>
-          </button>
-          <span class="sr-only">{{ social.title }}</span>
-        </a>
       </div>
     </div>
   </mat-toolbar-row>

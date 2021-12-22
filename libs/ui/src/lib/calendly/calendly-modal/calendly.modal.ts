@@ -30,6 +30,7 @@ export class CalendlyModal implements AfterViewInit {
     window.Calendly.initInlineWidget({
       url: 'https://calendly.com/' + this.data.calendlyUrl,
       parentElement: this.container.nativeElement,
+      branding: false,
     });
   }
 }

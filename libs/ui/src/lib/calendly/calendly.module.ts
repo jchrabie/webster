@@ -19,5 +19,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   declarations: [CalendlyComponent, CalendlyModal],
   exports: [CalendlyComponent],
+  entryComponents: [CalendlyModal],
 })
 export class CalendlyModule {}

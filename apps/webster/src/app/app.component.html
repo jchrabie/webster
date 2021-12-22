@@ -11,13 +11,25 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="mat-drawer-content">
-      <mat-progress-bar mode="determinate" [value]="scroll"></mat-progress-bar>
-      <app-header></app-header>
+      <header>
+        <app-header></app-header>
+      </header>
 
       <main>
-        <router-outlet></router-outlet>
+        <ng-template #loading>
+        <div class="w-100 d-flex justify-content-center align-items-center" [style.height]="'52vh'">
+          <mat-icon class="loading-logo" svgIcon="webster"></mat-icon>
+        </div>
+      </ng-template>
+        <ng-container *ngIf="!isLoading; else loading">
+          <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
+          <router-outlet
+            [@fadeAnimation]="'in'"></router-outlet>
+        </ng-container>
       </main>
-      <app-footer></app-footer>
+      <footer>
+        <app-footer></app-footer>
+      </footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

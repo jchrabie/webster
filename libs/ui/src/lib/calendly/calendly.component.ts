@@ -36,6 +36,7 @@ export class CalendlyComponent {
         const dialogRef = this.dialog.open(CalendlyModal, {
           width: state.matches ? '100vw' : '60vw',
           maxWidth: state.matches ? '100vw' : '70vw',
+          minWidth: '320px',
           data: { calendlyUrl: this.calendlyUrl },
         });
 

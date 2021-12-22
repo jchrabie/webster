@@ -34,6 +34,7 @@
 @use "./partials/utils/mixins";
 
 @forward "./partials/theme";
+@forward "./partials/utils/breakpoint";
 
 @include mixins.fontFace();
 

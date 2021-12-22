@@ -1,4 +1,4 @@
-
+@use '../../partials/utils/breakpoint';
 
 img {
   width: 56px;
@@ -9,7 +9,6 @@ img {
 ul {
   list-style: none;
   width: 700px;
-  background: #071a34;
   color: white;
   padding: 1rem;
   margin: 0;
@@ -20,20 +19,30 @@ ul {
     &:not(:first-of-type)::before {
       content: '';
       position: absolute;
-      right: 2rem;
-      left: 2rem;
+      background: #ffffff22;
       height: 2px;
-      background: linear-gradient(to right, #030379, purple);
+      left: 1rem;
+      right: 1rem;
 
+      @include breakpoint.breakpoint(xl) {
+        top: 1rem;
+        bottom: 1rem;
+        width: 2px;
+        height: 100%;
+      }
     }
   }
 
   figure {
     display: grid;
-    grid-template-columns: 33% auto;
+    grid-template-columns: auto;
     gap: 1rem;
     padding: 1rem;
     margin: 0 1rem;
+
+    @include breakpoint.breakpoint(md) {
+      grid-template-columns: 33% auto;
+    }
 
     a {
       display: grid;
@@ -50,8 +59,6 @@ ul {
 
       h3 {
         color: rgba(255, 255, 255, .9);
-        font-size: 1.6rem;
-        line-height: 1.5;
         font-weight: 600;
 
         small {
@@ -61,9 +68,6 @@ ul {
     }
 
     blockquote {
-      font-size: 1.6rem;
-      line-height: 1.5;
-
       & p {
         margin: 0;
 

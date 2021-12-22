@@ -1,10 +1,10 @@
 import {
+  AfterViewInit,
   Component,
-  ViewChild,
   ElementRef,
   OnDestroy,
-  AfterViewInit,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,8 +12,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { SidenavService } from '../../service/sidenav.service';
 import { ThemeService } from '../../service/theme.service';
 import { AnalyticsService } from '../../service/analytics.service';
-import { Subject, fromEvent } from 'rxjs';
-import { takeUntil, throttleTime, map } from 'rxjs/operators';
+import { fromEvent, Subject } from 'rxjs';
+import { map, takeUntil, throttleTime } from 'rxjs/operators';
+import { Link } from '../../constants/linkList.constants';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,8 @@ export class HeaderComponent implements OnDestroy, OnInit, AfterViewInit {
   public isScrolled: boolean = true;
   public isDarkTheme: boolean;
   private destroy$: Subject<void> = new Subject();
+  linkList: Link[];
+  blog: Link | undefined;
 
   @ViewChild('menu', { static: true }) public menu: ElementRef;
 
@@ -45,6 +48,8 @@ export class HeaderComponent implements OnDestroy, OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.linkList = this.sidenavService.getLinkList();
+    this.blog = this.linkList.find((l) => l.type === 'Blog');
     this.themeService.setDarkTheme();
   }
 

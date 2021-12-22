@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
 
   initCard(): void {
     this.card = {
-      title: 'Joël CHRABIE',
+      title: 'Webster',
       subtitleRaw: 'devweb',
       icon: 'code',
       imagePath: '/assets/carteDeVisite.jpg ',

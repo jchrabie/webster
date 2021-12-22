@@ -9,17 +9,16 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [HomeComponent],
       providers: [
         {
           provide: AnalyticsService,
           useClass: class {
             analyticsService = jasmine.createSpy('AnalyticsService');
-          }
-        }
+          },
+        },
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

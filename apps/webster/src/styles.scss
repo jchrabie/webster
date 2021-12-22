@@ -7,4 +7,18 @@
 @use 'stylesheets/scrollbar';
 @use 'stylesheets/theme';
 @use 'stylesheets/badge';
-@use 'stylesheets/fonts';
+@use 'stylesheets/wave';
+
+mat-sidenav-content {
+  min-height: 100vh;
+}
+
+body .mat-dialog-container {
+  background: white;
+  padding: 0;
+  width: 87%;
+}
+
+.bkg-light {
+  background-color: var(--background-light);
+}

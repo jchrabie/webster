@@ -10,19 +10,11 @@ import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
-import { SkillsModule } from './skills/skills.module';
-import { ExperienceListModule } from './experience-list/experience-list.module';
 import { HomeModule } from './home/home.module';
 import { LegalModule } from './legal/legal.module';
+import { CalendlyModule } from '@webster/ui';
 
 const route = [
-  {
-    path: 'skills',
-    loadChildren: () =>
-      import('./skills/skills-routing.module').then(
-        (m) => m.SkillsRoutingModule
-      ),
-  },
   {
     path: 'legal',
     loadChildren: () =>
@@ -36,18 +28,10 @@ const route = [
       ),
   },
   {
-    path: 'experiences',
-    loadChildren: () =>
-      import('./experience-list/experience-list-routing.module').then(
-        (m) => m.ExperienceListRoutingModule
-      ),
-  },
-  {
     path: '',
     loadChildren: () =>
       import('./home/home-routing.module').then((m) => m.HomeRoutingModule),
   },
-  { path: 'pdf', redirectTo: 'assets/CV.pdf' },
   {
     path: 'blog/:template',
     loadChildren: () =>
@@ -62,9 +46,8 @@ const route = [
     BrowserModule.withServerTransition({ appId: 'jc-angular-project' }),
     BlogModule,
     MaterialModule,
+    CalendlyModule,
     ContactModule,
-    SkillsModule,
-    ExperienceListModule,
     HomeModule,
     LegalModule,
     HttpClientModule,

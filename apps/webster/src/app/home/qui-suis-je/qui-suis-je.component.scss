@@ -1,0 +1,21 @@
+@use 'libs/ui/src/partials/utils/breakpoint';
+
+article {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.8;
+
+  p {
+    margin-bottom: .5rem;
+  }
+
+  @include breakpoint.breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}

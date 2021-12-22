@@ -1,29 +1,18 @@
-@import '../../../../../../../../workspace/jc-angular-project/node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import '../../../../../../../../workspace/jc-angular-project/src/stylesheets/breakpoints';
+@use 'libs/ui/src/partials/utils/breakpoint';
 
 mat-toolbar {
   position: fixed;
-  top: 10px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 2;
+  font-weight: 400;
+  font-size: 16px;
   background-color: var(--background-light) !important;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
-  ::ng-deep .mat-slide-toggle.mat-checked {
-    mat-icon {
-      display: none;
-      @include breakpoint($breakpoint-medium) {
-        display: inline-block;
-      }
-    }
-
-    .mat-slide-toggle-bar {
-      @include breakpoint($breakpoint-medium) {
-        margin: 0 10px;
-      }
-    }
+  .active-link {
+    color: var(--primary-light50-color)!important;
+    font-weight: 700;
   }
 
   #menu {
@@ -42,7 +31,7 @@ mat-toolbar {
       margin-left: 20px;
       display: none;
 
-      @include breakpoint($breakpoint-medium) {
+      @include breakpoint.breakpoint(md) {
         display: inline;
       }
     }
