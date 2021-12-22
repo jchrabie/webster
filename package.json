@@ -8,6 +8,7 @@
     "start": "nx serve",
     "start:webster": "nx serve --project=webster",
     "build": "nx build",
+    "build:webster": "nx build --project=webster",
     "test": "nx test"
   },
   "private": true,
