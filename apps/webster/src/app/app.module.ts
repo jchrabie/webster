@@ -2,7 +2,6 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 
@@ -52,7 +51,6 @@ const route = [
     LegalModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    FontAwesomeModule,
     SharedModule,
     RouterModule.forRoot(route, {
       useHash: false,
