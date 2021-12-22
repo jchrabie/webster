@@ -6,9 +6,7 @@
   "search": "Rechercher (ex: Angular, React, ...)",
   "sideNav": {
     "home": "Accueil",
-    "experiences": "Expériences",
-    "skills": "Compétences",
-    "contact": "Contact"
+    "contact": "Contact & Tarifs"
   },
   "experiences": {
     "title": "Expériences",

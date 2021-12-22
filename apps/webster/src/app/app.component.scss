@@ -28,15 +28,3 @@ main {
 .mat-raised-button.mat-primary {
   background-color: #733fb1 !important;
 }
-
-.mat-drawer-content {
-  mat-progress-bar {
-    position: fixed;
-    height: 10px;
-    z-index: 2;
-
-    rect {
-      fill: var(--background-light);
-    }
-  }
-}

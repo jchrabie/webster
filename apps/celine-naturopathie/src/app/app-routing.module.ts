@@ -44,6 +44,11 @@ const routes: Routes = [
       import('libs/ui/src/lib/mentions-legales/mentions-legales.module').then(
         (ml) => ml.MentionsLegalesModule
       ),
+    data: {
+      name: 'Céline',
+      lastName: 'CHRABIE',
+      url: 'celine-naturopathe.com',
+    },
   },
 ];
 

@@ -15,9 +15,16 @@ import { CalendlyModule } from '@webster/ui';
 
 const route = [
   {
-    path: 'legal',
+    path: 'mention-legales',
     loadChildren: () =>
-      import('./legal/legal-routing.module').then((m) => m.LegalRoutingModule),
+      import('libs/ui/src/lib/mentions-legales/mentions-legales.module').then(
+        (ml) => ml.MentionsLegalesModule
+      ),
+    data: {
+      name: 'Céline',
+      lastName: 'CHRABIE',
+      url: 'celine-naturopathe.com',
+    },
   },
   {
     path: 'contact',
@@ -54,7 +61,7 @@ const route = [
     SharedModule,
     RouterModule.forRoot(route, {
       useHash: false,
-      scrollPositionRestoration: 'top',
+      scrollPositionRestoration: 'enabled',
     }),
   ],
   exports: [RouterModule],

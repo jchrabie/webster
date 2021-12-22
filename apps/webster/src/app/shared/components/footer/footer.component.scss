@@ -71,7 +71,7 @@ mat-toolbar {
 }
 
 hr {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
 
   @include design-system.breakpoint(md) {
     display: none;
@@ -95,8 +95,14 @@ img {
   }
 }
 mat-toolbar-row {
+  h2 {
+    margin: 0 0 1rem!important;
+    transform: translate(0,0);
+  }
   p {
     font-weight: 400;
+    line-height: 1.5;
+    font-size: 14px;
   }
 }
 

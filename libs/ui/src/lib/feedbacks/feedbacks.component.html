@@ -1,11 +1,11 @@
-<ul class="list-unstyled list-xl-horizontal w-100">
+<ul class="list-unstyled list-lg-horizontal w-100">
   <li *ngFor="let feedback of feedbacks">
     <figure>
       <figcaption>
         <a [href]="feedback.sender.linkedIn" [attr.aria-labelledby]="'Voir le Profile de ' + feedback.sender.name">
           <img [src]="feedback.sender.img" [alt]="'Photo de profile de ' +  feedback.sender.name">
           <div>
-            <h3>{{ feedback.sender.name}}
+            <h3 class="gap-3">{{ feedback.sender.name}}
               <br>
               <small>{{ feedback.sender.role}}</small>
             </h3>

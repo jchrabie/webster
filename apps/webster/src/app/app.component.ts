@@ -4,41 +4,24 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { delay, filter, map, takeUntil, throttleTime } from 'rxjs/operators';
-import { fromEvent } from 'rxjs/internal/observable/fromEvent';
-import { of, Subject } from 'rxjs';
+import { delay, filter, map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 import { SidenavService } from './shared/service/sidenav.service';
 import { getHeaderByType, Header } from './shared/constants/header.constants';
 import { getArticleByTemplate } from './shared/constants/blog.constants';
 import { TagService } from './shared/service/tag.service';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 
 @Component({
   selector: 'webster-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('fadeAnimation', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [style({ opacity: 0 }), animate(600)]),
-      transition(':leave', animate(600, style({ opacity: 0 }))),
-    ]),
-  ],
   providers: [SidenavService, MatSidenav],
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   public scroll: number = 0;
   isLoading = true;
-
-  private destroy$: Subject<void> = new Subject();
 
   constructor(
     public sidenavService: SidenavService,
@@ -93,30 +76,8 @@ export class AppComponent implements OnInit {
           header.description,
           header.imagePath
         );
-
-        document.getElementsByClassName('mat-drawer-content')[0].scrollTo(0, 0);
+        window.scroll(0, 0);
       });
-  }
-
-  ngAfterViewInit() {
-    const content = document.querySelector('.mat-sidenav-content');
-
-    // @ts-ignore
-    fromEvent(content, 'scroll')
-      .pipe(
-        takeUntil(this.destroy$),
-        throttleTime(10),
-        map(() => {
-          // @ts-ignore
-          const currentTarget = event.currentTarget as Element;
-          const winScroll = currentTarget.scrollTop;
-          const height =
-            currentTarget.scrollHeight - currentTarget.clientHeight;
-
-          return (winScroll / height) * 100;
-        })
-      )
-      .subscribe((scroll) => (this.scroll = scroll));
   }
 
   private iconRegistry() {
@@ -164,5 +125,9 @@ export class AppComponent implements OnInit {
         )
       )
     );
+  }
+
+  onActivate() {
+    window.scroll(0, 0);
   }
 }

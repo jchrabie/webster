@@ -24,7 +24,7 @@ ul {
       left: 1rem;
       right: 1rem;
 
-      @include breakpoint.breakpoint(xl) {
+      @include breakpoint.breakpoint(lg) {
         top: 1rem;
         bottom: 1rem;
         width: 2px;
@@ -40,7 +40,7 @@ ul {
     padding: 1rem;
     margin: 0 1rem;
 
-    @include breakpoint.breakpoint(md) {
+    @include breakpoint.breakpoint(xxl) {
       grid-template-columns: 33% auto;
     }
 

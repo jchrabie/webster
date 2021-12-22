@@ -1,11 +1,9 @@
 <div class="wrapper">
   <mat-sidenav-container>
     <mat-sidenav
-      #sidenav
       mode="over"
       [(opened)]="sidenavService.opened"
       (openedChange)="sidenavService.onOpenedChange($event)"
-      color="primary"
     >
       <app-sidenav></app-sidenav>
     </mat-sidenav>
@@ -23,8 +21,7 @@
       </ng-template>
         <ng-container *ngIf="!isLoading; else loading">
           <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
-          <router-outlet
-            [@fadeAnimation]="'in'"></router-outlet>
+          <router-outlet></router-outlet>
         </ng-container>
       </main>
       <footer>
