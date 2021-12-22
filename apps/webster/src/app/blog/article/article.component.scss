@@ -1,18 +1,17 @@
-@import '../../../../../../../workspace/jc-angular-project/node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import '../../../../../../../workspace/jc-angular-project/src/stylesheets/breakpoints';
+@use 'libs/ui/src/partials/utils/breakpoint';
 
 .blog-container {
   display: flex;
   padding: 0;
 
-  @include breakpoint($breakpoint-large) {
+  @include breakpoint.breakpoint(lg) {
     padding: 20px 40px;
   }
 
   .author {
     display: none;
 
-    @include breakpoint($breakpoint-large) {
+    @include breakpoint.breakpoint(lg) {
       flex: 1 1 20%;
       display: block;
     }
@@ -50,7 +49,7 @@
     width: 100%;
     padding: 0;
 
-    @include breakpoint($breakpoint-large) {
+    @include breakpoint.breakpoint(lg) {
       flex: 1 1 50%;
       width: 50%;
       padding: 0 40px;
@@ -61,7 +60,7 @@
     display: none;
     max-width: 300px;
 
-    @include breakpoint($breakpoint-large) {
+    @include breakpoint.breakpoint(lg) {
       flex: 1 1 30%;
       width: 30%;
       display: block;
@@ -111,7 +110,7 @@
       transform: translate(0, 0);
       bottom: 75px;
 
-      @include breakpoint($breakpoint-large) {
+      @include breakpoint.breakpoint(lg) {
         display: none;
       }
     }
