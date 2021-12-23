@@ -1,6 +1,6 @@
-@use 'libs/ui/src/partials/utils/mixins';
-@use 'libs/ui/src/partials/utils/functions';
-@use 'variables';
+@use './utils/mixins';
+@use './utils/functions';
+@use './variables';
 
 @each $size, $breakpoint in variables.$breakpoints-map {
   @include mixins.breakpoint($size) {
