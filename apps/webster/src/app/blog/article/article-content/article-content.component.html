@@ -1,5 +1,6 @@
 <div class="content">
   <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+  <br>
   <h2>
     {{ article.title }} <small>{{ article.dates }}</small>
   </h2>
@@ -8,8 +9,8 @@
       {{ project.title }} <span *ngIf="project.date"> - {{ project.date }}</span>
     </h3>
     <p [innerHTML]="project.content"></p>
-    <mat-chip-list *ngIf="project.skills">
-      <mat-chip *ngFor="let skill of project.skills" [selected]="false">
+    <mat-chip-list *ngIf="project.skills" class="mt-3.">
+      <mat-chip *ngFor="let skill of project.skills" [selected]="false" [title]="skill">
         {{ skill }}
       </mat-chip>
     </mat-chip-list>

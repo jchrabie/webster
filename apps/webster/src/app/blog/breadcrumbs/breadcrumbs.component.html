@@ -1,6 +1,6 @@
 <ul>
     <li>
-        <a [routerLink]="['/']" (click)="onClick('home')"><mat-icon>home</mat-icon></a>
+        <a [routerLink]="['/']" (click)="onClick('home')" title="accueil"><mat-icon>home</mat-icon></a>
     </li>
     <li *ngFor="let item of breadcrumbs">
         <a

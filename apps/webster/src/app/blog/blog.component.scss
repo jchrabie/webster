@@ -1,4 +1,26 @@
+@use 'libs/ui/src/partials/utils/breakpoint';
+
 app-breadcrumbs {
-    flex: 1 1 100%;
-    padding: 20px 20px 0;
+  grid-column: 1/-1;
+  padding: 20px 20px 0;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  @include breakpoint.breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @include breakpoint.breakpoint(xl) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  app-card {
+    place-self: center center;
+  }
 }

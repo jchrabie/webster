@@ -10,7 +10,7 @@ ul {
       a {
         color: var(--text);
         display: block;
-        background: var(--primary);
+        background: var(--primary-dark80-color);
         text-decoration: none;
         position: relative;
         height: 40px;
@@ -22,15 +22,15 @@ ul {
 
       &:nth-child(even) {
         a {
-          background-color: var(--primary);
+          background-color: var(--primary-dark80-color);
 
           &:before {
-            border-color: var(--primary);
+            border-color: var(--primary-dark80-color);
             border-left-color: transparent;
           }
 
           &:after {
-            border-left-color: var(--primary);
+            border-left-color: var(--primary-dark80-color);
           }
         }
       }
@@ -66,7 +66,7 @@ ul {
           content: "";
           position: absolute;
           top: 0;
-          border: 0 solid var(--primary);
+          border: 0 solid var(--primary-dark80-color);
           border-width: 20px 10px;
           width: 0;
           height: 0;
@@ -80,19 +80,19 @@ ul {
         &:after {
           left: 100%;
           border-color: transparent;
-          border-left-color: var(--primary);
+          border-left-color: var(--primary-dark80-color);
         }
 
         &:hover, &:active {
-          background-color: var(--primary-dark);
+          background-color: var(--primary-dark70-color);
 
           &:before {
-            border-color: var(--primary-dark);
+            border-color: var(--primary-dark70-color);
             border-left-color: transparent;
           }
 
           &:after {
-            border-left-color: var(--primary-dark);
+            border-left-color: var(--primary-dark70-color);
           }
         }
 

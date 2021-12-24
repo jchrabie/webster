@@ -37,7 +37,7 @@
   </mat-card-content>
   <ng-template #rawContent>
     <mat-card-content *ngIf="card.content || isList">
-      <app-card-content [cardContent]="card.content" [isList]="isList"></app-card-content>
+      <app-card-content [cardContent]="card.content"></app-card-content>
     </mat-card-content>
   </ng-template>
   <mat-card-actions *ngIf="card.showMore">

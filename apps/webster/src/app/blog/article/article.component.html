@@ -1,4 +1,4 @@
-<div *ngIf="article" id="toto">
+<div *ngIf="article">
   <div class="blog-container">
     <div class="author">
       <mat-card>
@@ -42,6 +42,7 @@
       mat-mini-fab
       color="primary"
       class="back-to-top"
+      name="Retour en haut de page"
       tooltip="Retour en haut de page"
       (click)="scrollToElement()"
       id="mobile-back-to-top"

@@ -25,8 +25,8 @@ export class SidenavComponent implements OnInit {
   }
 
   linkClick(link: string): void {
-    this.analyticsService.emit('SideNav', 'Links', 'link clicked', link);
     this.sideNavService.toggle();
+    this.analyticsService.emit('SideNav', 'Links', 'link clicked', link);
 
     if (link === '/pdf') {
       const headers = new HttpHeaders().set('Accept', 'application/pdf');

@@ -8,12 +8,12 @@ export class AnalyticsService {
 
   setInitialInformations(event: RouterEvent) {
     if (event instanceof NavigationEnd) {
-      ga('set', 'page', event.urlAfterRedirects);
-      ga('send', 'pageview');
+      ga?.('set', 'page', event.urlAfterRedirects);
+      ga?.('send', 'pageview');
     }
   }
 
   emit(...params: unknown[]) {
-    ga('send', 'event', ...params);
+    ga?.('send', 'event', ...params);
   }
 }

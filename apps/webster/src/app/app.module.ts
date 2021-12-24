@@ -60,7 +60,7 @@ const route = [
     HttpClientJsonpModule,
     SharedModule,
     RouterModule.forRoot(route, {
-      useHash: false,
+      useHash: true,
       scrollPositionRestoration: 'enabled',
     }),
   ],

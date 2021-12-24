@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardContentComponent implements OnInit {
   @Input() public cardContent: string | undefined;
-  @Input() public isList: boolean;
 
   constructor() {}
 
