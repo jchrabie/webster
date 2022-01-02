@@ -54,7 +54,7 @@ export const tipsGroups: ArticlesGroup[] = [
   },
   {
     group: 'css',
-    description: `Parcequ'on a tous quelque chose à partager, je te livre ici quelques tips sur divers sujets`,
+    description: `Les CSS (Cascading Style Sheets en anglais, ou « feuilles de style en cascade ») sont le code utilisé pour mettre en forme une page web. Les bases des CSS présentent ce qu'il faut savoir pour commencer. Nous répondrons à des questions comme : Comment rendre mon texte rouge ou noir ? Comment faire apparaître mon contenu à tel endroit de l'écran ? Comment décorer ma page web avec une image ou une couleur d'arrière-plan ?`,
     breadcrumbs: [
       { name: 'Tips', url: '/tips', active: false },
       {
@@ -66,15 +66,18 @@ export const tipsGroups: ArticlesGroup[] = [
     ],
     articles: [
       {
-        template: 'css',
+        template: 'pseudo-classes',
         group: 'tips',
-        title: 'CSS',
+        title: 'Pseudo Classes',
         breadcrumb: { name: 'CSS', url: '/tips/css', active: true },
         showMore: true,
         baseLink: 'tips',
-        subtitle: 'Css',
+        subtitle: 'first-of-type / nth-of-type / last-of-type',
         imagePath: 'assets/cards/CSStips001.png',
-        content: `Article en cours d'écriture.`,
+        content: `
+          <p>Comment en #CSS ou #SCSS modifier le style du premier/dernier élément ayant la class "Pouet" ou mieux, tu souhaites modifier le Xème élément de cette class?</p>
+          <p>Nous allons voir ensemble comment acceder à ces classes</p>
+        `,
         icon: 'css',
         customIcon: true,
         iconLink: 'css',
@@ -105,11 +108,11 @@ export const tipsGroups: ArticlesGroup[] = [
   },
   {
     group: 'javascript',
-    description: `Parcequ'on a tous quelque chose à partager, je te livre ici quelques tips sur divers sujets`,
+    description: `Le JavaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web.`,
     breadcrumbs: [
       { name: 'Tips', url: '/tips', active: false },
       {
-        name: 'Javascript',
+        name: 'JavaScript',
         url: '/tips',
         queryParams: { frag: 'javascript' },
         active: false,
@@ -117,19 +120,63 @@ export const tipsGroups: ArticlesGroup[] = [
     ],
     articles: [
       {
-        template: 'elvis',
+        template: 'null-operator',
         group: 'tips',
         title: 'Optional Chaining',
         breadcrumb: {
           name: 'null-operator',
-          url: '/tips/elvis-operator',
+          url: '/tips/null-operator',
           active: true,
         },
         showMore: true,
         baseLink: 'tips',
         subtitle: 'Null propagation operator',
         imagePath: 'assets/cards/JStips001.png',
-        content: `Article en cours d'écriture.`,
+        content: `
+    <p>Le "Null propagation operator", ou "Optional Chaining", ou l'art de faire en une ligne ce qu'on faisait en près de 10 lignes. </p><p> Cet opérateur permet de s'affranchir de pleins de conditions.</p>
+`,
+        icon: 'javascript',
+        customIcon: true,
+        iconLink: 'javascript',
+        projects: [
+          {
+            title: 'En cours',
+            id: 'css',
+            date: 'Bientôt',
+            content: '<p>Contenu en cours de réalisation</p>',
+          },
+        ],
+        other: [
+          {
+            title: 'Responsive',
+            url: '/competences/responsive',
+          },
+          {
+            title: 'Accessibilité',
+            url: '/competences/a11y',
+          },
+          {
+            title: 'Analytics',
+            url: '/competences/analytics',
+          },
+        ],
+      },
+      {
+        template: 'affectation',
+        group: 'tips',
+        title: 'Affectation',
+        breadcrumb: {
+          name: 'affectation',
+          url: '/tips/affectation',
+          active: true,
+        },
+        showMore: true,
+        baseLink: 'tips',
+        subtitle: 'Affecter une valeur',
+        imagePath: 'assets/cards/JStips002.png',
+        content: `
+    <p>Il existe pleins de méthodes différentes pour affecter une valeur si notre variable n'est pas défini. </p><p>Voyons ensemble quels méthodes existent à l'heure actuelle.</p>
+`,
         icon: 'javascript',
         customIcon: true,
         iconLink: 'javascript',

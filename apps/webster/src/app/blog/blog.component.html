@@ -2,7 +2,7 @@
   <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
   <div *ngFor="let articlesGroup of articlesGroups">
     <h2><span class="text-stroke">{{articlesGroup.group| slice:0:1}}</span>{{articlesGroup.group| slice:1}}</h2>
-    <p class="m-4 p-2">{{articlesGroup.description}}</p>
+    <p class="m-4 p-2 w-lg-50 text-justify">{{articlesGroup.description}}</p>
     <div class="wrapper">
       <app-card *ngFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
     </div>

@@ -1,46 +1,56 @@
-@use 'libs/ui/src/partials/utils/functions';
+@use './utils/mixins';
+@use './utils/functions';
+@use './variables';
 
-@for $i from 1 through 20 {
-  @each $type in null, min, max {
-    $suffix: functions.suffix($type);
+@each $size, $breakpoint in variables.$breakpoints-map {
+  @include mixins.breakpoint($size) {
+    $infix: functions.breakpoint-infix($size);
 
-    .#{$suffix}w-#{$i * 5} {
-      #{$suffix}width: $i * 5% !important;
+    @for $i from 1 through 20 {
+      @each $type in null, min, max {
+        $suffix: functions.suffix($type);
+
+        .#{$suffix}w#{$infix}-#{$i * 5} {
+          #{$suffix}width: $i * 5% !important;
+        }
+
+        .#{$suffix}h#{$infix}-#{$i * 5} {
+          #{$suffix}height: $i * 5% !important;
+        }
+      }
     }
 
-    .#{$suffix}h-#{$i * 5} {
-      #{$suffix}height: $i * 5% !important;
+    @for $i from 1 through 500 {
+      @each $type in null, min, max {
+        $suffix: functions.suffix($type);
+
+        .#{$suffix}w#{$infix}-#{$i * 10}-px {
+          #{$suffix}width: #{$i * 10}px !important;
+        }
+
+        .#{$suffix}h#{$infix}-#{$i * 10}-px {
+          #{$suffix}height: #{$i * 10}px !important;
+        }
+      }
+
+      .box#{$infix}-#{$i * 2} {
+        height: #{$i * 2}px !important;
+        min-height: #{$i * 2}px !important;
+        width: #{$i * 2}px !important;
+        min-width: #{$i * 2}px !important;
+      }
     }
-  }
-}
-
-@for $i from 1 through 500 {
-  @each $type in null, min, max {
-    $suffix: functions.suffix($type);
-
-    .#{$suffix}w-#{$i * 10}-px {
-      #{$suffix}width: #{$i * 10}px !important;
-    }
-
-    .#{$suffix}h-#{$i * 10}-px {
-      #{$suffix}height: #{$i * 10}px !important;
-    }
-  }
-
-  .box-#{$i * 2} {
-    height: #{$i * 2}px !important;
-    min-height: #{$i * 2}px !important;
-    width: #{$i * 2}px !important;
-    min-width: #{$i * 2}px !important;
   }
 }
 
 .w-auto {
   width: auto !important;
 }
+
 .h-auto {
   height: auto !important;
 }
+
 .w-33 {
   width: calc(100% / 3);
 }
