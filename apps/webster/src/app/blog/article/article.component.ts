@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { blog, Article } from '../../shared/constants/blog.constants';
+import {
+  Article,
+  ArticlesGroup,
+  Breadcrumb,
+} from '../../shared/constants/blog.constants';
+import { combineLatest } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-article',
@@ -10,6 +16,7 @@ import { blog, Article } from '../../shared/constants/blog.constants';
 })
 export class ArticleComponent implements OnInit {
   public article: Article | undefined;
+  public breadcrumbs: Breadcrumb[] = [];
   public card = {
     title: 'Joël CHRABIE',
     subtitleRaw: 'devweb',
@@ -19,32 +26,42 @@ export class ArticleComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((param) => {
-      this.article = blog.find((art) => art.template === param.template);
-
-      if (!this.article) {
-        this.router.navigate(['/']);
-      }
-    });
+    combineLatest([this.activatedRoute.params, this.activatedRoute.data])
+      .pipe(
+        filter(([param, data]) => !!param && !!data),
+        map(([param, data]) => ({
+          article: data.groups
+            .reduce(
+              (old: Article[], curr: ArticlesGroup) => [
+                ...old,
+                ...curr.articles,
+              ],
+              []
+            )
+            .find((art: Article) => art.template === param.template),
+          group: data.groups.find((g: ArticlesGroup) =>
+            g.articles.some((art: Article) => art.template === param.template)
+          ),
+        })),
+        filter(({ article, group }) => !!article && !!group)
+      )
+      .subscribe(({ article, group }) => {
+        this.article = article;
+        this.breadcrumbs = [...group?.breadcrumbs, article?.breadcrumb];
+      });
   }
 
   public scrollToElement(id?: string): void {
     if (id) {
-      document
-        .getElementById(id)
-        ?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-          inline: 'start',
-        });
+      document.getElementById(id)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'start',
+      });
 
       return;
     }
 
-    document.getElementsByClassName('mat-drawer-content')[0].scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
+    document.getElementsByTagName('body')[0].scrollTo(0, 0);
   }
 }

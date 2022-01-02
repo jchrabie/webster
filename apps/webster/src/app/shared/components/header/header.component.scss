@@ -9,6 +9,7 @@ mat-toolbar {
   font-weight: 400;
   font-size: 16px;
   background-color: var(--background-light) !important;
+  justify-content: space-between;
 
   .active-link {
     color: var(--primary-light50-color)!important;
@@ -58,6 +59,10 @@ mat-toolbar {
     .bigger {
       font-size: 1.5em;
       color: var(--primary);
+    }
+
+    img {
+      width: 200px;
     }
   }
 }

@@ -9,17 +9,6 @@
   h2 {
     transform: none;
     margin: 2rem!important;
-
-    .text-stroke {
-      font-size: 4rem;
-      line-height: 1;
-      text-transform: uppercase;
-      -webkit-text-stroke: 2px var(--primary-light80-color);
-      text-stroke: 2px var(--primary-light80-color);
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-      margin-bottom: 1.5rem;
-    }
   }
 
   .wrapper {

@@ -20,6 +20,20 @@ export const headers: Header[] = [
     description: 'Coordonnées pour me rencontrer',
     canonical: 'https://www.webster.com/contact',
   },
+  {
+    type: 'tips',
+    title: 'Tips',
+    imagePath: 'https://www.webster.com/assets/webster.png',
+    description: 'Partageons des tips',
+    canonical: 'https://www.webster.com/tips',
+  },
+  {
+    type: 'competences',
+    title: 'Compétences',
+    imagePath: 'https://www.webster.com/assets/contact.jpg',
+    description: 'Dossier de compétences',
+    canonical: 'https://www.webster.com/competences',
+  },
 ];
 
 export interface Header {

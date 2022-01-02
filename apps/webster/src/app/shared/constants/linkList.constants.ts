@@ -10,9 +10,14 @@ export const linkList: Link[] = [
     url: '/contact',
   },
   {
-    type: 'Blog',
+    type: 'Tips',
     icon: 'speaker_notes',
-    url: '/blog',
+    url: '/tips',
+  },
+  {
+    type: 'Compétence',
+    icon: 'speaker_notes',
+    url: '/competences',
   },
 ];
 

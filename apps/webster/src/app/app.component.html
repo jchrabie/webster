@@ -14,15 +14,8 @@
       </header>
 
       <main>
-        <ng-template #loading>
-        <div class="w-100 d-flex justify-content-center align-items-center" [style.height]="'52vh'">
-          <mat-icon class="loading-logo" svgIcon="webster"></mat-icon>
-        </div>
-      </ng-template>
-        <ng-container *ngIf="!isLoading; else loading">
-          <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
-          <router-outlet></router-outlet>
-        </ng-container>
+        <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
+        <router-outlet></router-outlet>
       </main>
       <footer>
         <app-footer></app-footer>

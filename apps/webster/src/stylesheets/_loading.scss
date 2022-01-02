@@ -1,0 +1,26 @@
+
+.loading-logo {
+  [class*="cls-"] {
+    stroke-miterlimit: 10;
+    stroke: white!important;
+    stroke-width: 0;
+    fill: currentColor;
+    stroke-dasharray: 500;
+    animation: stroke 2s linear 3 alternate;
+  }
+
+  @keyframes stroke {
+    0% {
+      stroke-width: 2px;
+      stroke-dashoffset: 500;
+      fill: transparent;
+    }
+    50% {
+      fill: transparent;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: currentColor;
+    }
+  }
+}

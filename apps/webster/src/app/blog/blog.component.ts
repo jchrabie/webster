@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {
-  ArticlesGroup,
-  articlesGroups,
-} from '../shared/constants/blog.constants';
+import { ArticlesGroup, Breadcrumb } from '../shared/constants/blog.constants';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
   private param: string;
+  private _breadcrumbs: Breadcrumb[] = [];
+  groups: ArticlesGroup[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
@@ -20,30 +19,36 @@ export class BlogComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.param = params.frag;
     });
+    this.route.data.subscribe(({ groups, breadcrumbs }) => {
+      this.groups = groups;
+      this._breadcrumbs = breadcrumbs;
+    });
   }
 
   get articlesGroups(): ArticlesGroup[] {
     return this.param
-      ? articlesGroups.filter(
+      ? this.groups.filter(
           (articlesGroup) => articlesGroup.group === this.param
         )
-      : articlesGroups;
+      : this.groups;
   }
 
   get breadcrumbs(): any[] {
-    const breadcrumb = [
-      { name: 'Blog', url: '/blog', queryParams: {}, active: !this.param },
-    ];
+    const breadcrumbs = [...this._breadcrumbs];
 
+    breadcrumbs.forEach(
+      (breadcrumb: Breadcrumb) => (breadcrumb.active = !this.param)
+    );
+    console.log(breadcrumbs);
     if (this.param) {
-      breadcrumb.push({
+      breadcrumbs.push({
         name: this.param.charAt(0).toUpperCase() + this.param.slice(1),
-        url: '/blog',
+        url: `${breadcrumbs[0].url}/${this.param}`,
         queryParams: { frag: this.param },
         active: true,
       });
     }
 
-    return breadcrumb;
+    return breadcrumbs;
   }
 }

@@ -16,10 +16,6 @@ main {
   @include breakpoint.breakpoint(lg) {
     margin: 65px 0 0;
   }
-  .loading-logo {
-    width: 400px;
-    height: 400px;
-  }
 }
 
 .mat-fab.mat-primary,
@@ -28,3 +24,4 @@ main {
 .mat-raised-button.mat-primary {
   background-color: #733fb1 !important;
 }
+

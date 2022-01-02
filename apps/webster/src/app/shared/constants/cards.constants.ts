@@ -2,6 +2,7 @@ export interface Card {
   title?: string;
   subtitle?: string;
   template?: string;
+  baseLink?: string;
   type?: string;
   icon: string;
   customIcon?: boolean;

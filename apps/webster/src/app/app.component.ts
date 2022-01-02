@@ -41,10 +41,6 @@ export class AppComponent implements OnInit {
     );
 
     this.iconRegistry();
-
-    of(false)
-      .pipe(delay(5000))
-      .subscribe((loading) => (this.isLoading = loading));
   }
 
   ngOnInit() {
@@ -61,10 +57,10 @@ export class AppComponent implements OnInit {
         if (urlArray.length > 2) {
           const article = getArticleByTemplate(finalUrl);
           header = {
-            title: article.title,
-            imagePath: `https://www.joelchrabie.com/${article.imagePath}`,
-            description: article.content,
-            canonical: `https://www.joelchrabie.com/blog/${article.template}`,
+            title: article?.title ?? '',
+            imagePath: `https://www.webster-dev.com/${article?.imagePath}`,
+            description: article?.content ?? '',
+            canonical: `https://www.webster-dev.com/competences/${article?.template}`,
           };
         } else {
           header = getHeaderByType(finalUrl);
@@ -76,7 +72,8 @@ export class AppComponent implements OnInit {
           header.description,
           header.imagePath
         );
-        window.scroll(0, 0);
+
+        document.getElementsByTagName('body')[0].scrollTo(0, 0);
       });
   }
 

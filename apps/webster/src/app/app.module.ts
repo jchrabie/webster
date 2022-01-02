@@ -39,7 +39,7 @@ const route = [
       import('./home/home-routing.module').then((m) => m.HomeRoutingModule),
   },
   {
-    path: 'blog/:template',
+    path: 'competences',
     loadChildren: () =>
       import('./blog/blog-routing.module').then((m) => m.BlogRoutingModule),
   },

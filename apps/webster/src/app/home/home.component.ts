@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import Typed from 'typed.js';
 
 import { AnalyticsService } from '../shared/service/analytics.service';
 import { Feedback } from '@webster/ui/models';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { Feedback } from '@webster/ui/models';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  isLoading = true;
+
   feedbacks: Feedback[] = [
     {
       comment:
@@ -32,19 +35,13 @@ export class HomeComponent implements OnInit {
       },
     },
   ];
+
   constructor(private analyticsService: AnalyticsService) {}
 
   ngOnInit() {
-    const options = {
-      strings: ['Angular', 'Web', 'Front', 'Green', 'Fun'],
-      typeSpeed: 200,
-      backSpeed: 50,
-      showCursor: true,
-      cursorChar: '|',
-      loop: true,
-    };
-
-    new Typed('.typing-element', options);
+    of(false)
+      .pipe(delay(6000))
+      .subscribe((loading) => (this.isLoading = loading));
   }
 
   hireClick() {

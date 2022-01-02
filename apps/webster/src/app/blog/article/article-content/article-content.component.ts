@@ -1,5 +1,5 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Article } from '../../../shared/constants/blog.constants';
+import { Component, Input } from '@angular/core';
+import { Article, Breadcrumb } from '../../../shared/constants/blog.constants';
 
 @Component({
   selector: 'app-article-content',
@@ -8,10 +8,7 @@ import { Article } from '../../../shared/constants/blog.constants';
 })
 export class ArticleContentComponent {
   @Input() article: Article;
+  @Input() breadcrumbs: Breadcrumb[];
 
-  constructor() { }
-
-  get breadcrumbs(): any {
-    return this.article.breadcrumbs;
-  }
+  constructor() {}
 }

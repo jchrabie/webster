@@ -16,7 +16,7 @@
     class="card-button"
     [ngClass]="{ 'no-content': !card.content && !card.type }"
     *ngIf="card.iconLink; else noLink"
-    routerLink="/blog"
+    [routerLink]="['/' + card.baseLink]"
     [queryParams]="{ frag: card.iconLink }"
   >
     <mat-icon *ngIf="card.customIcon; else materialIcon" [svgIcon]="card.icon"></mat-icon>
@@ -44,7 +44,7 @@
     <button
       mat-raised-button
       color="primary"
-      [routerLink]="['/blog/' + card.template]"
+      [routerLink]="['/'+card.baseLink+'/' + card.template]"
       (click)="onShowMore(card.type, card.title)"
     >
       {{ 'showMore' | translate }}
