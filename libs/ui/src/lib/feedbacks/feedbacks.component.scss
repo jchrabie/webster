@@ -37,6 +37,7 @@ ul {
     display: grid;
     grid-template-columns: auto;
     gap: 1rem;
+    align-items: center;
 
     @include breakpoint.breakpoint(xxl) {
       grid-template-columns: 33% auto;
@@ -63,6 +64,8 @@ ul {
       h3 {
         color: rgba(255, 255, 255, .9);
         font-weight: 600;
+        flex-direction: column;
+        align-items: baseline;
 
         small {
           font-weight: initial;
