@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogComponent implements OnInit {
   private param: string;
   private _breadcrumbs: Breadcrumb[] = [];
+  title: string;
   groups: ArticlesGroup[] = [];
 
   constructor(private route: ActivatedRoute) {}
@@ -19,9 +20,10 @@ export class BlogComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.param = params.frag;
     });
-    this.route.data.subscribe(({ groups, breadcrumbs }) => {
+    this.route.data.subscribe(({ groups, breadcrumbs, title }) => {
       this.groups = groups;
       this._breadcrumbs = breadcrumbs;
+      this.title = title;
     });
   }
 

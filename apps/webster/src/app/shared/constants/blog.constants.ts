@@ -120,6 +120,53 @@ export const tipsGroups: ArticlesGroup[] = [
     ],
     articles: [
       {
+        template: 'copy',
+        group: 'tips',
+        title: 'Cloner un objet',
+        breadcrumb: {
+          name: 'copy',
+          url: '/tips/copy',
+          active: true,
+        },
+        showMore: true,
+        baseLink: 'tips',
+        subtitle: 'Deep & shallow copy',
+        imagePath: 'assets/cards/JStips003.png',
+        content: `
+    <p>
+        Très souvent nous avons besoin en JS de copier / cloner un objet. 🐑🐑🐑🐑
+    </p>
+    <p>
+        Nous allons voir ensemble les deux types de clonages
+    </p>
+`,
+        icon: 'javascript',
+        customIcon: true,
+        iconLink: 'javascript',
+        projects: [
+          {
+            title: 'En cours',
+            id: 'css',
+            date: 'Bientôt',
+            content: '<p>Contenu en cours de réalisation</p>',
+          },
+        ],
+        other: [
+          {
+            title: 'Responsive',
+            url: '/competences/responsive',
+          },
+          {
+            title: 'Accessibilité',
+            url: '/competences/a11y',
+          },
+          {
+            title: 'Analytics',
+            url: '/competences/analytics',
+          },
+        ],
+      },
+      {
         template: 'null-operator',
         group: 'tips',
         title: 'Optional Chaining',
@@ -131,9 +178,9 @@ export const tipsGroups: ArticlesGroup[] = [
         showMore: true,
         baseLink: 'tips',
         subtitle: 'Null propagation operator',
-        imagePath: 'assets/cards/JStips001.png',
+        imagePath: 'assets/cards/JStips002.png',
         content: `
-    <p>Le "Null propagation operator", ou "Optional Chaining", ou l'art de faire en une ligne ce qu'on faisait en près de 10 lignes. </p><p> Cet opérateur permet de s'affranchir de pleins de conditions.</p>
+    <p>Le "Null propagation operator", ou "Optional Chaining", ou l'art de faire en une ligne ce qu'on faisait en près de 10 lignes. </p>
 `,
         icon: 'javascript',
         customIcon: true,
@@ -173,7 +220,7 @@ export const tipsGroups: ArticlesGroup[] = [
         showMore: true,
         baseLink: 'tips',
         subtitle: 'Affecter une valeur',
-        imagePath: 'assets/cards/JStips002.png',
+        imagePath: 'assets/cards/JStips001.png',
         content: `
     <p>Il existe pleins de méthodes différentes pour affecter une valeur si notre variable n'est pas défini. </p><p>Voyons ensemble quels méthodes existent à l'heure actuelle.</p>
 `,

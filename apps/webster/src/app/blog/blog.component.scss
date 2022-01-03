@@ -6,30 +6,39 @@
     padding: 2rem 2rem 0;
   }
 
+  .huge {
+    margin: 2rem;
+    font-size: 4rem;
+    max-width: 100%;
+    font-weight: 900;
+
+    @include breakpoint.breakpoint(md) {
+      max-width: 80%;
+    }
+
+    @include breakpoint.breakpoint(xl) {
+      max-width: 50%;
+    }
+  }
+
   h2 {
     transform: none;
     margin: 2rem!important;
   }
 
   .wrapper {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 4rem;
-    margin-bottom: 4rem;
-
-    @include breakpoint.breakpoint(md) {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-
-    @include breakpoint.breakpoint(xl) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 2rem;
-    }
 
     app-card {
       place-self: center center;
     }
   }
+
+  .cdk-virtual-scroll-content-wrapper .viewport {
+     display: flex;
+     flex-direction: row;
+   }
 }

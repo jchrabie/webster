@@ -1,10 +1,13 @@
 <div class="px-mb-6 px-4 my-6 w-100 ">
   <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+  <p class="huge" [innerHTML]="title"></p>
   <div *ngFor="let articlesGroup of articlesGroups">
     <h2><span class="text-stroke">{{articlesGroup.group| slice:0:1}}</span>{{articlesGroup.group| slice:1}}</h2>
     <p class="m-4 p-2 w-lg-50 text-justify">{{articlesGroup.description}}</p>
-    <div class="wrapper">
-      <app-card *ngFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
-    </div>
+    <cdk-virtual-scroll-viewport autosize orientation="horizontal" class="w-80 h-700-px m-auto">
+      <div class="wrapper">
+        <app-card *cdkVirtualFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
+      </div>
+    </cdk-virtual-scroll-viewport>
   </div>
 </div>

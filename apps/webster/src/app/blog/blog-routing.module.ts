@@ -21,6 +21,11 @@ const routes: Routes = [
     data: {
       groups: tipsGroups,
       breadcrumbs: [{ name: 'Tips', url: '/tips', active: false }],
+      title: `
+JE PARTAGE MES <span class="text-stroke">TIPS</span>
+    SUR DU CODE <span class="text-stroke">HTML</span>, <span class="text-stroke">CSS</span>, <span class="text-stroke">JAVASCRIPT</span>...
+
+      `,
     },
   },
   {

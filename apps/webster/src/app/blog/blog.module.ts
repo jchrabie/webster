@@ -8,9 +8,23 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleContentComponent } from './article/article-content/article-content.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { MaterialModule } from '../material/material.module';
+import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
-  imports: [SharedModule, BlogRoutingModule, CommonModule, MaterialModule],
-  declarations: [BlogComponent, ArticleComponent, ArticleContentComponent, BreadcrumbsComponent],
+  imports: [
+    SharedModule,
+    BlogRoutingModule,
+    CommonModule,
+    MaterialModule,
+    ExperimentalScrollingModule,
+    ScrollingModule,
+  ],
+  declarations: [
+    BlogComponent,
+    ArticleComponent,
+    ArticleContentComponent,
+    BreadcrumbsComponent,
+  ],
 })
 export class BlogModule {}

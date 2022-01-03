@@ -16,12 +16,14 @@
 
   mat-card {
     padding: 0;
-    max-width: 300px;
+    width: 300px;
+    max-width: calc(100vw - 8rem);
 
     .mat-card-image {
       margin: 0;
       width: 100%;
       height: 175px;
+      object-fit: cover
     }
 
     .mat-card-header {
@@ -37,13 +39,9 @@
     }
 
     .mat-card-content {
-      min-height: 136px;
+      min-height: 250px;
       padding: 0 24px;
     }
-  }
-
-  .mat-card-content {
-    padding: 0 24px;
   }
 
   mat-card-actions {
