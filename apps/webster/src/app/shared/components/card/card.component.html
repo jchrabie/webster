@@ -18,6 +18,7 @@
     *ngIf="card.iconLink; else noLink"
     [routerLink]="['/' + card.baseLink]"
     [queryParams]="{ frag: card.iconLink }"
+    disabled
   >
     <mat-icon *ngIf="card.customIcon; else materialIcon" [svgIcon]="card.icon"></mat-icon>
     <ng-template #materialIcon>

@@ -13,6 +13,8 @@ const routes: Routes = [
       breadcrumbs: [
         { name: 'Compétences', url: '/competences', active: false },
       ],
+      title: `
+    TU VEUX EN SAVOIR PLUS SUR MES <span class="text-stroke">EXPERIENCES</span> OU LES <span class="text-stroke">CONCEPTS</span>?`,
     },
   },
   {
@@ -22,9 +24,8 @@ const routes: Routes = [
       groups: tipsGroups,
       breadcrumbs: [{ name: 'Tips', url: '/tips', active: false }],
       title: `
-JE PARTAGE MES <span class="text-stroke">TIPS</span>
-    SUR DU CODE <span class="text-stroke">HTML</span>, <span class="text-stroke">CSS</span>, <span class="text-stroke">JAVASCRIPT</span>...
-
+    JE PARTAGE MES <span class="text-stroke">TIPS</span>
+    SUR DU CODE <span class="text-stroke">HTML</span>, <span class="text-stroke">CSS</span>, <span class="text-stroke">JS</span>...
       `,
     },
   },

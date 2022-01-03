@@ -1,19 +1,20 @@
 @use 'libs/ui/src/partials/utils/breakpoint';
 
 :host {
-  app-breadcrumbs {
+  webster-filters {
     grid-column: 1/-1;
     padding: 2rem 2rem 0;
   }
 
   .huge {
     margin: 2rem;
-    font-size: 4rem;
+    font-size: 2rem;
     max-width: 100%;
     font-weight: 900;
 
     @include breakpoint.breakpoint(md) {
       max-width: 80%;
+      font-size: 4rem;
     }
 
     @include breakpoint.breakpoint(xl) {

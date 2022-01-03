@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-  private param: string;
+  private params: string[];
   private _breadcrumbs: Breadcrumb[] = [];
   title: string;
   groups: ArticlesGroup[] = [];
@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.param = params.frag;
+      this.params = [params.frag];
     });
     this.route.data.subscribe(({ groups, breadcrumbs, title }) => {
       this.groups = groups;
@@ -28,29 +28,32 @@ export class BlogComponent implements OnInit {
   }
 
   get articlesGroups(): ArticlesGroup[] {
-    return this.param
-      ? this.groups.filter(
-          (articlesGroup) => articlesGroup.group === this.param
-        )
-      : this.groups;
+    if (this.params) {
+      const params = Array.isArray(this.params) ? this.params : [this.params];
+
+      return this.groups.filter((articlesGroup) =>
+        params.some((param) => articlesGroup.group === param)
+      );
+    }
+
+    return this.groups;
   }
 
   get breadcrumbs(): any[] {
     const breadcrumbs = [...this._breadcrumbs];
 
     breadcrumbs.forEach(
-      (breadcrumb: Breadcrumb) => (breadcrumb.active = !this.param)
+      (breadcrumb: Breadcrumb) => (breadcrumb.active = !this.params)
     );
-    console.log(breadcrumbs);
-    if (this.param) {
-      breadcrumbs.push({
-        name: this.param.charAt(0).toUpperCase() + this.param.slice(1),
-        url: `${breadcrumbs[0].url}/${this.param}`,
-        queryParams: { frag: this.param },
-        active: true,
-      });
-    }
 
     return breadcrumbs;
+  }
+
+  filter(checked: { group: string; selected: boolean }): void {
+    if (checked.selected) {
+      this.params.push(checked.group);
+    } else {
+      this.params = this.params.filter((param) => param !== checked.group);
+    }
   }
 }

@@ -2,89 +2,41 @@ import { Card } from './cards.constants';
 
 export const tipsGroups: ArticlesGroup[] = [
   {
-    group: 'html',
-    description: `Parcequ'on a tous quelque chose à partager, je te livre ici quelques tips sur divers sujets`,
+    group: 'accessibilité',
+    description: `
+        <p>L'accessibilité, ou A11y pour les intimes (11 étant le nombre de lettres entre le "A" et le "y" du mot Accessibility, comme I18n pour Internationalization), permets de rendre accessible un site ou une application web pour tous.</p>
+        <p>Contrairement à ce qu'on voit un peu partout, l'accessibilité ne s'adresse pas QUE aux personnes handicapés, je préfère dire que c'est pour les 𝐩𝐞𝐫𝐬𝐨𝐧𝐧𝐞𝐬 𝐞𝐧 𝐬𝐢𝐭𝐮𝐚𝐭𝐢𝐨𝐧 𝐝𝐞 𝐡𝐚𝐧𝐝𝐢𝐜𝐚𝐩.</p>
+`,
     breadcrumbs: [
       { name: 'Tips', url: '/tips', active: false },
       {
-        name: 'HTML',
+        name: 'Accessibilité',
         url: '/tips',
-        queryParams: { frag: 'html' },
+        queryParams: { frag: 'a11y' },
         active: false,
       },
     ],
     articles: [
       {
-        template: 'html',
+        template: 'sr-only',
         group: 'tips',
-        title: 'HTML',
-        breadcrumb: { name: 'HTML', url: '/tips/html', active: true },
+        title: 'Screen reader only',
+        breadcrumb: { name: 'sr-only', url: '/tips/html', active: true },
         showMore: true,
-        subtitle: 'I18n',
+        subtitle: 'sr-only',
         baseLink: 'tips',
-        imagePath: 'assets/cards/HTMLtips001.png',
-        content: `Article en cours d'écriture.`,
-        icon: 'html',
+        imagePath: 'assets/cards/a11ytips001.png',
+        content: `
+<p>Comment cacher un texte sur le navigateur, tout en l'affichant pour les lecteurs d'écran?</p>
+<p>Comment expliquer sans alourdir le design à l'écran?</p>
+`,
+        icon: 'accessible',
         customIcon: true,
-        iconLink: 'html',
+        iconLink: 'accessibilité',
         projects: [
           {
             title: 'En cours',
             id: 'html',
-            date: 'Bientôt',
-            content: '<p>Contenu en cours de réalisation</p>',
-          },
-        ],
-        other: [
-          {
-            title: 'Responsive',
-            url: '/competences/responsive',
-          },
-          {
-            title: 'Accessibilité',
-            url: '/competences/a11y',
-          },
-          {
-            title: 'Analytics',
-            url: '/competences/analytics',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    group: 'css',
-    description: `Les CSS (Cascading Style Sheets en anglais, ou « feuilles de style en cascade ») sont le code utilisé pour mettre en forme une page web. Les bases des CSS présentent ce qu'il faut savoir pour commencer. Nous répondrons à des questions comme : Comment rendre mon texte rouge ou noir ? Comment faire apparaître mon contenu à tel endroit de l'écran ? Comment décorer ma page web avec une image ou une couleur d'arrière-plan ?`,
-    breadcrumbs: [
-      { name: 'Tips', url: '/tips', active: false },
-      {
-        name: 'CSS',
-        url: '/tips',
-        queryParams: { frag: 'css' },
-        active: false,
-      },
-    ],
-    articles: [
-      {
-        template: 'pseudo-classes',
-        group: 'tips',
-        title: 'Pseudo Classes',
-        breadcrumb: { name: 'CSS', url: '/tips/css', active: true },
-        showMore: true,
-        baseLink: 'tips',
-        subtitle: 'first-of-type / nth-of-type / last-of-type',
-        imagePath: 'assets/cards/CSStips001.png',
-        content: `
-          <p>Comment en #CSS ou #SCSS modifier le style du premier/dernier élément ayant la class "Pouet" ou mieux, tu souhaites modifier le Xème élément de cette class?</p>
-          <p>Nous allons voir ensemble comment acceder à ces classes</p>
-        `,
-        icon: 'css',
-        customIcon: true,
-        iconLink: 'css',
-        projects: [
-          {
-            title: 'En cours',
-            id: 'css',
             date: 'Bientôt',
             content: '<p>Contenu en cours de réalisation</p>',
           },
@@ -252,6 +204,111 @@ export const tipsGroups: ArticlesGroup[] = [
       },
     ],
   },
+  {
+    group: 'css',
+    description: `Les CSS (Cascading Style Sheets en anglais, ou « feuilles de style en cascade ») sont le code utilisé pour mettre en forme une page web. Les bases des CSS présentent ce qu'il faut savoir pour commencer. Nous répondrons à des questions comme : Comment rendre mon texte rouge ou noir ? Comment faire apparaître mon contenu à tel endroit de l'écran ? Comment décorer ma page web avec une image ou une couleur d'arrière-plan ?`,
+    breadcrumbs: [
+      { name: 'Tips', url: '/tips', active: false },
+      {
+        name: 'CSS',
+        url: '/tips',
+        queryParams: { frag: 'css' },
+        active: false,
+      },
+    ],
+    articles: [
+      {
+        template: 'pseudo-classes',
+        group: 'tips',
+        title: 'Pseudo Classes',
+        breadcrumb: { name: 'CSS', url: '/tips/css', active: true },
+        showMore: true,
+        baseLink: 'tips',
+        subtitle: 'first-of-type / nth-of-type / last-of-type',
+        imagePath: 'assets/cards/CSStips001.png',
+        content: `
+          <p>Comment en #CSS ou #SCSS modifier le style du premier/dernier élément ayant la class "Pouet" ou mieux, tu souhaites modifier le Xème élément de cette class?</p>
+          <p>Nous allons voir ensemble comment acceder à ces classes</p>
+        `,
+        icon: 'css',
+        customIcon: true,
+        iconLink: 'css',
+        projects: [
+          {
+            title: 'En cours',
+            id: 'css',
+            date: 'Bientôt',
+            content: '<p>Contenu en cours de réalisation</p>',
+          },
+        ],
+        other: [
+          {
+            title: 'Responsive',
+            url: '/competences/responsive',
+          },
+          {
+            title: 'Accessibilité',
+            url: '/competences/a11y',
+          },
+          {
+            title: 'Analytics',
+            url: '/competences/analytics',
+          },
+        ],
+      },
+    ],
+  },
+  /* {
+    group: 'html',
+    description: `Parcequ'on a tous quelque chose à partager, je te livre ici quelques tips sur divers sujets`,
+    breadcrumbs: [
+      { name: 'Tips', url: '/tips', active: false },
+      {
+        name: 'HTML',
+        url: '/tips',
+        queryParams: { frag: 'html' },
+        active: false,
+      },
+    ],
+    articles: [
+      {
+        template: 'html',
+        group: 'tips',
+        title: 'HTML',
+        breadcrumb: { name: 'HTML', url: '/tips/html', active: true },
+        showMore: true,
+        subtitle: 'I18n',
+        baseLink: 'tips',
+        imagePath: 'assets/cards/HTMLtips001.png',
+        content: `Article en cours d'écriture.`,
+        icon: 'html',
+        customIcon: true,
+        iconLink: 'html',
+        projects: [
+          {
+            title: 'En cours',
+            id: 'html',
+            date: 'Bientôt',
+            content: '<p>Contenu en cours de réalisation</p>',
+          },
+        ],
+        other: [
+          {
+            title: 'Responsive',
+            url: '/competences/responsive',
+          },
+          {
+            title: 'Accessibilité',
+            url: '/competences/a11y',
+          },
+          {
+            title: 'Analytics',
+            url: '/competences/analytics',
+          },
+        ],
+      },
+    ],
+  },*/
 ];
 
 export const articlesGroups: ArticlesGroup[] = [

@@ -28,7 +28,7 @@ h3 {
 
 
 .text-stroke {
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 1;
   text-transform: uppercase;
   -webkit-text-stroke: 2px var(--primary-light80-color);
@@ -36,4 +36,8 @@ h3 {
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   margin-bottom: 1.5rem;
+
+  @include breakpoint(md) {
+    font-size: 4rem;
+  }
 }

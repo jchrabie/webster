@@ -1,0 +1,14 @@
+<h3>Filtres</h3>
+<p><small>(Vous pouvez aussi changer l'ordre)</small></p>
+<mat-selection-list cdkDropList (cdkDropListDropped)="drop($any($event))">
+  <div *ngFor="let group of groups"
+       class="d-flex align-items-center" cdkDrag>
+    <mat-icon >drag_handle</mat-icon>
+    <mat-list-option
+                     [selected]="true"
+                     (selectedChange)="selectedChange.emit({group: group.group, selected: $event})">
+      {{group.group | titlecase}}
+    </mat-list-option>
+
+  </div>
+</mat-selection-list>

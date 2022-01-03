@@ -10,21 +10,25 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { MaterialModule } from '../material/material.module';
 import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FiltersComponent } from './filters/filters.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
-    SharedModule,
     BlogRoutingModule,
     CommonModule,
-    MaterialModule,
     ExperimentalScrollingModule,
+    DragDropModule,
+    MaterialModule,
     ScrollingModule,
+    SharedModule,
   ],
   declarations: [
-    BlogComponent,
     ArticleComponent,
     ArticleContentComponent,
+    BlogComponent,
     BreadcrumbsComponent,
+    FiltersComponent,
   ],
 })
 export class BlogModule {}
