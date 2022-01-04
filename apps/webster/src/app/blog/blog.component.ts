@@ -49,7 +49,7 @@ export class BlogComponent implements OnInit {
     return breadcrumbs;
   }
 
-  filter(checked: { group: string; selected: boolean }): void {
+  filterGroups(checked: { group: string; selected: boolean }): void {
     if (checked.selected) {
       this.params.push(checked.group);
     } else {

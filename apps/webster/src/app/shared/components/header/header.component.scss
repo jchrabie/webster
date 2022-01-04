@@ -5,10 +5,10 @@ mat-toolbar {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 1000;
   font-weight: 400;
   font-size: 16px;
-  background-color: var(--background-light) !important;
+  background-color: var(--foreground) !important;
   justify-content: space-between;
 
   .active-link {

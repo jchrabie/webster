@@ -12,6 +12,8 @@ import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-exp
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FiltersComponent } from './filters/filters.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { A11yModule } from '@angular/cdk/a11y';
+import { VirtualScrollModule } from '@webster/ui';
 
 @NgModule({
   imports: [
@@ -22,6 +24,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MaterialModule,
     ScrollingModule,
     SharedModule,
+    A11yModule,
+    VirtualScrollModule,
   ],
   declarations: [
     ArticleComponent,

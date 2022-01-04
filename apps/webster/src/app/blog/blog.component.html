@@ -1,17 +1,18 @@
 <div class="px-mb-6 px-4 my-6 w-100 ">
-  <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
-  <div class="d-flex flex-column flex-lg-row">
-    <p class="huge" [innerHTML]="title"></p>
-    <webster-filters [groups]="groups" (selectedChange)="filter($event)"></webster-filters>
-
+  <div class="d-flex flex-sm-row flex-column justify-content-between align-items-sm-center w-100 w-md-80 w-xl-50">
+    <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+    <webster-filters class="mx-4" [groups]="groups" (selectedChange)="filterGroups($event)"></webster-filters>
   </div>
+  <p class="huge" [innerHTML]="title"></p>
   <div *ngFor="let articlesGroup of articlesGroups">
     <h2><span class="text-stroke">{{articlesGroup.group| slice:0:1}}</span>{{articlesGroup.group| slice:1}}</h2>
     <p class="m-4 p-2 w-lg-50 text-justify" [innerHTML]="articlesGroup.description"></p>
-    <cdk-virtual-scroll-viewport autosize orientation="horizontal" class="w-80 h-650-px m-auto">
+    <webster-virtual-scroll>
+      <cdk-virtual-scroll-viewport autosize orientation="horizontal" class="w-100 h-650-px mx-4 left-reached">
       <div class="wrapper">
         <app-card *cdkVirtualFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
       </div>
-    </cdk-virtual-scroll-viewport>
+      </cdk-virtual-scroll-viewport>
+    </webster-virtual-scroll>
   </div>
 </div>

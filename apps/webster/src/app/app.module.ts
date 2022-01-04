@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material.module';
 import { HomeModule } from './home/home.module';
 import { LegalModule } from './legal/legal.module';
 import { CalendlyModule } from '@webster/ui';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const route = [
   {
@@ -59,6 +60,7 @@ const route = [
     HttpClientModule,
     HttpClientJsonpModule,
     SharedModule,
+    ScrollingModule,
     RouterModule.forRoot(route, {
       useHash: true,
       scrollPositionRestoration: 'enabled',

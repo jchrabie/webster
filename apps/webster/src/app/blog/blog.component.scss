@@ -1,11 +1,6 @@
 @use 'libs/ui/src/partials/utils/breakpoint';
 
 :host {
-  webster-filters {
-    grid-column: 1/-1;
-    padding: 2rem 2rem 0;
-  }
-
   .huge {
     margin: 2rem;
     font-size: 2rem;
@@ -24,7 +19,7 @@
 
   h2 {
     transform: none;
-    margin: 2rem!important;
+    margin: 2rem !important;
   }
 
   .wrapper {
@@ -39,7 +34,7 @@
   }
 
   .cdk-virtual-scroll-content-wrapper .viewport {
-     display: flex;
-     flex-direction: row;
-   }
+    display: flex;
+    flex-direction: row;
+  }
 }

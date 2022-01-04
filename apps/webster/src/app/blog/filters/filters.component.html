@@ -1,14 +1,23 @@
-<h3>Filtres</h3>
-<p><small>(Vous pouvez aussi changer l'ordre)</small></p>
-<mat-selection-list cdkDropList (cdkDropListDropped)="drop($any($event))">
-  <div *ngFor="let group of groups"
-       class="d-flex align-items-center" cdkDrag>
-    <mat-icon >drag_handle</mat-icon>
-    <mat-list-option
-                     [selected]="true"
-                     (selectedChange)="selectedChange.emit({group: group.group, selected: $event})">
-      {{group.group | titlecase}}
-    </mat-list-option>
-
-  </div>
-</mat-selection-list>
+<button mat-flat-button color="primary"
+        [matMenuTriggerFor]="menu"
+        aria-label="Ouverture des filtres"
+        class="d-flex align-items-center"
+>
+  <mat-icon>filter_list</mat-icon>
+  Filtres
+</button>
+<mat-menu #menu="matMenu">
+  <mat-selection-list cdkTrapFocus cdkDropList (cdkDropListDropped)="drop($any($event))"
+                      (click)="selectionClick($event)">
+    <mat-list-item>(Vous pouvez changer l'ordre d'affichage)</mat-list-item>
+    <div *ngFor="let group of groups"
+         class="d-flex align-items-center" cdkDrag>
+      <mat-list-option
+        [selected]="true" checkboxPosition="before"
+        (selectedChange)="selectionChanged(group.group, $event)">
+        {{group.group | titlecase}}
+      </mat-list-option>
+      <mat-icon class="drag-handle" cdkDragHandle matTooltip="Changer l'ordre en glissant/déposant">drag_handle</mat-icon>
+    </div>
+  </mat-selection-list>
+</mat-menu>

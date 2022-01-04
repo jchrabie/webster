@@ -1,0 +1,39 @@
+.virtual-scroll-wrapper {
+  position: relative;
+  margin: 0 4rem;
+  overflow: hidden;
+
+  .left, .right {
+    display: none;
+  }
+
+  &:not(.left-reached) .left, &:not(.right-reached) .right {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    line-height: 650px;
+    top: 0;
+    bottom: 1rem;
+    width: 10%;
+    pointer-events: none;
+
+    mat-icon {
+      font-size: 4rem;
+    }
+  }
+
+  &:not(.right-reached) .right {
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, transparent 0%, var(--background) 100%);
+  }
+
+  &:not(.left-reached) .left {
+    left: 0;
+    justify-content: flex-start;
+    background: linear-gradient(270deg, transparent 0%, var(--background) 100%);
+  }
+}

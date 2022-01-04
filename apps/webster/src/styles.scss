@@ -20,6 +20,16 @@ body .mat-dialog-container {
   width: 87%;
 }
 
+
+body .mat-menu-panel {
+  background: var(--background-light);
+  color: white;
+
+  .mat-menu-content:not(:empty) {
+    padding: 1rem;
+  }
+}
+
 .bkg-light {
   background-color: var(--background-light);
 }
