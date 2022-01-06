@@ -23,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { LazyLoadDirective } from './directive/lazy-load.directive';
+import { AnimateDirective } from './directive/animate.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,8 +48,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AnalyticsService, SidenavService, SearchService, TagService, ThemeService],
+  providers: [
+    AnalyticsService,
+    SidenavService,
+    SearchService,
+    TagService,
+    ThemeService,
+  ],
   declarations: [
+    AnimateDirective,
     CardComponent,
     CardContentComponent,
     FilteredSearchPipe,
@@ -73,6 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     SearchbarComponent,
     LazyLoadDirective,
+    AnimateDirective,
   ],
 })
 export class SharedModule {}

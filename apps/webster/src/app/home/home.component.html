@@ -5,7 +5,7 @@
 </div>
 
 <section class="p-5 wave-dark bkg-light">
- <webster-qui-suis-je></webster-qui-suis-je>
+  <webster-qui-suis-je></webster-qui-suis-je>
 </section>
 
 <section class="p-5 wave-light">
@@ -16,7 +16,7 @@
         <mat-card-title>Angular</mat-card-title>
         <mat-icon svgIcon="a"></mat-icon>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content websterAnimate="none">
         <p>
           Développeur Angular depuis 6 ans, j'ai acquis une grande expérience au travers de mes différentes missions.
         </p>
@@ -27,7 +27,7 @@
         <mat-card-title>Intégration</mat-card-title>
         <mat-icon svgIcon="brush"></mat-icon>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content websterAnimate="none">
         <p>La notion de responsive fait partie intégrante de mes développements.</p>
       </mat-card-content>
     </mat-card>
@@ -36,7 +36,7 @@
         <mat-card-title>Accessibilité</mat-card-title>
         <mat-icon svgIcon="accessible"></mat-icon>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content websterAnimate="none">
         <p>
           L'accessibilité est pour moi un axe essentiel, il ne s'adresse pas seulement aux personnes en situations de
           handicap mais à tout le monde!
@@ -48,7 +48,7 @@
         <mat-card-title>Agilité</mat-card-title>
         <mat-icon svgIcon="scrum"></mat-icon>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content websterAnimate="none">
         <p>Agile dans l'âme, j'aime travailler dans un univers Agile, aussi bien Scrum que SaFe.</p>
       </mat-card-content>
     </mat-card>
@@ -57,12 +57,14 @@
 
 <section class="p-5 pb-6 wave-dark bkg-light">
   <h2 class="mt-5"><span class="text-stroke">I</span>ls m'ont fait confiance</h2>
-  <webster-feedbacks [feedbacks]="feedbacks"></webster-feedbacks>
+  <div websterAnimate="right">
+    <webster-feedbacks websterAnimate="right" [feedbacks]="feedbacks"></webster-feedbacks>
 
-  <div class="logo-wrapper">
-    <mat-icon svgIcon="younup"></mat-icon>
-    <mat-icon svgIcon="neo-soft"></mat-icon>
-    <mat-icon svgIcon="logistar"></mat-icon>
-    <mat-icon svgIcon="cbp"></mat-icon>
+    <div class="logo-wrapper">
+      <mat-icon svgIcon="younup"></mat-icon>
+      <mat-icon svgIcon="neo-soft"></mat-icon>
+      <mat-icon svgIcon="logistar"></mat-icon>
+      <mat-icon svgIcon="cbp"></mat-icon>
+    </div>
   </div>
 </section>

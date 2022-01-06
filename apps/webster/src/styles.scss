@@ -10,8 +10,9 @@
 @use 'stylesheets/badge';
 @use 'stylesheets/wave';
 
-mat-sidenav-content {
-  min-height: 100vh;
+
+html, body {
+  min-height: 100%;
 }
 
 body .mat-dialog-container {

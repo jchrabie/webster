@@ -62,7 +62,11 @@ mat-toolbar {
     }
 
     img {
-      width: 200px;
+      width: 130px;
+
+      @include breakpoint.breakpoint(md) {
+        width: 200px;
+      }
     }
   }
 }

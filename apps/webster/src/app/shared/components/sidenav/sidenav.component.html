@@ -10,7 +10,6 @@
       [routerLink]="link.url"
       routerLinkActive="active-link"
       [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
-      role="button"
       (click)="linkClick(link.url)"
     >
       {{ link.type | translate }}
