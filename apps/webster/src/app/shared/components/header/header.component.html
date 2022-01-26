@@ -8,25 +8,27 @@
     <img src="assets/webster.png" alt="Logo Webster">
     <span class="sr-only">Webster</span>
   </h1>
-  <div class="d-md-flex d-none w-60 justify-content-around">
-    <a
-      *ngFor="let link of linkList"
-      [routerLink]="link.url"
-      routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
-      class="text-white d-flex align-items-center"
-    >
-      {{ link.type | translate }}
-    </a>
-  </div>
+  <ul class="d-md-flex d-none w-60 justify-content-around m-0 p-0">
+    <li *ngFor="let link of linkList">
+      <a
+        [routerLink]="link.url"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
+        class="text-white d-flex align-items-center"
+      >
+        {{ link.type | translate }}
+      </a>
+
+    </li>
+  </ul>
   <div class="social d-flex gap-3">
     <a href="https://www.linkedin.com/in/joel-chrabie/"
        class="text-white d-flex align-items-center" target="_blank">
-      <mat-icon svgIcon="linkedin"></mat-icon>
+      <mat-icon aria-hidden="true" svgIcon="linkedin"></mat-icon>
     </a>
     <a href="https://www.malt.fr/profile/joelchrabie"
        class="text-white d-flex align-items-center" target="_blank">
-      <mat-icon svgIcon="malte"></mat-icon>
+      <mat-icon aria-hidden="true" svgIcon="malte"></mat-icon>
     </a>
   </div>
 </mat-toolbar>
