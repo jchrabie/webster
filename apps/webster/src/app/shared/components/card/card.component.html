@@ -1,5 +1,6 @@
 <mat-card *ngIf="card">
-  <img mat-card-image appLazyLoad [src]="card.imagePath" [alt]="card.imageAlt" />
+  <img mat-card-image appLazyLoad [src]="card.imagePath"
+       [alt]="card.imageAlt ?? ''" />
   <mat-card-header *ngIf="card.type; else rawHeader">
     <mat-card-title>{{ card.type + '.title' | translate }}</mat-card-title>
     <mat-card-subtitle>{{ card.type + '.subtitle' | translate }}</mat-card-subtitle>
@@ -27,7 +28,7 @@
   </button>
   <ng-template #noLink>
     <button mat-fab color="primary" class="card-button" [ngClass]="{ 'no-content': !card.content && !card.type }">
-      <mat-icon *ngIf="card.customIcon; else materialIcon" [svgIcon]="card.icon"></mat-icon>
+      <mat-icon aria-hidden="true" *ngIf="card.customIcon; else materialIcon" [svgIcon]="card.icon"></mat-icon>
       <ng-template #materialIcon>
         <mat-icon>{{ card.icon }}</mat-icon>
       </ng-template>
