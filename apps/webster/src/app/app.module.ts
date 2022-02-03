@@ -50,7 +50,7 @@ const route = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     BlogModule,
     MaterialModule,
     CalendlyModule,

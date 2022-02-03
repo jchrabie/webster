@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -22,6 +28,10 @@ import { TagService } from './shared/service/tag.service';
 export class AppComponent implements OnInit {
   public scroll: number = 0;
   isLoading = true;
+
+  @ViewChild('header') header: ElementRef;
+  @ViewChild('main') main: ElementRef;
+  @ViewChild('footer') footer: ElementRef;
 
   constructor(
     public sidenavService: SidenavService,
@@ -126,5 +136,14 @@ export class AppComponent implements OnInit {
 
   onActivate() {
     window.scroll(0, 0);
+  }
+
+  goTo(fragment: string, event: Event) {
+    event.stopPropagation();
+    event.preventDefault();
+    // @ts-ignore
+    (this[fragment] as ElementRef)?.nativeElement.focus();
+    // @ts-ignore
+    (this[fragment] as ElementRef)?.nativeElement.scrollIntoView();
   }
 }

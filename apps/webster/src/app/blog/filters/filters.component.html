@@ -7,17 +7,20 @@
   Filtres
 </button>
 <mat-menu #menu="matMenu">
-  <mat-selection-list cdkTrapFocus cdkDropList (cdkDropListDropped)="drop($any($event))"
-                      (click)="selectionClick($event)">
-    <mat-list-item>(Vous pouvez changer l'ordre d'affichage)</mat-list-item>
-    <div *ngFor="let group of groups"
-         class="d-flex align-items-center" cdkDrag>
+  <mat-selection-list cdkDropList (cdkDropListDropped)="drop($any($event))"
+                      (click)="selectionClick($event)"
+  >
+    <mat-list-item tabindex="0">(Vous pouvez changer l'ordre d'affichage)</mat-list-item>
+
+    <button mat-menu-item *ngFor="let group of groups"
+            class="d-flex align-items-center justify-content-between" cdkDrag>
       <mat-list-option
         [selected]="true" checkboxPosition="before"
         (selectedChange)="selectionChanged(group.group, $event)">
         {{group.group | titlecase}}
       </mat-list-option>
-      <mat-icon class="drag-handle" cdkDragHandle matTooltip="Changer l'ordre en glissant/déposant">drag_handle</mat-icon>
-    </div>
+      <mat-icon class="drag-handle" cdkDragHandle matTooltip="Changer l'ordre en glissant/déposant">drag_handle
+      </mat-icon>
+    </button>
   </mat-selection-list>
 </mat-menu>

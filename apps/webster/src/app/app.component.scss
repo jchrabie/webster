@@ -25,3 +25,21 @@ main {
   background-color: #733fb1 !important;
 }
 
+.evitement {
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: inline-block;
+    color: #555;
+    background: #fff;
+    padding: .5em;
+    position: absolute;
+    left: -99999rem;
+    z-index: 100;
+
+    &:focus {
+      left: 0;
+    }
+  }
+}

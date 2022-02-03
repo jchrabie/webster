@@ -1,7 +1,7 @@
 <ng-container *ngIf="inline; else absoluteTpl">
-  <button mat-flat-button color="primary"
+  <button mat-flat-button
           aria-label="Ouverture d'une boite de dialogue pour prendre rendez-vous"
-          [attr.aria-expanded]="isExpanded" [color]="color"
+          [color]="color"
           (click)="openDialog()">
     <mat-icon>event</mat-icon>
     Prendre rendez-vous
@@ -12,7 +12,6 @@
   <button mat-fab [color]="color"
           matTooltip="Prendre rendez-vous"
           aria-label="Ouverture d'une boite de dialogue pour prendre rendez-vous"
-          [attr.aria-expanded]="isExpanded"
           (click)="openDialog()">
     <mat-icon aria-label="Prendre rdv" role="img">event</mat-icon>
   </button>

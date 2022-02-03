@@ -1,4 +1,4 @@
-<mat-toolbar color="basic">
+<mat-toolbar color="basic" >
   <mat-toolbar-row>
     <div class="row">
       <div class="col-md-6 col-sm-12">
@@ -8,7 +8,7 @@
             <br>
             Passionné par les technologies liées au Web, je mets mes compétences au service de vos besoins dans divers domaines.
           </p>
-        <button mat-flat-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi</button>
+        <button id="footer" mat-flat-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi</button>
         <hr />
       </div>
       <mat-divider [vertical]="true"></mat-divider>
@@ -37,7 +37,7 @@
         <mat-icon id="device"></mat-icon>
         <span>Vous êtes sur la version </span>
       </div>
-      <a [routerLink]="['/mention-legales']">Mentions légales</a>
+      <a class="text-white text-with-hover" [routerLink]="['/mention-legales']">Mentions légales</a>
       <div class="socials">
       </div>
     </div>

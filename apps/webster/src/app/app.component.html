@@ -1,3 +1,14 @@
+<ul class="evitement">
+  <li>
+    <a href="#" (click)="goTo('header', $event)">Aller au contenu</a>
+  </li>
+  <li>
+    <a href="#" (click)="goTo('main', $event)">Aller au menu</a>
+  </li>
+  <li>
+    <a href="#" (click)="goTo('footer', $event)">Aller au pied de page</a>
+  </li>
+</ul>
 <div class="wrapper">
   <mat-sidenav-container>
     <mat-sidenav
@@ -9,15 +20,15 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="mat-drawer-content">
-      <header>
+      <header #header tabindex="-1">
         <app-header></app-header>
       </header>
 
-      <main>
+      <main #main tabindex="-1">
         <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
         <router-outlet></router-outlet>
       </main>
-      <footer>
+      <footer #footer tabindex="-1">
         <app-footer></app-footer>
       </footer>
     </mat-sidenav-content>
