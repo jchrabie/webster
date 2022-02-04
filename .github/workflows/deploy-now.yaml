@@ -46,21 +46,3 @@ jobs:
           remote-host: ${{ steps.project.outputs.remote-host }}
           service-host: api-eu.ionos.space
           storage-quota: ${{ steps.project.outputs.storage-quota }}
-      - name: Build project
-        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        run: npm run build:celine
-        env:
-          SITE_URL: celine-naturopathe.fr
-          CI: true
-      - name: Deploy build
-        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        uses: ionos-deploy-now/deploy-to-ionos-action@v1
-        with:
-          api-key: ${{ secrets.IONOS_API_KEY }}
-          bootstrap-deploy: ${{ steps.project.outputs.bootstrap-deploy }}
-          branch-id: ${{ steps.project.outputs.branch-id }}
-          dist-folder: dist/apps/celine-naturopathie
-          project: 90683953
-          remote-host: ${{ steps.project.outputs.remote-host }}
-          service-host: api-eu.ionos.space
-          storage-quota: ${{ steps.project.outputs.storage-quota }}
