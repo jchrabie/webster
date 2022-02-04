@@ -2,25 +2,28 @@
         [matMenuTriggerFor]="menu"
         aria-label="Ouverture des filtres"
         class="d-flex align-items-center"
+        aria-controls="mat-menu-panel-0"
 >
   <mat-icon>filter_list</mat-icon>
   Filtres
 </button>
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" id="filter-menu">
   <mat-selection-list cdkDropList (cdkDropListDropped)="drop($any($event))"
                       (click)="selectionClick($event)"
+                      aria-label="filtre"
   >
-    <mat-list-item tabindex="0">(Vous pouvez changer l'ordre d'affichage)</mat-list-item>
+    <mat-list-item>(Vous pouvez changer l'ordre d'affichage)</mat-list-item>
 
-    <button mat-menu-item *ngFor="let group of groups"
+    <div mat-menu-item *ngFor="let group of groups"
             class="d-flex align-items-center justify-content-between" cdkDrag>
       <mat-list-option
         [selected]="true" checkboxPosition="before"
+        [attr.aria-label]="group.group"
         (selectedChange)="selectionChanged(group.group, $event)">
         {{group.group | titlecase}}
       </mat-list-option>
       <mat-icon class="drag-handle" cdkDragHandle matTooltip="Changer l'ordre en glissant/déposant">drag_handle
       </mat-icon>
-    </button>
+    </div>
   </mat-selection-list>
 </mat-menu>

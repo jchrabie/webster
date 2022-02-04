@@ -1,5 +1,6 @@
 @use 'styles/text';
 @use 'libs/ui/src/design-system';
+@use 'libs/ui/src/partials/utils/breakpoint';
 
 .active {
   font-weight: 700 !important;
@@ -14,4 +15,17 @@ body {
     $transparent-amount: 0.5,
     $is-dark-mode: false
   );
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url(/assets/img/fond-celine-mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  @include breakpoint.breakpoint(lg) {
+    background-image: url(/assets/img/fond-celine.png);
+    background-size: cover;
+  }
 }

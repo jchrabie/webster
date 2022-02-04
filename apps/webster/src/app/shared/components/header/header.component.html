@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <div id="menu" class="d-block d-md-none">
-    <button mat-icon-button (click)="sidenavService.toggle()" matTooltip="Menu" matTooltipPosition="below">
+    <button mat-icon-button aria-label="Menu" (click)="sidenavService.toggle()" matTooltip="Menu" matTooltipPosition="below">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
@@ -8,21 +8,22 @@
     <img src="assets/webster.png" alt="Logo Webster">
     <span class="sr-only" lang="en">Webster - think the web different</span>
   </h1>
-  <ul class="d-md-flex d-none w-60 justify-content-around m-0 p-0">
-    <li *ngFor="let link of linkList">
-      <a
-        [routerLink]="link.url"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
-        #headerRouterLink="routerLinkActive"
-        [attr.aria-current]="headerRouterLink.isActive ? 'Page': undefined"
-        class="text-white d-flex align-items-center"
-      >
-        {{ link.type | translate }}
-      </a>
-
-    </li>
-  </ul>
+  <nav role="navigation" class="w-60" aria-label="navigation principale">
+    <ul class="d-md-flex d-none justify-content-around m-0 p-0">
+      <li *ngFor="let link of linkList">
+        <a
+          [routerLink]="link.url"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: link.type !== 'Blog' }"
+          #headerRouterLink="routerLinkActive"
+          [attr.aria-current]="headerRouterLink.isActive ? 'Page': undefined"
+          class="text-white d-flex align-items-center"
+        >
+          {{ link.type | translate }}
+        </a>
+      </li>
+    </ul>
+  </nav>
   <div class="social d-flex gap-3">
     <a href="https://www.linkedin.com/in/joel-chrabie/"
        class="text-white d-flex align-items-center" target="_blank">
@@ -30,7 +31,7 @@
     </a>
     <a href="https://www.malt.fr/profile/joelchrabie"
        class="text-white d-flex align-items-center" target="_blank">
-      <mat-icon aria-label="malte" svgIcon="malte" role="img"  aria-hidden="false"></mat-icon>
+      <mat-icon aria-label="malte" svgIcon="malte" role="img" aria-hidden="false"></mat-icon>
     </a>
   </div>
 </mat-toolbar>

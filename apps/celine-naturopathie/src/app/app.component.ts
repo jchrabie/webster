@@ -23,7 +23,16 @@ export class AppComponent implements AfterViewInit, OnInit {
     private router: Router,
     private tagService: TagService
   ) {
-    const icons: string[] = ['irido', 'naturo', 'logo', 'reflexo', 'webster'];
+    const icons: string[] = [
+      'facebook',
+      'instagram',
+      'irido',
+      'logo',
+      'naturo',
+      'phone',
+      'reflexo',
+      'webster',
+    ];
 
     icons.forEach((icon) =>
       this.matIconRegistry.addSvgIcon(

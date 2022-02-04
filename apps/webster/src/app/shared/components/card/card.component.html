@@ -19,6 +19,7 @@
     *ngIf="card.iconLink; else noLink"
     [routerLink]="['/' + card.baseLink]"
     [queryParams]="{ frag: card.iconLink }"
+    [attr.aria-label]="card.icon"
     disabled
   >
     <mat-icon *ngIf="card.customIcon; else materialIcon" [svgIcon]="card.icon"></mat-icon>
