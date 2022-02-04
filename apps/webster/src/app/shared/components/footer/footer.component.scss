@@ -25,12 +25,15 @@ mat-toolbar {
       .mat-mini-fab {
         margin: 0 1em;
       }
+  }
 
-      a:-webkit-any-link {
-        color: var(--primary-light50-color);
-        cursor: pointer;
-        text-decoration: none;
-      }
+    a {
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   }
 }

@@ -1,31 +1,46 @@
-<mat-toolbar color="basic" >
+<mat-toolbar color="basic">
   <mat-toolbar-row>
     <div class="row">
       <div class="col-md-6 col-sm-12">
-          <h2>Développeur Freelance sur Nantes</h2>
-          <p class="mb-3">
-            Développeur Web front freelance, je suis à votre disposition pour répondre à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.
-            <br>
-            Passionné par les technologies liées au Web, je mets mes compétences au service de vos besoins dans divers domaines.
-          </p>
-        <button id="footer" mat-flat-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi</button>
-        <hr />
+        <h2>Développeur Freelance sur Nantes</h2>
+        <p class="mb-3">
+          Développeur Web front freelance, je suis à votre disposition pour répondre à tout type de projets de création
+          de sites internet, de développement spécifique ou d'applications web.
+          <br>
+          Passionné par les technologies liées au Web, je mets mes compétences au service de vos besoins dans divers
+          domaines.
+        </p>
+        <button id="footer" mat-flat-button [routerLink]="['/contact']" color="primary" class="center">Contactez moi
+        </button>
+        <hr/>
       </div>
       <mat-divider [vertical]="true"></mat-divider>
       <div class="col-md-3 col-sm-6">
         <mat-list role="list">
-          <div mat-subheader>Quick Links</div>
-          <mat-list-item role="listitem" [routerLink]="['/']">Accueil</mat-list-item>
-          <mat-list-item role="listitem" [routerLink]="['/contact']">Contact</mat-list-item>
-          <mat-list-item role="listitem" [routerLink]="['/tips']">tips</mat-list-item>
+          <p mat-subheader>Quick Links</p>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/']">Accueil</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/contact']">Contact</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/tips']">tips</a>
+          </mat-list-item>
         </mat-list>
       </div>
       <div class="col-md-3 col-sm-6">
         <mat-list role="list">
-          <div mat-subheader>Derniers Articles</div>
-          <mat-list-item role="listitem" [routerLink]="['/competences/cbp']">CBP</mat-list-item>
-          <mat-list-item role="listitem" [routerLink]="['/competences/dsia']">DSIA</mat-list-item>
-          <mat-list-item role="listitem" [routerLink]="['/competences/freelance']">Freelance</mat-list-item>
+          <p mat-subheader>Derniers Articles</p>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/competences/cbp']">CBP</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/competences/cbp']">DSIA</a>
+          </mat-list-item>
+          <mat-list-item role="listitem">
+            <a class="text-white" [routerLink]="['/competences/cbp']">Freelance</a>
+          </mat-list-item>
         </mat-list>
       </div>
     </div>
@@ -34,10 +49,10 @@
   <mat-toolbar-row class="last-row">
     <div class="row space-between">
       <div id="devices">
-        <mat-icon id="device"></mat-icon>
+        <mat-icon id="device" role="presentation"></mat-icon>
         <span>Vous êtes sur la version </span>
       </div>
-      <a class="text-white text-with-hover" [routerLink]="['/mention-legales']">Mentions légales</a>
+      <a class="text-white" [routerLink]="['/mention-legales']">Mentions légales</a>
       <div class="socials">
       </div>
     </div>
