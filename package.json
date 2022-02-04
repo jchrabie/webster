@@ -8,8 +8,9 @@
     "start": "nx serve",
     "start:celine": "nx serve --project=celine-naturopathie",
     "start:webster": "nx serve --project=webster",
-    "build": "nx build --project=webster",
+    "build": "nx build --project=celine-naturopathie",
     "build:webster": "nx build --project=webster",
+    "build:celine": "nx build --project=celine-naturopathie",
     "test": "nx test"
   },
   "private": true,
