@@ -60,7 +60,7 @@ jobs:
           bootstrap-deploy: ${{ steps.project.outputs.bootstrap-deploy }}
           branch-id: ${{ steps.project.outputs.branch-id }}
           dist-folder: dist/apps/celine-naturopathie
-          project: ${{ secrets.IONOS_PROJECT_ID }}
+          project: 90683953
           remote-host: ${{ steps.project.outputs.remote-host }}
           service-host: api-eu.ionos.space
           storage-quota: ${{ steps.project.outputs.storage-quota }}
