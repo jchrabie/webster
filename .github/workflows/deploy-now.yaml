@@ -36,7 +36,7 @@ jobs:
           CI: true
       - name: Build project celine
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        run: npm run build:celine-naturopathie
+        run: npm run build:celine
         env:
           SITE_URL: https://celine-naturopathe.fr
           CI: true
