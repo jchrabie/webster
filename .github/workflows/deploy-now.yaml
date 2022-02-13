@@ -34,12 +34,6 @@ jobs:
         env:
           SITE_URL: ${{ steps.project.outputs.site-url }}
           CI: true
-      - name: Build project celine
-        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        run: npm run build:celine
-        env:
-          SITE_URL: https://celine-naturopathe.fr
-          CI: true
       - name: Deploy build
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
         uses: ionos-deploy-now/deploy-to-ionos-action@v1
@@ -48,18 +42,6 @@ jobs:
           bootstrap-deploy: ${{ steps.project.outputs.bootstrap-deploy }}
           branch-id: ${{ steps.project.outputs.branch-id }}
           dist-folder: dist/apps/webster
-          project: ${{ secrets.IONOS_PROJECT_ID }}
-          remote-host: ${{ steps.project.outputs.remote-host }}
-          service-host: api-eu.ionos.space
-          storage-quota: ${{ steps.project.outputs.storage-quota }}
-      - name: Deploy build celine
-        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        uses: ionos-deploy-now/deploy-to-ionos-action@v1
-        with:
-          api-key: ${{ secrets.IONOS_API_KEY }}
-          bootstrap-deploy: ${{ steps.project.outputs.bootstrap-deploy }}
-          branch-id: ${{ steps.project.outputs.branch-id }}
-          dist-folder: dist/apps/celine-naturopathie
           project: ${{ secrets.IONOS_PROJECT_ID }}
           remote-host: ${{ steps.project.outputs.remote-host }}
           service-host: api-eu.ionos.space
