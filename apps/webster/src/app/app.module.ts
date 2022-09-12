@@ -2,6 +2,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 import { AppComponent } from './app.component';
 
@@ -57,6 +58,7 @@ const route = [
     ContactModule,
     HomeModule,
     LegalModule,
+    HighlightModule,
     HttpClientModule,
     HttpClientJsonpModule,
     SharedModule,
@@ -67,7 +69,23 @@ const route = [
     }),
   ],
   exports: [RouterModule],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }, Title],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
+    Title,
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          javascript: () => import('highlight.js/lib/languages/javascript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          scss: () => import('highlight.js/lib/languages/scss'),
+        },
+        themePath: 'path-to-theme.css', // Optional, and useful if you want to change the theme dynamically
+      },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

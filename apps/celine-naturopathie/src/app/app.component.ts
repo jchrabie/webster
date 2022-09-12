@@ -29,6 +29,7 @@ export class AppComponent implements AfterViewInit, OnInit {
       'irido',
       'logo',
       'naturo',
+      'pin',
       'phone',
       'reflexo',
       'webster',
