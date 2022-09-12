@@ -15,6 +15,11 @@
     }
   }
 
+  h3 {
+    font-weight: bold;
+    font-size: 1.35rem;
+  }
+
   .content {
     padding: 20px;
   }
@@ -57,7 +62,8 @@
       background-color: #1e1e1e;
       font-family: Consolas;
       color: white;
-      padding: 1em;
+      padding: 0;
+      margin: 0;
       border-radius: 6px;
       white-space: pre-wrap;
       transition: all 1s;

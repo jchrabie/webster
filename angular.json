@@ -249,6 +249,9 @@
               "apps/webster/src/favicon.ico",
               "apps/webster/src/assets"
             ],
+            "allowedCommonJsDependencies": [
+              "highlight.js"
+            ],
             "styles": [
               "apps/webster/src/styles.scss"
             ],

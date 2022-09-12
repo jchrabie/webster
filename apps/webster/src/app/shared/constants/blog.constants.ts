@@ -35,10 +35,47 @@ export const tipsGroups: ArticlesGroup[] = [
         iconLink: 'accessibilité',
         projects: [
           {
-            title: 'En cours',
-            id: 'html',
-            date: 'Bientôt',
-            content: '<p>Contenu en cours de réalisation</p>',
+            title: `Qu'est ce qu'un screen reader`,
+            id: 'kesako',
+            content: `<p><span lang="en"><b>Screen reader</b></span> ou <b>Lecteur d'écran</b> est un logiciel qui permet de lire à voix haute le contenu d'une page ou de le retranscrire sur un afficheur braille.</p>
+<p>Il est destiné aux personnes aveugles ou fortement malvoyantes.</p>
+`,
+          },
+          {
+            title: `Pourquoi cacher?`,
+            id: 'why',
+            content: `<p>Dans certains cas, il peut être utile de masquer des éléments à l’écran, mais faire en sorte qu’ils soient quand même vocalisés par les lecteurs d’écran. Pour cela, on utilisera une classe <abbr>CSS</abbr> de «&nbsp;masquage accessible&nbsp;».</p>
+<p>Masquer un élément de manière accessible permet de faire disparaître un élément à l’écran, tout en le conservant pour les utilisateurs de lecteurs d’écran. Techniquement, la solution consiste à appliquer une classe <abbr>CSS</abbr> sur l’élément qui ne doit pas être visible.</p>
+`,
+          },
+          {
+            title: `Le masquage accessible`,
+            id: 'why',
+            content: `<p>Il existe plusieurs solutions pour réaliser ce type de classe <abbr>CSS</abbr>&nbsp;:</p>
+<ul>
+      <li>Donner une taille nulle à l’élément.</li>
+      <li>Positionner l’élément en dehors de l’écran (<code>left: -1000px; top: -1000px;</code>).</li>
+      <li>Utiliser les propriétés <code>text-indent</code> ou <code>clip</code>.</li>
+      <li>…</li>
+    </ul>
+    <p>L’idéal étant de mixer les solutions pour garantir le bon fonctionnement sur l’ensemble des navigateurs.</p>
+    <p><a href="http://getbootstrap.com/">Bootstrap</a> utilise d'ailleurs une classe de masquage dont voici le code:</p>
+    <pre>
+      <code langage="css" [lineNumbers]="true">
+        <span class="hljs-keyword">.sr-only</span> {
+          <span class="hljs-attribute">position</span>: absolute;
+          <span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
+          <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
+          <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+          <span class="hljs-attribute">margin</span>: -<span class="hljs-number">1px</span>;
+          <span class="hljs-attribute">overflow</span>: hidden;
+          <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+          <span class="hljs-attribute">white-space</span>: nowrap; <span class="hljs-comment">/* added line */</span>
+          <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+        }
+      </code>
+    </pre>
+`,
           },
         ],
         other: [

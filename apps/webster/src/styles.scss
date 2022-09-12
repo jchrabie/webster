@@ -9,6 +9,7 @@
 @use 'stylesheets/theme';
 @use 'stylesheets/badge';
 @use 'stylesheets/wave';
+@import '~highlight.js/styles/a11y-dark.css';
 
 
 html, body {
