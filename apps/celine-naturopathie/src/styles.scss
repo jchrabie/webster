@@ -8,8 +8,8 @@
 
 body {
   @include design-system.theme(
-    $primary: #507164,
-    $accent: #c59b3c,
+    $primary: #4a8c72,
+    $accent: #D6B056,
     $warning: #ebc86e,
     $base-color: #222,
     $transparent-amount: 0.5,
@@ -17,15 +17,4 @@ body {
   );
   height: 100vh;
   width: 100vw;
-
-  background-image: url(/assets/img/fond-celine-mobile.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-
-  @include breakpoint.breakpoint(lg) {
-    background-image: url(/assets/img/fond-celine.png);
-    background-size: cover;
-  }
 }

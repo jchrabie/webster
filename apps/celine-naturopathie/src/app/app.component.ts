@@ -27,11 +27,13 @@ export class AppComponent implements AfterViewInit, OnInit {
       'facebook',
       'instagram',
       'irido',
+      'jaune',
       'logo',
       'naturo',
       'pin',
       'phone',
       'reflexo',
+      'vert',
       'webster',
     ];
 
