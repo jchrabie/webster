@@ -1,3 +1,5 @@
+@use 'libs/ui/src/partials/utils/breakpoint';
+
 main {
   width: 100vw;
   height: 100vh;
@@ -7,10 +9,18 @@ main {
   .vert {
     position: absolute;
     overflow: hidden;
-    width: 1000px;
-    height: 1000px;
-    top: -200px;
-    left: -300px;
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    left: -150px;
+    z-index: -1;
+
+    @include breakpoint.breakpoint(md) {
+      width: 1000px;
+      height: 1000px;
+      top: -200px;
+      left: -300px;
+    }
   }
 
   .jaune {
@@ -20,5 +30,13 @@ main {
     height: 1000px;
     top: 400px;
     right: -250px;
+    z-index: -1;
+
+    @include breakpoint.breakpoint(md) {
+      width: 1000px;
+      height: 1000px;
+      top: 200px;
+      right: -120px;
+    }
   }
 }
