@@ -351,7 +351,7 @@ export const tipsGroups: ArticlesGroup[] = [
 export const articlesGroups: ArticlesGroup[] = [
   {
     group: 'experience',
-    description: 'Expériences',
+    description: '',
     breadcrumbs: [
       { name: 'Compétences', url: '/competences', active: false },
       {
@@ -848,7 +848,7 @@ export const articlesGroups: ArticlesGroup[] = [
   },
   {
     group: 'concept',
-    description: 'Concepts',
+    description: '',
     breadcrumbs: [
       { name: 'Compétences', url: '/competences', active: false },
       {
@@ -1173,6 +1173,7 @@ export const articlesGroups: ArticlesGroup[] = [
                     </ul>
                     <p>L'accessibilité était au cœur de nos préocupations, aussi bien à la conception technico/fonctionnelles, durant les live design ou je représentait la partie technique, que pendant les dev</p>
                     <p>Aujourd'hui encore, et c'est notamment le cas aussi sur ce site web, j'essaye de vraiment rendre les sites sur lesquels je travaille, le plus accessible possible en intégrant des librairies qui sont elles aussi accessibles, comme par exemple Angular Material.</p>
+                    <p>Pour parfaire mes connaissances aquises lors de mes différentes mission, j'ai été certifier en 2022 ""</p>
                     <p>Il est nécessaire et même indispensable que tout le monde puisse accéder à Internet quel que soit la langue, le pays, les conditions, l'age, ...!</p>
                 `,
           },
