@@ -377,7 +377,7 @@ export const articlesGroups: ArticlesGroup[] = [
         content: `Premier contrat en direct, j'ai travaillé pendant près de 10 mois chez Zeenea.`,
         icon: 'work',
         iconLink: 'experience',
-        imagePath: 'assets/cbp.png',
+        imagePath: 'assets/zeenea.jpg',
         dates: 'Mars 2022 - Décembre 2022',
         projects: [
           {
