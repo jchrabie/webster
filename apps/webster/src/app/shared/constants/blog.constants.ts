@@ -363,6 +363,75 @@ export const articlesGroups: ArticlesGroup[] = [
     ],
     articles: [
       {
+        template: 'zeenea',
+        group: 'experience',
+        breadcrumb: {
+          name: 'Zeenea',
+          url: '/competences/zeenea',
+          active: true,
+        },
+        title: 'Zeenea',
+        baseLink: 'competences',
+        showMore: true,
+        subtitle: 'Développeur Angular Sénior',
+        content: `Premier contrat en direct, j'ai travaillé pendant près de 10 mois chez Zeenea.`,
+        icon: 'work',
+        iconLink: 'experience',
+        imagePath: 'assets/cbp.png',
+        dates: 'Mars 2022 - Décembre 2022',
+        projects: [
+          {
+            title: 'Le context',
+            id: 'context',
+            content: `<p>Zeenea est une plateforme de data discovery conçue pour que chacun puisse trouver, faire confiance et libérer la valeur des données d'entreprise. La plateforme cloud propose deux expériences utilisateur:</p>
+                      <ul>
+                        <li><strong>Zeenea Studio</strong> : application conçue pour les experts data qui souhaitent gagner du temps dans la gestion, la documentation et la gouvernance des données avec une automatisation maximale.</li>
+                        <li><strong>Zeenea Explorer</strong> : permet aux utilisateurs métier de gagner en productivité en trouvant les actifs de données dont ils ont besoin dans toutes les informations de l'entreprise.</li>
+                      </ul>
+                      </p>`,
+          },
+          {
+            title: 'Zeenea explorer et studio',
+            id: 'explorer-studio',
+            date: '10 mois',
+            content: `<p>Méthodologie Agile Scrum de deux équipes avec pour chacune : 1 testeur, 1 scrum master, 1 PO, et 10 développeurs.</p>
+                      <p>Ma mission chez Zeenea consistait à faire :</p>
+                      <ul>
+                        <li>L’estimation des nouvelles fonctionnalités.</li>
+                        <li>Le développement front Angular (Run &amp; Build).</li>
+                        <li>L’intégration des maquettes sous Figma.</li>
+                        <li>La rédaction de tests unitaires Jest.</li>
+                        <li>La rédaction de tests end2end Cypress</li>
+                        <li>La mise en place d’un Design system</li>
+                        <li> L’accessibilité (A11y).</li>
+                      </ul>
+                      <p>De plus, j’étais en charge de faire la passerelle entre les devs et le design.</p>
+                `,
+            skills: [
+              'Angular',
+              'A11y',
+              'design-system',
+              'TypeScript',
+              'Jest',
+              'Cypress',
+              'HTML',
+              'Sass',
+              'Figma',
+            ],
+          },
+        ],
+        other: [
+          {
+            title: 'DSIA',
+            url: '/competences/dsia',
+          },
+          {
+            title: 'Free-lance',
+            url: '/competences/freelance',
+          },
+        ],
+      },
+      {
         template: 'cbp',
         group: 'experience',
         breadcrumb: { name: 'CBP', url: '/competences/cbp', active: true },
