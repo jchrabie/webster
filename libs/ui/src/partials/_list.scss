@@ -1,6 +1,7 @@
 
-@use 'libs/ui/src/partials/utils/mixins';
-@use 'libs/ui/src/partials/utils/functions';
+@use 'utils/breakpoint';
+@use 'utils/functions';
+@use 'utils/mixins';
 @use 'variables';
 
 %bullet {
@@ -60,7 +61,7 @@ ul:not(.list-unstyled) {
     .list#{$infix}-horizontal {
       display: grid;
       gap: var(--spacer-5);
-      grid-template-columns: repeat(3, auto);
+      grid-template-columns: repeat(2, auto);
     }
   }
 }

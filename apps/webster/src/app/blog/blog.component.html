@@ -5,14 +5,9 @@
   </div>
   <p class="huge" [innerHTML]="title"></p>
   <div *ngFor="let articlesGroup of articlesGroups">
-    <h2 ><span class="text-stroke">{{articlesGroup.group| slice:0:1}}</span>{{articlesGroup.group| slice:1}}</h2>
-    <p websterAnimate="right" class="m-4 p-2 w-lg-50 text-justify text-huge" [innerHTML]="articlesGroup.description"></p>
-    <webster-virtual-scroll>
-      <cdk-virtual-scroll-viewport autosize orientation="horizontal" class="w-100 h-650-px mx-4 left-reached">
-      <div class="wrapper">
-        <app-card *cdkVirtualFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
-      </div>
-      </cdk-virtual-scroll-viewport>
-    </webster-virtual-scroll>
+    <h2><span class="text-stroke">{{articlesGroup.group| slice:0:1}}</span>{{articlesGroup.group| slice:1}}</h2>
+    <div class="wrapper">
+      <app-card *ngFor="let article of articlesGroup.articles" [cardData]="article"></app-card>
+    </div>
   </div>
 </div>

@@ -10,8 +10,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { delay, filter, map } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 import { SidenavService } from './shared/service/sidenav.service';
 import { getHeaderByType, Header } from './shared/constants/header.constants';
@@ -122,6 +121,7 @@ export class AppComponent implements OnInit {
       `webster`,
       `wave`,
       `younup`,
+      `zeenea`,
     ];
 
     icons.forEach((icon) =>

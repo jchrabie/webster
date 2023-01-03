@@ -23,18 +23,25 @@
   }
 
   .wrapper {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     align-items: center;
-    gap: 4rem;
+    margin: 0 2rem;
+    gap: 2rem;
+
+    @include breakpoint.breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint.breakpoint(lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include breakpoint.breakpoint(xl) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     app-card {
       place-self: center center;
     }
-  }
-
-  .cdk-virtual-scroll-content-wrapper .viewport {
-    display: flex;
-    flex-direction: row;
   }
 }

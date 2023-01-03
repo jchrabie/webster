@@ -108,7 +108,7 @@ h1 mat-icon {
   }
 
   @include breakpoint.breakpoint(xl) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 2rem;
   }
 
@@ -117,6 +117,7 @@ h1 mat-icon {
     height: 120px;
     transition: all .25s ease-in-out;
     margin: 2rem;
+    place-self: center;
 
     &:not(:hover) {
       filter: grayscale(100%);

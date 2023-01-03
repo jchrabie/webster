@@ -16,13 +16,13 @@ ul {
   li {
     position: relative;
 
-    &:not(:first-of-type)::before {
+    &:nth-child(even)::before {
       content: '';
       position: absolute;
       background: #ffffff22;
       height: 2px;
-      left: 1rem;
-      right: 1rem;
+      left: 0;
+      right: 0;
 
       @include breakpoint.breakpoint(lg) {
         top: 1rem;

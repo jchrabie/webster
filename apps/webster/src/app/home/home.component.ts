@@ -16,6 +16,26 @@ export class HomeComponent implements OnInit {
   feedbacks: Feedback[] = [
     {
       comment:
+        'Joël is a great front end developer with great technical skills which include UX skills and of course user accessibility best practices. Thanks for your job at Zeenea !!',
+      sender: {
+        name: 'Nicolas Boisnic',
+        img: 'assets/boisnic.jpeg',
+        role: 'Senior Product Manager chez Zeenea',
+        linkedIn: 'https://www.linkedin.com/in/nicolasboisnic/',
+      },
+    },
+    {
+      comment:
+        'Je recommande sans hésiter Joël pour son expertise Angular et ses compétences en CSS. Cela a été un réel plaisir de travailler avec lui.',
+      sender: {
+        name: 'Guillaume Deleplace',
+        img: 'assets/deleplace.jpeg',
+        role: 'Scrum Master chez Cbp',
+        linkedIn: 'https://www.linkedin.com/in/gdeleplace/',
+      },
+    },
+    {
+      comment:
         'Une vraie compétence en dev front, que ce soit pour mettre en œuvre une architecture Angular modulaire et bien pensée que pour évangéliser l’équipe sur la sémantique html et les bonnes pratiques css. Ravi de t’avoir eu dans l’équipe Joël.',
       sender: {
         name: 'Reynald Jégo',
