@@ -422,12 +422,12 @@ export const articlesGroups: ArticlesGroup[] = [
         ],
         other: [
           {
-            title: 'DSIA',
-            url: '/competences/dsia',
+            title: 'CBP',
+            url: '/competences/cbp',
           },
           {
-            title: 'Free-lance',
-            url: '/competences/freelance',
+            title: 'DSIA',
+            url: '/competences/dsia',
           },
         ],
       },
@@ -443,7 +443,7 @@ export const articlesGroups: ArticlesGroup[] = [
         icon: 'work',
         iconLink: 'experience',
         imagePath: 'assets/cbp.png',
-        dates: 'Octobre 2020 - Novembre 2020',
+        dates: 'Octobre 2020 - Décembre 2021',
         projects: [
           {
             title: 'Espace Adhésion',
@@ -487,8 +487,8 @@ export const articlesGroups: ArticlesGroup[] = [
             url: '/competences/dsia',
           },
           {
-            title: 'Free-lance',
-            url: '/competences/freelance',
+            title: 'Zeenea',
+            url: '/competences/zeenea',
           },
         ],
       },
