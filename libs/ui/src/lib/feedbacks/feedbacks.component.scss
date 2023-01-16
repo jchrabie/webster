@@ -12,38 +12,21 @@ ul {
   padding: 1rem;
   margin: 0;
 
-  li {
-    position: relative;
-
-    &:nth-child(even)::before {
-      content: '';
-      position: absolute;
-      background: #ffffff22;
-      height: 2px;
-      left: 0;
-      right: 0;
-
-      @include breakpoint.breakpoint(lg) {
-        top: 1rem;
-        bottom: 1rem;
-        width: 2px;
-        height: 100%;
-      }
-    }
-  }
-
   figure {
     display: grid;
     grid-template-columns: auto;
     gap: 1rem;
-    align-items: center;
+    height: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px -3px var(--foreground),0 4px 6px -4px var(--foreground);
+    padding: 1rem;
 
     @include breakpoint.breakpoint(xxl) {
       grid-template-columns: 33% auto;
     }
 
     @include breakpoint.breakpoint(md) {
-      padding: 1rem;
       margin: 0 1rem;
     }
 
