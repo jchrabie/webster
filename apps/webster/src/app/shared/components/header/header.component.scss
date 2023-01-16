@@ -8,7 +8,7 @@ mat-toolbar {
   z-index: 1000;
   font-weight: 400;
   font-size: 16px;
-  background-color: var(--background-light) !important;
+  background-color: #201f47 !important;
   justify-content: space-between;
 
   .active-link {
@@ -21,11 +21,7 @@ mat-toolbar {
     align-items: center;
 
     button {
-      background-color: var(--background);
-
-      &.expanded-btn {
-        background-color: var(--primary);
-      }
+      background-color: var(--primary);
     }
 
     span {
@@ -63,10 +59,7 @@ mat-toolbar {
 
     img {
       width: 130px;
-
-      @include breakpoint.breakpoint(md) {
-        width: 200px;
-      }
+      height: 20px;
     }
   }
 }

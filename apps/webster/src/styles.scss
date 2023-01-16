@@ -14,6 +14,7 @@
 
 html, body {
   min-height: 100%;
+  overflow: hidden;
 }
 
 body .mat-dialog-container {
@@ -22,9 +23,8 @@ body .mat-dialog-container {
   width: 87%;
 }
 
-
 body .mat-menu-panel {
-  background: var(--background-light);
+  background: var(--text);
   color: white;
 
   .mat-menu-content:not(:empty) {

@@ -247,7 +247,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/webster/src/favicon.ico",
-              "apps/webster/src/assets"
+              "apps/webster/src/assets",
+                   {
+                       "glob": "**/*",
+                     "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                      "output": "/assets/"
+                    }
             ],
             "allowedCommonJsDependencies": [
               "highlight.js"

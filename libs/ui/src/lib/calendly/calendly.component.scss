@@ -1,10 +1,18 @@
 :host{
   display: block;
 
-  button[mat-fab] {
-    position: fixed;
-    bottom: 2rem;
-    right: 3rem;
-    z-index: 1000;
+  button {
+    &:not([mat-fab]) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &[mat-fab] {
+      position: fixed;
+      bottom: 2rem;
+      right: 3rem;
+      z-index: 1000;
+    }
   }
 }

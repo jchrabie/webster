@@ -18,18 +18,246 @@ export const tipsGroups: ArticlesGroup[] = [
     ],
     articles: [
       {
-        template: 'sr-only',
+        template: 'images',
         group: 'tips',
-        title: 'Screen reader only',
-        breadcrumb: { name: 'sr-only', url: '/tips/html', active: true },
+        title: 'Les images',
+        breadcrumb: { name: 'linkedin-img', url: '/tips/a11y', active: true },
         showMore: true,
-        subtitle: 'sr-only',
+        subtitle: 'Linkedin',
         baseLink: 'tips',
         imagePath: 'assets/cards/a11ytips001.png',
         content: `
-<p>Comment cacher un texte sur le navigateur, tout en l'affichant pour les lecteurs d'écran?</p>
-<p>Comment expliquer sans alourdir le design à l'écran?</p>
+<p>Tu as une superbe image que tu veux partager sur les réseaux, mais certaines personnes ne la voit pas !</p>
 `,
+        icon: 'accessible',
+        customIcon: true,
+        iconLink: 'accessibilité',
+        projects: [
+          {
+            title: `Tu as une superbe image, ...`,
+            id: 'les-images',
+            content: `<p>... Mais certaines personnes ne la voit pas !</p>
+<p>Certaines images sont nécessaires pour véhiculer des informations, mais quand on souffre d'un handicap visuel, ces informations sont cachés.</p>
+
+<p>Mais comment font les personnes aveugles ou mal voyantes pour aller sur internet?</p>
+
+<p>Elles utilisent un outil que l'on appelle "Un lecteur d'écran" (ou Screen reader en anglais) qui vient restituer à l'oral le contenu d'une page.</p>
+
+<p>Tout y passe, le texte et même les images.</p>
+
+<p>Le lecteur d'écran va lire le "Texte alternatif" de l'image (l'attribut alt pour les développeurs).</p>
+
+<p>Il est donc nécessaire de renseigner la description du contenu. (enfin pas tout le temps pour les développeurs mais ce sera le sujet d'un autre post)</p>
+
+<p>Comment faire sur linkedIn?</p>
+
+<p>C'est très simple! Quand tu télécharges la photo, juste en dessous, il y a un bouton "Texte alternatif".</p>
+
+<p>Tu cliques, tu remplis, tu enregistres et c'est tout!</p>
+`,
+          },
+        ],
+        other: [
+          {
+            title: 'Les caractères fantaisistes',
+            url: '/tips/caracteres-fantaisistes',
+          },
+          {
+            title: 'Les textes inclusifs',
+            url: '/tips/textes-inclusifs',
+          },
+          {
+            title: 'Les émoticones',
+            url: '/tips/emoticones',
+          },
+        ],
+        pdf: 'Images Accessible.pdf',
+      },
+      {
+        template: 'emoticones',
+        group: 'tips',
+        title: 'Les émoticones',
+        breadcrumb: { name: 'emoticones', url: '/tips/a11y', active: true },
+        showMore: true,
+        subtitle: 'Linkedin',
+        baseLink: 'tips',
+        imagePath: 'assets/cards/a11ytips002.png',
+        content: `
+<p>Tu veux animer certains mots en les remplaçant par des émojis, mais tu rends ton texte incompréhensible.</p>
+`,
+        icon: 'accessible',
+        customIcon: true,
+        iconLink: 'accessibilité',
+        projects: [
+          {
+            title: `Tu veux animer certains mots en les remplaçant par des émojis, ...`,
+            id: 'emojis',
+            content: `<p>... Mais tu rends ton texte incompréhensible.</p>
+
+<p>Les émojis permettent de rendre tes posts plus attractifs.</p>
+
+<p>Mais attention toute fois à ne pas remplacer un mot ou des chiffres.</p>
+
+<p>Par exemple, si on veut parler de "la page d'accueil", certains vont remplacer le mot "accueil" par l'émoji "🏡".</p>
+
+<p>Le lecteur d'écran restituera "La page d 'maison avec jardin'". 😱</p>
+
+<p>Idem pour ceux qui remplacent les bullets points de liste par des émojis.</p>
+
+<p>Avoir une restitution du style "Fusée point numéro 1, fusée point numéro 2, ..." c'est assez compliqué à comprendre. 😂</p>
+
+<p>Il est préférable de mettre les émojis en fin de phrase plutôt qu'en début ou au milieu, pour ne pas faire un rébus géant.</p>
+
+<p>De plus, Il ne faut pas oublier qu'en fonction du navigateur, et de l'OS, certains émojis peuvent être remplacés par un rectangle vide.</p>
+`,
+          },
+        ],
+        other: [
+          {
+            title: 'Les caractères fantaisistes',
+            url: '/tips/caracteres-fantaisistes',
+          },
+          {
+            title: 'Les textes inclusifs',
+            url: '/tips/textes-inclusifs',
+          },
+          {
+            title: 'Les images sur les réseaux sociaux',
+            url: '/tips/images',
+          },
+        ],
+        pdf: 'Les émojis.pdf',
+      },
+      {
+        template: 'textes-inclusifs',
+        group: 'tips',
+        title: 'Textes inclusifs',
+        breadcrumb: { name: 'inclusif', url: '/tips/a11y', active: true },
+        showMore: true,
+        subtitle: 'Linkedin',
+        baseLink: 'tips',
+        imagePath: 'assets/cards/a11ytips003.png',
+        content: `<p>Tu veux utiliser les textes inclusifs mais tu peux parfois exclure.</p>`,
+        icon: 'accessible',
+        customIcon: true,
+        iconLink: 'accessibilité',
+        projects: [
+          {
+            title: `Tu veux utiliser les textes inclusifs, ...`,
+            id: 'kesako',
+            content: `<p>Il existe plein de façon de rendre un texte inclusif:</p>
+<ul>
+  <li>Le pronom iel.</li>
+  <li>Le point médian "·".</li>
+  <li>Les mots englobants.</li>
+  <li>Les mots valises.</li>
+  <li>...</li>
+</ul>
+
+<p>Je te propose un carrousel qui explique différentes façons de rendre un texte inclusif.</p>
+
+<p>Il n'existe pas de solution miracle !</p>
+
+<p>Personnellement je préfère utiliser la version longue et les mots englobants:</p>
+
+<p>"Je recherche un développeur H/F Angular. Il interviendra sur ... avec une équipe de développeurs."</p>
+
+<p>Deviendra:</p>
+
+<p>"Je recherche un développeur ou une développeuse Angular. Iel interviendra sur ... avec une équipe de développement."</p>
+`,
+          },
+        ],
+        other: [
+          {
+            title: 'Les caractères fantaisistes',
+            url: '/tips/caracteres-fantaisistes',
+          },
+          {
+            title: 'Les émoticones',
+            url: '/tips/emoticones',
+          },
+          {
+            title: 'Les images sur les réseaux sociaux',
+            url: '/tips/images',
+          },
+        ],
+        pdf: 'Textes inclusifs.pdf',
+      },
+      {
+        template: 'caracteres-fantaisistes',
+        group: 'tips',
+        title: 'Caractères fantaisistes',
+        breadcrumb: {
+          name: 'caracteres-fantaisistes',
+          url: '/tips/a11y',
+          active: true,
+        },
+        showMore: true,
+        subtitle: 'Linkedin',
+        baseLink: 'tips',
+        imagePath: 'assets/cards/a11ytips004.png',
+        content: `<p>Tu veux mettre en valeurs certains mots, mais tu les caches pour certains.</p>`,
+        icon: 'accessible',
+        customIcon: true,
+        iconLink: 'accessibilité',
+        projects: [
+          {
+            title: `Tu veux mettre en valeurs certains mots, ...`,
+            id: 'kesako',
+            content: `<p>... Mais tu les caches pour certains</p>
+<p>Je vais bien évidemment parler d'accessibilité et d'inclusion.</p>
+
+<p>Qui n'a pas utilisé PerfectPost App ou des générateurs qui te permettent de remplacer ton texte en leur équivalent en gras, italique, fantaisiste, souligné, ... ?</p>
+
+<p>Je ne leur jette pas la pierre, je l'ai moi-même fait !</p>
+
+<p>Il faut savoir que ces "caractères fantaisistes" sont en vérité des symboles mathématiques qui ne sont pas ou mal reconnus par les lecteurs d'écran.</p>
+
+<p>Tu te rappelles à l'école de la fonction que l'on abrégeait avec le symbole "f italique" ?</p>
+
+<p>Bah ce sont ces caractères-là qu'on utilise pour les mots en italique, gras, ...</p>
+
+<p>Prenons par exemple la phrase :</p>
+
+<p>"Je suis 𝗲𝗻 𝘁𝗿𝗮𝗶𝗻 𝗱𝗲 𝗿𝗲́𝗮𝗹𝗶𝘀𝗲𝗿 une tâche 𝗱𝗶𝗳𝗳𝗶𝗰𝗶𝗹𝗲."</p>
+
+<p>(La phrase complète est : Je suis en train de réaliser une tâche difficile. Avec "en train de réaliser" et "difficile" en gras)</p>
+
+<p>Certains lecteurs d'écran restitueront :</p>
+
+<p>"Je suis une tâche." 😱</p>
+
+<p>On est d'accord que ce n'est pas la même 🤣.</p>
+`,
+          },
+        ],
+        other: [
+          {
+            title: 'Les textes inclusifs',
+            url: '/tips/textes-inclusifs',
+          },
+          {
+            title: 'Les émoticones',
+            url: '/tips/emoticones',
+          },
+          {
+            title: 'Les images sur les réseaux sociaux',
+            url: '/tips/images',
+          },
+        ],
+        pdf: 'Les caractères fantaisistes.pdf',
+      },
+      {
+        template: 'sr-only',
+        group: 'tips',
+        title: 'Screen reader only',
+        breadcrumb: { name: 'sr-only', url: '/tips/a11y', active: true },
+        showMore: true,
+        subtitle: 'sr-only',
+        baseLink: 'tips',
+        imagePath: 'assets/cards/a11ytips005.png',
+        content: `<p>Comment cacher un texte sur le navigateur, tout en l'affichant pour les lecteurs d'écran ?</p>`,
         icon: 'accessible',
         customIcon: true,
         iconLink: 'accessibilité',
@@ -80,16 +308,20 @@ export const tipsGroups: ArticlesGroup[] = [
         ],
         other: [
           {
-            title: 'Responsive',
-            url: '/competences/responsive',
+            title: 'Les caractères fantaisistes',
+            url: '/tips/caracteres-fantaisistes',
           },
           {
-            title: 'Accessibilité',
-            url: '/competences/a11y',
+            title: 'Les textes inclusifs',
+            url: '/tips/textes-inclusifs',
           },
           {
-            title: 'Analytics',
-            url: '/competences/analytics',
+            title: 'Les émoticones',
+            url: '/tips/emoticones',
+          },
+          {
+            title: 'Les images sur les réseaux sociaux',
+            url: '/tips/images',
           },
         ],
       },
@@ -1320,6 +1552,7 @@ export interface Article extends Card {
   dates?: string;
   projects: Project[];
   other: { title: string; url: string }[];
+  pdf?: string;
 }
 
 export interface ArticlesGroup {

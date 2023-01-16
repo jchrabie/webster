@@ -62,6 +62,6 @@ export class ArticleComponent implements OnInit {
       return;
     }
 
-    document.getElementsByTagName('body')[0].scrollTo(0, 0);
+    document.getElementsByTagName('main')[0].scrollTo(0, 0);
   }
 }

@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
           header.imagePath
         );
 
-        document.getElementsByTagName('body')[0].scrollTo(0, 0);
+        document.getElementsByTagName('main')[0].scrollTo(0, 0);
       });
   }
 

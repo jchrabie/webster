@@ -14,6 +14,7 @@ import { HomeModule } from './home/home.module';
 import { LegalModule } from './legal/legal.module';
 import { CalendlyModule } from '@webster/ui';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 const route = [
   {
@@ -61,6 +62,7 @@ const route = [
     HighlightModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    NgxExtendedPdfViewerModule,
     SharedModule,
     ScrollingModule,
     RouterModule.forRoot(route, {

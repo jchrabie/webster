@@ -42,9 +42,11 @@ export class BlogComponent implements OnInit {
   get breadcrumbs(): any[] {
     const breadcrumbs = [...this._breadcrumbs];
 
-    breadcrumbs.forEach(
-      (breadcrumb: Breadcrumb) => (breadcrumb.active = !this.params)
-    );
+    if (breadcrumbs.length > 1) {
+      breadcrumbs.forEach(
+        (breadcrumb: Breadcrumb) => (breadcrumb.active = !this.params)
+      );
+    }
 
     return breadcrumbs;
   }

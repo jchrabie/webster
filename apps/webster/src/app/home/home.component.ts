@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     of(false)
-      .pipe(delay(6000))
+      .pipe(delay(1500))
       .subscribe((loading) => (this.isLoading = loading));
   }
 

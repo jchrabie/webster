@@ -1,13 +1,21 @@
-.wave-dark {
-  background-image: url(/assets/svg/wave.svg);
+%wave {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: bottom;
+  margin-top: -1px;
+}
+
+.wave-dark {
+  background-image: url(/assets/svg/wave.svg);
+  @extend %wave;
 }
 
 .wave-light {
+  background-image: url(/assets/svg/wave-light.svg);
+  @extend %wave;
+}
+
+.wave-white {
   background-image: url(/assets/svg/wave-white.svg);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: bottom;
+  @extend %wave;
 }

@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content bkg">
   <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
   <br>
   <h2>
@@ -15,4 +15,15 @@
       </mat-chip>
     </mat-chip-list>
   </div>
+  <ngx-extended-pdf-viewer
+    *ngIf="article.pdf"
+    [src]="'assets/pdf/' + article.pdf"
+    [height]="'400px'"
+    [showToolbar]="false"
+    [useBrowserLocale]="true"
+    [textLayer]="false"
+    [showHandToolButton]="false"
+    [showPresentationModeButton]="false"
+    [zoom]="'page-fit'"
+  ></ngx-extended-pdf-viewer>
 </div>

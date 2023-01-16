@@ -22,17 +22,16 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="mat-drawer-content">
-      <header #header tabindex="-1">
-        <app-header></app-header>
-      </header>
-
       <main #main tabindex="-1">
+        <header #header tabindex="-1">
+          <app-header></app-header>
+        </header>
         <webster-calendly calendlyUrl="websterdev/entretien-meet"></webster-calendly>
         <router-outlet></router-outlet>
-      </main>
       <footer #footer tabindex="-1">
         <app-footer></app-footer>
       </footer>
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

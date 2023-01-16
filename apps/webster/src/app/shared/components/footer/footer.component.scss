@@ -1,7 +1,7 @@
 @use 'libs/ui/src/design-system';
 
 mat-toolbar {
-  background-color: var(--background);
+  background-color: #201f47;
 
   mat-divider {
     border-color: var(--text);
@@ -20,7 +20,7 @@ mat-toolbar {
     white-space: pre-line;
 
     &.last-row {
-      background-color: var(--background-light);
+      background-color: #2f2e53;
 
       .mat-mini-fab {
         margin: 0 1em;

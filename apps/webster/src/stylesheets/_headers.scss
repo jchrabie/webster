@@ -3,7 +3,6 @@
 h2 {
   border-bottom: var(--primary) 3px solid;
   display: inline-block;
-  margin-bottom: 5rem;
   font-size: 2rem;
 
   @include breakpoint(md) {

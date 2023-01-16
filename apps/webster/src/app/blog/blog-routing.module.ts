@@ -10,9 +10,7 @@ const routes: Routes = [
     component: BlogComponent,
     data: {
       groups: articlesGroups,
-      breadcrumbs: [
-        { name: 'Compétences', url: '/competences', active: false },
-      ],
+      breadcrumbs: [{ name: 'Compétences', url: '/competences', active: true }],
       title: `
     TU VEUX EN SAVOIR PLUS SUR MES <span class="text-stroke">EXPERIENCES</span> OU LES <span class="text-stroke">CONCEPTS</span>?`,
     },
@@ -22,7 +20,7 @@ const routes: Routes = [
     component: BlogComponent,
     data: {
       groups: tipsGroups,
-      breadcrumbs: [{ name: 'Tips', url: '/tips', active: false }],
+      breadcrumbs: [{ name: 'Tips', url: '/tips', active: true }],
       title: `
     JE PARTAGE MES <span class="text-stroke">TIPS</span>
     SUR DU CODE <span class="text-stroke">HTML</span>, <span class="text-stroke">CSS</span>, <span class="text-stroke">JS</span>...

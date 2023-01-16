@@ -11,6 +11,7 @@ $colors-map: (
   'accent': #{var(--accent-color)},
   'accent-light': #{var(--accent-transparentized-color)},
   'alert': #ffe28b,
+  'current': #{var(--text)},
   'dark': #3c3c3c,
   'error': #{var(--error-color)},
   'flash': #{var(--accent-color)},

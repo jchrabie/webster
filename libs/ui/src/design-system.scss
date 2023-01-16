@@ -36,7 +36,7 @@
 @forward "./partials/theme";
 @forward "./partials/utils/breakpoint";
 
-@include mixins.fontFace();
+@include mixins.fontFace('Inter');
 
 :root {
   @include mixins.button-component();
@@ -49,7 +49,7 @@
   @include mixins.tag-component();
 
   @include mixins.fontSizes();
-  @include mixins.font(Poppins);
+  @include mixins.font(Inter);
 
   @include mixins.defineColor(--white-color, white);
   @include mixins.defineColor(--light-color, #f7f7fa);

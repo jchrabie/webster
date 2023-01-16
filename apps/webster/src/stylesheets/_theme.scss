@@ -10,6 +10,6 @@ body {
   );
 
   .mat-card, .mat-drawer {
-    background: #2f2e53;
+    background: var(--text);
   }
 }
