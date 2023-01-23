@@ -5,7 +5,6 @@ export const tipsGroups: ArticlesGroup[] = [
     group: 'accessibilité',
     description: `
         <p>L'accessibilité, ou A11y pour les intimes (11 étant le nombre de lettres entre le "A" et le "y" du mot Accessibility, comme I18n pour Internationalization), permets de rendre accessible un site ou une application web pour tous.</p>
-        <p>Contrairement à ce qu'on voit un peu partout, l'accessibilité ne s'adresse pas QUE aux personnes handicapés, je préfère dire que c'est pour les 𝐩𝐞𝐫𝐬𝐨𝐧𝐧𝐞𝐬 𝐞𝐧 𝐬𝐢𝐭𝐮𝐚𝐭𝐢𝐨𝐧 𝐝𝐞 𝐡𝐚𝐧𝐝𝐢𝐜𝐚𝐩.</p>
 `,
     breadcrumbs: [
       { name: 'Tips', url: '/tips', active: false },
