@@ -4,7 +4,7 @@ import { LegalComponent } from './legal.component';
 
 const routes: Routes = [
   {
-    path: 'legal',
+    path: 'mention-legales',
     component: LegalComponent,
   },
 ];

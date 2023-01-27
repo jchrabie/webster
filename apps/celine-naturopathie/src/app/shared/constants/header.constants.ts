@@ -35,7 +35,7 @@ export const headers: Header[] = [
     name: 'Témoignages',
     imagePath: 'https://www.celine-naturo.com/assets/experiences.jpg',
     description: 'Visualisation de mes différentes expériences',
-    canonical: 'https://www.joelchrabie.com/experiences',
+    canonical: 'https://www.webster-dev.fr/experiences',
     enabled: true,
   },
   {
@@ -44,7 +44,7 @@ export const headers: Header[] = [
     name: 'Contact et tarif',
     imagePath: 'https://www.celine-naturo.com/assets/contact.jpg',
     description: 'Coordonnées pour me rencontrer',
-    canonical: 'https://www.joelchrabie.com/contact',
+    canonical: 'https://www.webster-dev.fr/contact',
     enabled: true,
   },
 ];

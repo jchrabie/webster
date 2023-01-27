@@ -33,8 +33,8 @@ export class ContactComponent implements OnInit {
       content: [
         new CardContent('06 88 74 00 93', 'Mobile', 'phone'),
         new CardContent('Nantes', 'Localisation', 'place'),
-        new CardContent('contact@joelchrabie.com', 'Mail', 'email'),
-        new CardContent('www.joelchrabie.com', 'Site', 'qr_code'),
+        new CardContent('contact@webster-dev.fr', 'Mail', 'email'),
+        new CardContent('www.webster-dev.fr', 'Site', 'qr_code'),
       ],
     };
   }

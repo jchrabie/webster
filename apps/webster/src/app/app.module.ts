@@ -20,8 +20,8 @@ const route = [
   {
     path: 'mention-legales',
     loadChildren: () =>
-      import('libs/ui/src/lib/mentions-legales/mentions-legales.module').then(
-        (ml) => ml.MentionsLegalesModule
+      import('./legal/legal-routing.module').then(
+        (ml) => ml.LegalRoutingModule
       ),
     data: {
       name: 'Céline',
