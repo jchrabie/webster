@@ -2,27 +2,24 @@
 .loading-logo {
   [class*="cls-"] {
     stroke-miterlimit: 10;
-    stroke: white!important;
-    stroke-width: 0;
-    fill: currentColor;
+    stroke: var(--text)!important;
+    stroke-width: 2px;
+    fill: white;
     stroke-dasharray: 500;
-    animation: stroke 1.5s linear;
-    transition: .5s all ease-in-out;
+    animation: stroke 3s linear;
+    transition: 1s fill ease-in-out;
   }
 
   @keyframes stroke {
     0% {
-      stroke-width: 2px;
       stroke-dashoffset: 500;
-      fill: transparent;
     }
     50% {
       stroke-dashoffset: 0;
-      fill: transparent;
     }
     100% {
       stroke-dashoffset: 0;
-      fill: white;
+      fill: var(--text);
     }
   }
 }

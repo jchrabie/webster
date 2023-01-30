@@ -19,7 +19,7 @@
       }
 
       .cls-5 {
-        fill: white;
+        fill: var(--text);
       }
 
       .cls-6 {
