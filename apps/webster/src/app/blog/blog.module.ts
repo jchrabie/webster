@@ -14,7 +14,6 @@ import { FiltersComponent } from './filters/filters.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { A11yModule } from '@angular/cdk/a11y';
 import { VirtualScrollModule } from '@webster/ui';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   imports: [
@@ -27,7 +26,6 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     SharedModule,
     A11yModule,
     VirtualScrollModule,
-    NgxExtendedPdfViewerModule,
   ],
   declarations: [
     ArticleComponent,

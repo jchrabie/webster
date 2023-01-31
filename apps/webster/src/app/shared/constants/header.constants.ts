@@ -41,6 +41,13 @@ export const headers: Header[] = [
     description: 'Mention Légales',
     canonical: 'https://www.webster-dev.fr/legal',
   },
+  {
+    type: 'accessibilite',
+    title: 'Accessibilité',
+    imagePath: 'https://www.webster-dev.fr/assets/a11y.jpg',
+    description: 'Accessibilité',
+    canonical: 'https://www.webster-dev.fr/a11y',
+  },
 ];
 
 export interface Header {

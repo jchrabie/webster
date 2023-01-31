@@ -14,7 +14,7 @@ import { HomeModule } from './home/home.module';
 import { LegalModule } from './legal/legal.module';
 import { CalendlyModule } from '@webster/ui';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { AccessibiliteComponent } from './accessibilite/accessibilite.component';
 
 const route = [
   {
@@ -23,11 +23,10 @@ const route = [
       import('./legal/legal-routing.module').then(
         (ml) => ml.LegalRoutingModule
       ),
-    data: {
-      name: 'Céline',
-      lastName: 'CHRABIE',
-      url: 'celine-naturopathe.com',
-    },
+  },
+  {
+    path: 'accessibilite',
+    component: AccessibiliteComponent,
   },
   {
     path: 'contact',
@@ -62,12 +61,12 @@ const route = [
     HighlightModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    NgxExtendedPdfViewerModule,
     SharedModule,
     ScrollingModule,
     RouterModule.forRoot(route, {
       useHash: true,
       scrollPositionRestoration: 'enabled',
+      initialNavigation: 'enabledBlocking',
     }),
   ],
   exports: [RouterModule],
