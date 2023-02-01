@@ -83,7 +83,6 @@ const route = [
           css: () => import('highlight.js/lib/languages/css'),
           scss: () => import('highlight.js/lib/languages/scss'),
         },
-        themePath: 'path-to-theme.css', // Optional, and useful if you want to change the theme dynamically
       },
     },
   ],

@@ -15,7 +15,7 @@ export const linkList: Link[] = [
     url: '/tips',
   },
   {
-    type: 'Compétence',
+    type: 'Compétences',
     icon: 'speaker_notes',
     url: '/competences',
   },
