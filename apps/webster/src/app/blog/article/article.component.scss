@@ -20,6 +20,7 @@
     mat-card {
       position: sticky;
       top: 120px;
+      background-color: #201f47;
 
       .mat-card-header {
         flex-direction: column;
@@ -72,6 +73,7 @@
       height: calc(100vh - 400px);
       position: sticky;
       top: 80px;
+      background-color: #201f47;
     }
 
     ul {

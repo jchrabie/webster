@@ -25,6 +25,15 @@
     </ul>
   </nav>
   <div class="social d-flex gap-3">
+    <div>
+      <input type="checkbox" class="checkbox" id="checkbox" (change)="modeChange($event)" [checked]="isDarkTheme$ | async">
+      <label for="checkbox" class="checkbox-label">
+        <mat-icon class="moon">dark_mode</mat-icon>
+        <mat-icon class="sun">light_mode</mat-icon>
+        <span class="ball"></span>
+        <span class="sr-only">Changer le thème</span>
+      </label>
+    </div>
     <a href="https://www.linkedin.com/in/joel-chrabie/"
        class="text-white d-flex align-items-center" target="_blank">
       <mat-icon aria-label="Linkedin" svgIcon="linkedin" role="img" aria-hidden="false"></mat-icon>

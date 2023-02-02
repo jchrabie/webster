@@ -6,16 +6,24 @@
 }
 
 .wave-dark {
-  background-image: url(/assets/svg/wave.svg);
   @extend %wave;
+  background-image: url(/assets/svg/wave.svg);
 }
 
 .wave-light {
-  background-image: url(/assets/svg/wave-light.svg);
   @extend %wave;
+  background-image: url(/assets/svg/wave-dark-light.svg);
+
+  .light-theme & {
+    background-image: url(/assets/svg/wave-light.svg);
+  }
 }
 
 .wave-white {
-  background-image: url(/assets/svg/wave-white.svg);
   @extend %wave;
+  background-image: url(/assets/svg/wave.svg);
+
+  .light-theme & {
+    background-image: url(/assets/svg/wave-white.svg);
+  }
 }

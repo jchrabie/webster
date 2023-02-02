@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Theme, light, dark } from '../model/theme';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private active: Theme = dark;
+  private active: BehaviorSubject<Theme> = new BehaviorSubject<Theme>(dark);
   private availableThemes: Theme[] = [light, dark];
+
+  isDarkTheme$ = this.active.pipe(
+    map((activeTheme) => activeTheme.name === dark.name)
+  );
 
   getAvailableThemes(): Theme[] {
     return this.availableThemes;
   }
 
   getActiveTheme(): Theme {
-    return this.active;
-  }
-
-  isDarkTheme(): boolean {
-    return this.active.name === dark.name;
+    return this.active.value;
   }
 
   setDarkTheme(): void {
@@ -31,13 +33,13 @@ export class ThemeService {
   }
 
   setActiveTheme(theme: Theme): void {
-    this.active = theme;
+    this.active.next(theme);
 
-    /*Object.keys(this.active.properties).forEach(property => {
-            document.documentElement.style.setProperty(
-                property,
-                this.active.properties[property]
-            );
-        });*/
+    Object.keys(this.active.value.properties).forEach((property) => {
+      document.documentElement.style.setProperty(
+        property,
+        this.active.value.properties[property]
+      );
+    });
   }
 }

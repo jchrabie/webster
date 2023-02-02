@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SidenavService } from '../../service/sidenav.service';
 import { ThemeService } from '../../service/theme.service';
 import { AnalyticsService } from '../../service/analytics.service';
-import { fromEvent, Subject } from 'rxjs';
+import { fromEvent, Observable, Subject } from 'rxjs';
 import { map, takeUntil, throttleTime } from 'rxjs/operators';
 import { Link } from '../../constants/linkList.constants';
 
@@ -24,7 +24,7 @@ import { Link } from '../../constants/linkList.constants';
 export class HeaderComponent implements OnDestroy, OnInit, AfterViewInit {
   public isMobile: boolean;
   public isScrolled: boolean = true;
-  public isDarkTheme: boolean;
+  public isDarkTheme$: Observable<boolean> = this.themeService.isDarkTheme$;
   private destroy$: Subject<void> = new Subject();
   linkList: Link[];
   blog: Link | undefined;
@@ -50,7 +50,15 @@ export class HeaderComponent implements OnDestroy, OnInit, AfterViewInit {
   ngOnInit() {
     this.linkList = this.sidenavService.getLinkList();
     this.blog = this.linkList.find((l) => l.type === 'Blog');
-    this.themeService.setDarkTheme();
+    this.themeService.setLightTheme();
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      this.themeService.setDarkTheme();
+    } else {
+      this.themeService.setLightTheme();
+    }
   }
 
   ngAfterViewInit() {
@@ -103,5 +111,15 @@ export class HeaderComponent implements OnDestroy, OnInit, AfterViewInit {
 
   ngOnDestroy(): void {
     this.destroy$.next();
+  }
+
+  modeChange({ target }: Event): void {
+    if ((target as HTMLInputElement)?.checked) {
+      this.themeService.setDarkTheme();
+
+      return;
+    }
+
+    this.themeService.setLightTheme();
   }
 }

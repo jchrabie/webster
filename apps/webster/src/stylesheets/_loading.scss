@@ -3,8 +3,8 @@
   [class*="cls-"] {
     stroke-miterlimit: 10;
     stroke: var(--text)!important;
-    stroke-width: 2px;
-    fill: white;
+    stroke-width: 1px;
+    fill: transparent;
     stroke-dasharray: 500;
     animation: stroke 3s linear;
     transition: 1s fill ease-in-out;

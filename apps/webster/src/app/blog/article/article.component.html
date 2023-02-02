@@ -1,4 +1,4 @@
-<div *ngIf="article" class="pb-6 wave-dark">
+<div *ngIf="article" class="pb-6 wave-dark bkg-light">
   <div class="blog-container">
     <div class="author">
       <mat-card>
@@ -39,6 +39,7 @@
       </mat-card>
     </div>
     <button
+      aria-label="Retour en haut de page"
       mat-mini-fab
       color="primary"
       class="back-to-top"
@@ -46,7 +47,6 @@
       matTooltip="Retour en haut de page"
       (click)="scrollToElement()"
       id="mobile-back-to-top"
-      aria-label="Retour en haut de page"
     >
       <mat-icon>keyboard_arrow_up</mat-icon>
     </button>

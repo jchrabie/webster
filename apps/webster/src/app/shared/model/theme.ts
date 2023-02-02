@@ -6,33 +6,27 @@ export interface Theme {
 export const light: Theme = {
   name: 'light',
   properties: {
-    '--foreground': '#3030301b',
+    '--foreground': '#2f2e538a',
+    '--background': '#fff',
+    '--background-light': '#efefef',
 
-    '--background': 'white',
-    '--background-dark': '#DDD',
-    '--background-light': '#f5f5f5',
+    '--primary': '#a55afe',
 
-    '--primary': '#00bcd4',
-    '--primary-dark': 'rgb(97,169,160)',
-    '--primary-light': '#45c3b8',
-
-    '--text': '#303030',
-    '--text-light': '#555',
+    '--text': '#201f47',
+    '--text-light': '#2f2e53',
   },
 };
 
 export const dark: Theme = {
   name: 'dark',
   properties: {
-    '--foreground': '#3030308a',
-    '--background': '#303030',
-    '--background-light': '#424242',
+    '--foreground': '#2f2e538a',
+    '--background': '#201f47',
+    '--background-light': '#2f2e53',
 
     '--primary': '#a55afe',
-    '--primary-dark': 'rgb(97, 169, 160)',
-    '--primary-light': '#45c3b8',
 
-    '--text': 'white',
-    '--text-light': '#bbb',
+    '--text': '#fff',
+    '--text-light': '#efefef',
   },
 };

@@ -20,6 +20,7 @@
     padding: 0;
     width: 300px;
     max-width: calc(100vw - 8rem);
+    background-color: #201f47;
 
     @include breakpoint.breakpoint(xxl) {
       width: 350px;
@@ -35,7 +36,7 @@
     .mat-card-header {
       display: flex;
       flex-direction: row;
-      background-color: var(--text-light);
+      background-color: #2f2e53;
       padding: 16px 24px 0 24px;
       margin: -4px 0;
     }
